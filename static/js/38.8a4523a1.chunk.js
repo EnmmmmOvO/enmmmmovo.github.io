@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkhome=self.webpackChunkhome||[]).push([[38],{8038:e=>{e.exports=JSON.parse('{"home":"\u4e3b\u9875","about":"\u5173\u4e8e","contact":"\u8054\u7cfb\u65b9\u5f0f","projects":"\u9879\u76ee","name":"\u738b\u9756\u6db5"}')}}]);
