@@ -8,5 +8,55 @@
   "afternoon": "Good Afternoon, ",
   "evening": "Good Evening, ",
   "welcome": "Welcome to my website!",
-  "aboutme": "About Me"
+  "aboutme": "About Me",
+  "project": [
+    {
+      "title": "My Airbnb",
+      "description": "This project is a web application similar to Airbnb, designed to provide a convenient intermediary platform for landlords and renters.",
+      "content": [
+        {
+          "type": "title",
+          "content": "Feature Description:"
+        },
+        {
+          "type": "text",
+          "content": "This project allows landlords to publicly share their property information, while renters can easily browse, search, and book these listings. Specifically, the app supports the following features:"
+        },
+        {
+          "type": "list",
+          "content": [
+            "User Registration and Login",
+            "Uploading Property Photos and Information",
+            "Search and Filter Functionality",
+            "Online Booking Functionality"
+          ]
+        },
+        {
+          "type": "title",
+          "content": "Technology Stack:"
+        },
+        {
+          "type": "text",
+          "content": "This project was my first major assignment using the React framework. I adopted TypeScript to ensure high code quality and maintainability. For routing management, I used React Router's BrowserRouter component to create a dynamic and responsive single-page application (SPA). Due to the minimal need for global state, I chose React's Context API over Redux for state management, which met the application's needs while keeping the architecture simple."
+        },
+        {
+          "type": "text",
+          "content": "In terms of interface design, I used Material UI (MUI) as the main UI framework, which not only sped up development but also ensured a modern and responsive look for the application."
+        },
+        {
+          "type": "text",
+          "content": "To ensure code stability and quality, as per the assignment requirements, I used Jest for unit testing three key components. Additionally, I used Cypress for end-to-end UI testing to ensure overall application stability and user experience."
+        },
+        {
+          "type": "text",
+          "content": "Overall, this project enhanced my front-end development skills, especially in using React and related technology stacks. A shortcoming, however, was the tight coupling of multiple components within the React framework due to extensive data interactions between different components. This strategy avoided complex management of global state to some extent but reduced code reusability and limited testing convenience. In future projects, a more refined component division is needed to reduce inter-component coupling and enhance code maintainability, testability, and scalability."
+        }
+      ],
+      "link": "https://enmmmmovo.github.io/Airbnb/",
+      "repo": "https://github.com/EnmmmmOvO/Airbnb",
+      "image": [
+        "/static/images/projects/airbnb/logo.svg"
+      ]
+    }
+  ]
 }

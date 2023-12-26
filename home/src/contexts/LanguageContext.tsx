@@ -1,8 +1,12 @@
 import { createContext } from 'react';
 
+export interface JsonContent {
+  [key: string]: string | string[] | JsonContent | JsonContent[] | number | number[];
+}
+
 interface LanguageContextProps {
   lang: string;
-  content: { [key: string]: string }
+  content: JsonContent;
   setLang: (language: string) => void;
 }
 

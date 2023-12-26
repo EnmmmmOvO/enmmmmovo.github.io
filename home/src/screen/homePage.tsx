@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, keyframes, styled, Typography } from '@mui/material';
-import { LanguageContext } from '../contexts/languageContext';
+import { LanguageContext } from '../contexts/LanguageContext';
 
 const colorChange = keyframes`
   0% { color: lightcoral; }
@@ -37,7 +37,7 @@ const AboutButton = styled(Button)({
   width: '20vw',
   fontSize: '1vw',
   '@media (max-width: 600px)': {
-    fontSize: '2vw',
+    fontSize: '1.5vw',
   },
 });
 
@@ -48,11 +48,11 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour < 12) {
-      setGreeting(content.morning);
+      setGreeting(content.morning as string);
     } else if (hour < 18) {
-      setGreeting(content.afternoon);
+      setGreeting(content.afternoon as string);
     } else {
-      setGreeting(content.evening);
+      setGreeting(content.evening as string);
     }
   }, [content]);
 

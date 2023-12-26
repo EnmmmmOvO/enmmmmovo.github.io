@@ -1,18 +1,41 @@
 import { useRoutes } from 'react-router-dom';
-import router from './router';
+import router, { Loader } from './router';
 import './App.css';
 
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { LanguageContext } from './contexts/languageContext';
+import { LanguageContext } from './contexts/LanguageContext';
 
 import { CssBaseline } from '@mui/material';
 import ThemeProvider from './theme/ThemeProvider';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { WindowContext, WindowContextProps } from './contexts/WIndowContext';
+
+const NoticeDialog = Loader(React.lazy(() => import('./components/NoticeDialog')));
 
 function App() {
   const [lang, setLang] = useState<string>('en');
+  const [windowSize, setWindowSize] = useState<WindowContextProps>({
+    width: 0,
+    height: 0
+  });
   const [content, setContent] = useState<{ [key: string]: string }>({});
+
+  useEffect(() => {
+    try {
+      fetch('https://3.25.181.130', { method: 'HEAD' })
+    } catch (error) {}
+
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     import(`./content/${lang}.json`)
@@ -23,10 +46,14 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageContext.Provider value={{ lang, content, setLang }}>
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <CssBaseline />
-          {useRoutes(router)}
-        </LocalizationProvider>
+        <WindowContext.Provider value={ windowSize }>
+          <NoticeDialog>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <CssBaseline />
+              {useRoutes(router)}
+            </LocalizationProvider>
+          </NoticeDialog>
+        </WindowContext.Provider>
       </LanguageContext.Provider>
     </ThemeProvider>
   );

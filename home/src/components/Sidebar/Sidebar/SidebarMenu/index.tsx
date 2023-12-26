@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { NavLink as RouterLink } from 'react-router-dom';
 import { SidebarContext } from '../../../../contexts/SidebarContext';
-import { LanguageContext } from '../../../../contexts/languageContext';
+import { LanguageContext } from '../../../../contexts/LanguageContext';
 
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';

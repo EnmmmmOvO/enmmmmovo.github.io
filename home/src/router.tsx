@@ -5,7 +5,7 @@ import { RouteObject } from 'react-router';
 import SidebarLayout from './components/Sidebar';
 import SuspenseLoader from './components/SuspenseLoader';
 
-const Loader = (Component: React.FC) => (props: any) =>
+export const Loader = (Component: React.FC) => (props: any) =>
   (
     <Suspense fallback={<SuspenseLoader />}>
       <Component {...props} />

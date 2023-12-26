@@ -14,7 +14,7 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from '../../../contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
-import { LanguageContext } from '../../../contexts/languageContext';
+import { LanguageContext } from '../../../contexts/LanguageContext';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `

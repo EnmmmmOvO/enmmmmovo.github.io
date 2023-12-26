@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 
 import SidebarMenu from './SidebarMenu';
-import { LanguageContext } from '../../../contexts/languageContext';
+import { LanguageContext } from '../../../contexts/LanguageContext';
 import SidebarBottom from './SidebarBottom';
 
 const SidebarWrapper = styled(Box)(
