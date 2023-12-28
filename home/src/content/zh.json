@@ -8,5 +8,70 @@
   "afternoon": "下午好，",
   "evening": "晚上好，",
   "welcome": "欢迎来到我的个人网站",
-  "aboutme": "关于我"
+  "aboutme": "关于我",
+  "website": "网页",
+  "source": "源代码",
+  "jumpTitle": "服务器响应可能存在延迟",
+  "jumpContent": "网站从服务器接收响应时可能存在轻微的延迟。因此，如果点击按钮后没有立即反应，请耐心等待一会儿～",
+  "jumpButton": "我明白",
+  "jumpDismiss": "不再显示",
+  "project": [
+    {
+      "logo": "/logo512.png",
+      "type": "React",
+      "title": "My Airbnb",
+      "description": "这个项目是一个类似于 Airbnb 的网页应用，旨在为房东和租房者提供一个便捷的中间平台。",
+      "content": [
+        {
+          "type": "title",
+          "content": "功能描述："
+        },
+        {
+          "type": "text",
+          "content": "项目允许使房东能够公开他们的房屋信息，而租房者则可以方便地浏览、查询和预订这些房源。具体来说，该应用支持以下功能："
+        },
+        {
+          "type": "list",
+          "content": [
+            "用户注册与登录",
+            "上传房屋图片和信息",
+            "搜索与筛选功能",
+            "在线预订功能"
+          ]
+        },
+        {
+          "type": "title",
+          "content": "技术实现："
+        },
+        {
+          "type": "text",
+          "content": "这个项目是我使用 React 框架完成的第一个大型作业。我采用了 TypeScript 来确保代码的高质量和可维护性。在路由管理方面，我使用了 React Router 的 `BrowserRouter` 组件，创建了一个动态和响应式的单页面应用（SPA）。由于全局状态的需求并不多，我选择了 React 的 Context API 而非 Redux 来进行状态管理，这样既满足了应用需求，又保持了架构的简洁性。"
+        },
+        {
+          "type": "text",
+          "content": "在界面设计方面，我采用了 Material UI（MUI）作为主要的 UI 框架，这不仅加快了开发速度，而且保证了应用界面的现代感和响应性。"
+        },
+        {
+          "type": "text",
+          "content": "为了保证代码的稳定性和质量，我按照作业要求，利用 Jest 对三个关键组件进行了单元测试。此外，我还使用了 Cypress 进行了端到端的 UI 测试，确保了应用的整体稳定性和用户体验。"
+        },
+        {
+          "type": "text",
+          "content": "总体而言，这个项目提高了我的前端开发技能，特别是在使用 React 和相关技术栈方面，较为不足的是，对于 React 框架的使用，由于不同组件间存在大量的数据交互，为了避免过多的全局变量，我在项目中采取了将多个组件紧密耦合的策略。这种方法在一定程度上避免了全局状态的复杂管理，但降低了代码的可重用性，限制了测试的便利性。在未来的项目中，需要采用更精细的组件划分，减少组件间的耦合，以增强代码的可维护性、可测试性和扩展性。"
+        }
+      ],
+      "link": "https://enmmmmovo.github.io/Airbnb/",
+      "repo": "https://github.com/EnmmmmOvO/Airbnb",
+      "image": [
+        "logo.svg",
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+        "7.png"
+      ]
+    }
+  ]
 }

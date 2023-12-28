@@ -9,8 +9,16 @@
   "evening": "Good Evening, ",
   "welcome": "Welcome to my website!",
   "aboutme": "About Me",
+  "website": "website",
+  "source": "source code",
+  "jumpTitle": "Potential Delay in Server Response",
+  "jumpContent": "The website takes a slight delay in receiving responses from the service (over 100ms). Consequently, if there is no immediate reaction upon clicking buttons, please be patient and wait for a while.",
+  "jumpButton": "I understand",
+  "jumpDismiss": "Don't show this again",
   "project": [
     {
+      "logo": "/logo512.png",
+      "type": "React",
       "title": "My Airbnb",
       "description": "This project is a web application similar to Airbnb, designed to provide a convenient intermediary platform for landlords and renters.",
       "content": [
@@ -55,7 +63,14 @@
       "link": "https://enmmmmovo.github.io/Airbnb/",
       "repo": "https://github.com/EnmmmmOvO/Airbnb",
       "image": [
-        "/static/images/projects/airbnb/logo.svg"
+        "logo.svg",
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+        "7.png"
       ]
     }
   ]

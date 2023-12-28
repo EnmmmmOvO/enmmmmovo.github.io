@@ -11,6 +11,8 @@ const ProjectsPage: React.FC = () => {
     <Box height='calc(100vh - 80px'>
       {(content.project as ProjectDetailProps[]).map((i, index) =>
         <ProjectsView
+          logo={i.logo}
+          type={i.type}
           title={i.title}
           description={i.description}
           content={i.content}
