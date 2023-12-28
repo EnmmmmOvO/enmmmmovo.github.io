@@ -74,19 +74,24 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
   }, [expanded, height]);
 
   const handleWebsite = async (url: string) => {
-    if (disabled) window.open(url, '_blank');
+    if (disabled) {
+      window.open(url, '_blank');
+      return
+    } else {
+      handleClickOpen(url);
+    }
 
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 200);
-
-    fetch('https://3.25.181.130', { method: 'HEAD', signal: controller.signal })
-      .then(() => {
-        clearTimeout(timeoutId);
-        window.open(detail.link as string, '_blank');
-      })
-      .catch((_error) => {
-        handleClickOpen(url);
-      });
+    // const controller = new AbortController();
+    // const timeoutId = setTimeout(() => controller.abort(), 200);
+    //
+    // fetch('https://3.25.181.130', { method: 'HEAD', signal: controller.signal })
+    //   .then(() => {
+    //     clearTimeout(timeoutId);
+    //     window.open(detail.link as string, '_blank');
+    //   })
+    //   .catch((_error) => {
+    //     handleClickOpen(url);
+    //   });
   }
 
   const handleExpandClick = () => {
@@ -119,7 +124,11 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
               ref={imageRef}
             >
               <ImageContext.Provider value={{ imageHeight }}>
-                {expanded ? <PhotoView list={detail.image.slice(1)} /> : <img src={`/static/images/projects/airbnb/${detail.image[0]}`} style={{ height: 60 }} />}
+                {
+                  expanded
+                  ? <PhotoView list={detail.image.slice(1)} />
+                  : <img src={`/static/images/projects/airbnb/${detail.image[0]}`} style={{ height: 60 }} alt="logo"/>
+                }
               </ImageContext.Provider>
             </CardMedia>
             <CardContent ref={titleRef}>
@@ -165,7 +174,7 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
             </Collapse>
             <CardActions disableSpacing>
               <Button size="small" onClick={() => handleWebsite('https://enmmmmovo.github.io/Airbnb')}>{content.website}</Button>
-              <Button size="small" href="https://github.com/EnmmmmOvO/Airbnb" target="_blank">Source Code</Button>
+              <Button size="small" href="https://github.com/EnmmmmOvO/Airbnb" target="_blank">{content.source}</Button>
               <ExpandMore
                 expand={expanded}
                 onClick={handleExpandClick}

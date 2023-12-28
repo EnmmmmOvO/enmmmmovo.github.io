@@ -10,8 +10,6 @@ import { CssBaseline } from '@mui/material';
 import ThemeProvider from './theme/ThemeProvider';
 import React, { useEffect, useState } from 'react';
 import { WindowContext, WindowContextProps } from './contexts/WIndowContext';
-import { Simulate } from 'react-dom/test-utils';
-import error = Simulate.error;
 
 const NoticeDialog = Loader(React.lazy(() => import('./components/NoticeDialog')));
 
@@ -24,10 +22,6 @@ function App() {
   const [content, setContent] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    try {
-      fetch('https://3.25.181.130', { method: 'HEAD' }).catch(error => console.log(error))
-    } catch (error) {console.log(error)}
-
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
