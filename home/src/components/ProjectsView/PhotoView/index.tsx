@@ -36,7 +36,7 @@ const PhotoView: React.FC<{ list: string[] }> = (detail: { list: string[] }) => 
   return (
     <Slider {...settings}>
       {detail.list.map((i, index) =>
-        <ImageBox key={index}><ImageTag src={`/static/images/projects/airbnb/${i}`} /></ImageBox>
+        <ImageBox key={index}><ImageTag src={`/static/images/projects/${i}`} /></ImageBox>
       )}
     </Slider>
   );

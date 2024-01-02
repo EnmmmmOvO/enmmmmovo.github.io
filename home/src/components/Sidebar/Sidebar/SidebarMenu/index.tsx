@@ -16,6 +16,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -202,6 +204,30 @@ function SidebarMenu() {
                   {content.projects}
                 </Button>
               </ListItem>
+
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/portfolio"
+                  startIcon={<HistoryEduIcon />}
+                >
+                  {content.portfolio}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/friend"
+                  startIcon={<PeopleAltIcon />}
+                >
+                  {content.friend}
+                </Button>
+              </ListItem>
+
               <ListItem component="div">
                 <Button
                   disableRipple
@@ -213,6 +239,7 @@ function SidebarMenu() {
                   {content.contact}
                 </Button>
               </ListItem>
+
             </List>
           </SubMenuWrapper>
         </List>

@@ -10,7 +10,7 @@ import {
   Collapse,
   Divider,
   IconButton,
-  IconButtonProps,
+  IconButtonProps, Link,
   List,
   ListItem,
   ListItemText,
@@ -37,6 +37,8 @@ export interface ProjectDetailProps extends JsonContent {
   content: DetailProps[];
   link: string;
   repo: string;
+  paper: string;
+  imageSize: number | string;
   image: string[];
   key: number;
 }
@@ -56,6 +58,21 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   })
 }));
 
+const compilerSentence = (i: string) => {
+  return i.split('#').map((j, index) => {
+    if (j.startsWith(':b')) return <b key={index}>{j.slice(2)}</b>
+    else if (j.startsWith(':i')) return <i key={index}>{j.slice(2)}</i>
+    else if (j.startsWith(':u')) return <Link
+      key={index}
+      href={j.slice(2).split('[')[1].split(']')[0]}
+      target="_blank"
+    >
+      {j.slice(2).split('[')[0]}
+    </Link>
+    else return (<span key={index}>{j}</span>)
+  })
+}
+
 const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) => {
   const { disabled, handleClickOpen } = React.useContext(DialogContext);
   const [expanded, setExpanded] = React.useState<boolean>(false);
@@ -64,6 +81,7 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
   const imageRef = useRef<HTMLDivElement>(null);
   const [ imageHeight, setImageHeight ] = React.useState(0);
   const { content } = useContext(LanguageContext);
+  const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
     if (expanded) {
@@ -74,38 +92,31 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
   }, [expanded, height]);
 
   const handleWebsite = async (url: string) => {
-    if (disabled) {
-      window.open(url, '_blank');
-      return
-    } else {
-      handleClickOpen(url);
-    }
-
-    // const controller = new AbortController();
-    // const timeoutId = setTimeout(() => controller.abort(), 200);
-    //
-    // fetch('https://3.25.181.130', { method: 'HEAD', signal: controller.signal })
-    //   .then(() => {
-    //     clearTimeout(timeoutId);
-    //     window.open(detail.link as string, '_blank');
-    //   })
-    //   .catch((_error) => {
-    //     handleClickOpen(url);
-    //   });
+    if (disabled) window.open(url, '_blank');
+    else handleClickOpen(url);
   }
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+
+    setTimeout(() => {
+      if (ref.current) {
+        window.scrollTo({
+        top: ref.current?.offsetTop as number - 80,
+        behavior: 'smooth'
+      });
+      }
+    }, 300);
+
     if (!expanded) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
-    // window.scrollTo(0, 0);
   }
 
   return (
-    <Box sx={{ p: height > 800 ? 2 : 1, boxSizing: 'border-box' }}>
+    <Box sx={{ p: height > 800 ? 2 : 1, boxSizing: 'border-box' }} ref={ref}>
       <Card sx={{ mb: 3 }}>
         <CardHeader
-          avatar={<img src={detail.logo} style={{ height: '20px', width: 'auto', margin: 0, padding: 0 }}  alt="react logo"/>}
+          avatar={<img src={`/static/images/logo/${detail.logo}`} style={{ height: '20px', width: 'auto', margin: 0, padding: 0 }}  alt="react logo"/>}
           title={detail.type}
           sx={{ color : 'black' }}
         />
@@ -127,7 +138,7 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
                 {
                   expanded
                   ? <PhotoView list={detail.image.slice(1)} />
-                  : <img src={`/static/images/projects/airbnb/${detail.image[0]}`} style={{ height: 60 }} alt="logo"/>
+                  : <img src={`/static/images/projects/${detail.image[0]}`} style={{ height: detail.imageSize }} alt="logo"/>
                 }
               </ImageContext.Provider>
             </CardMedia>
@@ -142,17 +153,19 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent
                 sx={{
-                  height: height - 250 - (titleRef.current?.clientHeight ?? 0) - imageHeight,
+                  height: height - 270 - (titleRef.current?.clientHeight ?? 0) - imageHeight,
                   overflowY: 'auto'
                 }}
               >
                 {(detail.content).map((i, index) => {
                   if (i.type === 'text')
-                    return <Typography key={index} color="text.secondary" sx={{ mb: 1 }}>{i.content}</Typography>
+                    return (<Typography key={index} color="text.secondary" sx={{ mb: 1 }}>
+                      {compilerSentence(i.content as string)}
+                  </Typography>)
                   else if (i.type === 'title')
                     return (
                       <Typography gutterBottom variant="h6" sx={{ fontWeight: 600, fontFamily: 'Arial' }} key={index}>
-                        {i.content}
+                        {compilerSentence(i.content as string)}
                       </Typography>
                     )
                   else if (i.type === 'list')
@@ -173,8 +186,9 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
               </CardContent>
             </Collapse>
             <CardActions disableSpacing>
-              <Button size="small" onClick={() => handleWebsite('https://enmmmmovo.github.io/Airbnb')}>{content.website}</Button>
-              <Button size="small" href="https://github.com/EnmmmmOvO/Airbnb" target="_blank">{content.source}</Button>
+              {detail.link && <Button size="small" onClick={() => handleWebsite(detail.link)}>{content.website}</Button>}
+              {detail.repo && <Button size="small" href={detail.repo} target="_blank">{content.source}</Button>}
+              {detail.paper && <Button size="small" href={detail.paper as string} target="_blank">{content.paper}</Button>}
               <ExpandMore
                 expand={expanded}
                 onClick={handleExpandClick}

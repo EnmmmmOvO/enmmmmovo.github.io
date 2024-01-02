@@ -17,6 +17,8 @@ const Home = Loader(lazy(() => import('./screen/homePage')));
 const Project = Loader(lazy(() => import('./screen/projectsPage')));
 const About = Loader(lazy(() => import('./screen/aboutPage')));
 const Contact = Loader(lazy(() => import('./screen/contactPage')));
+const Portfolio = Loader(lazy(() => import('./screen/portfolioPage')));
+const Friend = Loader(lazy(() => import('./screen/friendPage')));
 
 const routes: RouteObject[] = [
   {
@@ -46,6 +48,14 @@ const routes: RouteObject[] = [
         path: 'contact',
         element: <Contact />
       },
+      {
+        path: 'friend',
+        element: <Friend />
+      },
+      {
+        path: 'portfolio',
+        element: <Portfolio />
+      }
     ]
   }
 ];

@@ -36,7 +36,7 @@ function App() {
   useEffect(() => {
     import(`./content/${lang}.json`)
       .then(data => setContent(data.default))
-      .catch(error => setLang('en'));
+      .catch(_error => setLang('en'));
   }, [lang]);
 
   return (

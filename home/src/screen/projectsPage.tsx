@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 import { LanguageContext } from '../contexts/LanguageContext';
 import ProjectsView, { ProjectDetailProps } from '../components/ProjectsView';
+import Copyright from '../components/Copyright';
 
 
 const ProjectsPage: React.FC = () => {
@@ -18,10 +19,13 @@ const ProjectsPage: React.FC = () => {
           content={i.content}
           link={i.link}
           repo={i.repo}
+          paper={i.paper}
           image={i.image}
+          imageSize={i.imageSize}
           key={index}
         ></ProjectsView>)
       }
+      <Copyright />
     </Box>
   );
 }

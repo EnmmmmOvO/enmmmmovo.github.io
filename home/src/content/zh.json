@@ -10,6 +10,9 @@
   "welcome": "欢迎来到我的个人网站",
   "aboutme": "关于我",
   "website": "网页",
+  "friend": "友情链接",
+  "portfolio": "作品集",
+  "paper": "论文",
   "source": "源代码",
   "jumpTitle": "服务器响应可能存在延迟",
   "jumpContent": "网站从服务器接收响应时可能存在轻微的延迟。因此，如果点击按钮后没有立即反应，请耐心等待一会儿～",
@@ -62,15 +65,30 @@
       ],
       "link": "https://enmmmmovo.github.io/Airbnb/",
       "repo": "https://github.com/EnmmmmOvO/Airbnb",
+      "imageSize": 60,
       "image": [
-        "logo.svg",
-        "1.png",
-        "2.png",
-        "3.png",
-        "4.png",
-        "5.png",
-        "6.png",
-        "7.png"
+        "airbnb/logo.svg",
+        "airbnb/1.png",
+        "airbnb/2.png",
+        "airbnb/3.png",
+        "airbnb/4.png",
+        "airbnb/5.png",
+        "airbnb/6.png",
+        "airbnb/7.png"
+      ]
+    },
+    {
+      "logo": "kaggle.png",
+      "type": "Neural Network",
+      "title": "Stable Diffusion - Image to Prompts",
+      "description": "这个项目是一个基于 Kaggle 的竞赛项目，其主要目标是根据输入的图片生成与图片内容相符的提示词。",
+      "content": [
+      ],
+      "repo": "https://github.com/GATA-Chen/COMP9417_Project",
+      "paper": "http://3.25.181.130/documents/9417%20Report.pdf",
+      "imageSize": 80,
+      "image": [
+        "imageToPrompt/logo.svg"
       ]
     }
   ]
