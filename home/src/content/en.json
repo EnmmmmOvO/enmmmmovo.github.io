@@ -23,7 +23,7 @@
       "logo": "react.png",
       "type": "React",
       "title": "My Airbnb",
-      "description": "This project is a web application similar to Airbnb, designed to provide a convenient intermediary platform for landlords and renters.",
+      "description": "Web application for Property Trading similar to #:aAirbnb[https://www.airbnb.com.au/]#.",
       "content": [
         {
           "type": "title",
@@ -31,7 +31,7 @@
         },
         {
           "type": "text",
-          "content": "This project allows landlords to publicly share their property information, while renters can easily browse, search, and book these listings. Specifically, the app supports the following features:"
+          "content": "This project designed to provide a convenient intermediary platform for landlords and renters, allows landlords to publicly share their property information, while renters can easily browse, search, and book these listings. Specifically, the app supports the following features:"
         },
         {
           "type": "list",
@@ -81,7 +81,7 @@
       "logo": "kaggle.png",
       "type": "Neural Network",
       "title": "Stable Diffusion - Image to Prompts",
-      "description": "This project is an Neural Network Competition Project on #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]#, it aims to to generate prompt words that align with the content of the input images.",
+      "description": "Generate prompt words that align with the content of the input images.",
       "content": [
         {
           "type": "title",
@@ -146,6 +146,15 @@
         "imageToPrompt/3.png",
         "imageToPrompt/4.png"
       ]
+    },
+    {
+      "logo": "fastapi.svg",
+      "type": "FastAPI + React",
+      "title": "CONEX",
+      "description": "Web Platform for Connecting Professionals with Projects",
+      "content": [],
+      "imageSize": 80,
+      "image": [ "conex/logo.svg" ]
     }
   ],
   "portfolio": [

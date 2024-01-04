@@ -23,7 +23,7 @@
       "logo": "/logo512.png",
       "type": "React",
       "title": "My Airbnb",
-      "description": "这个项目是一个类似于 Airbnb 的网页应用，旨在为房东和租房者提供一个便捷的中间平台。",
+      "description": "类似于 #:aAirbnb[https://www.airbnb.com.au/]# 的房屋交易Web应用。",
       "content": [
         {
           "type": "title",
@@ -31,7 +31,7 @@
         },
         {
           "type": "text",
-          "content": "项目允许使房东能够公开他们的房屋信息，而租房者则可以方便地浏览、查询和预订这些房源。具体来说，该应用支持以下功能："
+          "content": "项目旨在为房东和租房者提供一个便捷的中间平台，允许使房东能够公开他们的房屋信息，而租房者则可以方便地浏览、查询和预订这些房源。具体来说，该应用支持以下功能："
         },
         {
           "type": "list",
@@ -81,7 +81,7 @@
       "logo": "kaggle.png",
       "type": "Neural Network",
       "title": "Stable Diffusion - Image to Prompts",
-      "description": "这个项目是一个 #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]# 的神经网络竞赛项目，其主要目标是根据输入的图片生成与图片内容相符的提示词。",
+      "description": "根据输入的图片生成与图片内容相符的提示词。",
       "content": [
         {
           "type": "title",
@@ -145,6 +145,18 @@
         "imageToPrompt/2.png",
         "imageToPrompt/3.png",
         "imageToPrompt/4.png"
+      ]
+    },
+    {
+      "logo": "fastapi.svg",
+      "type": "FastAPI + React",
+      "title": "CONEX",
+      "description": "连接专业人员与项目的Web平台",
+      "content": [
+      ],
+      "imageSize": 80,
+      "image": [
+        "conex/logo.svg"
       ]
     }
   ],

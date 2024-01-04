@@ -9,7 +9,7 @@ const ProjectsPage: React.FC = () => {
   const { content } = useContext(LanguageContext);
 
   return (
-    <Box height='calc(100vh - 80px'>
+    <Box height='calc(100vh - 80px)'>
       {(content.project as ProjectDetailProps[]).map((i, index) =>
         <ProjectsView
           logo={i.logo}
