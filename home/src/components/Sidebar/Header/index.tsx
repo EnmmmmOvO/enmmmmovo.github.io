@@ -1,15 +1,6 @@
 import React, { useContext } from 'react';
 
-import {
-  Box,
-  alpha,
-  lighten,
-  IconButton,
-  Tooltip,
-  styled,
-  useTheme,
-  Button, darken
-} from '@mui/material';
+import { Box, alpha, lighten, IconButton, Tooltip, styled, useTheme, Button } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from '../../../contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
