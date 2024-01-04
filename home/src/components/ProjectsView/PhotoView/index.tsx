@@ -9,7 +9,8 @@ import { ImageContext } from '../../../contexts/WIndowContext';
 const ImageBox = styled(Box)({
   display: 'flex!important',
   width: '100%',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  cursor: 'pointer',
 })
 
 const PhotoView: React.FC<{ list: string[] }> = (detail: { list: string[] }) => {
@@ -36,7 +37,12 @@ const PhotoView: React.FC<{ list: string[] }> = (detail: { list: string[] }) => 
   return (
     <Slider {...settings}>
       {detail.list.map((i, index) =>
-        <ImageBox key={index}><ImageTag src={`/static/images/projects/${i}`} /></ImageBox>
+        <ImageBox key={index}>
+          <ImageTag
+            src={`/static/images/projects/${i}`}
+            onClick={() => window.open(`/static/images/projects/${i}`, '_blank')}
+          />
+        </ImageBox>
       )}
     </Slider>
   );
