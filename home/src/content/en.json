@@ -12,7 +12,7 @@
   "website": "Website",
   "paper": "Paper",
   "friend": "Friend Link",
-  "portfolio": "Portfolio",
+  "portfolios": "Portfolios",
   "source": "Source code",
   "jumpTitle": "Potential Delay in Server Response",
   "jumpContent": "The website takes a slight delay in receiving responses from the service. Consequently, if there is no immediate reaction upon clicking buttons, please be patient and wait for a while.",
@@ -81,16 +81,74 @@
       "logo": "kaggle.png",
       "type": "Neural Network",
       "title": "Stable Diffusion - Image to Prompts",
-      "description": "This project is an Neural Network Project on Kaggle, it aims to to generate prompt words that align with the content of the input images.",
+      "description": "This project is an Neural Network Competition Project on #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]#, it aims to to generate prompt words that align with the content of the input images.",
       "content": [
-
+        {
+          "type": "title",
+          "content": "Project Concept and Model Selection"
+        },
+        {
+          "type": "text",
+          "content": "This project is inspired by a #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]# competition. We selected two distinct models for implementation and comparative analysis: the #:iCLIP# model and the #:iResnet + LSTM# model. The objective was to train both models separately and then conduct a macro-level comparison to evaluate their strengths and weaknesses."
+        },
+        {
+          "type": "title",
+          "content": "Model Training and Optimization"
+        },
+        {
+          "type": "text",
+          "content": "Each model was built upon its respective pre-trained framework. We employed the Adam optimizer and a learning rate scheduler during the training process to facilitate model convergence and enhance the overall training results. For both models, the test and validation sets were sourced from the #:iDiffusionDB# dataset in #:aHugging Face[https://huggingface.co/datasets/poloclub/diffusiondb]#, following adequate preprocessing."
+        },
+        {
+          "type": "title",
+          "content": "My Contribution - #:iResnet + LSTM# Model"
+        },
+        {
+          "type": "text",
+          "content": "As a member of the team, my responsibility was to implement and train the #:Resnet + LSTM# model. The primary process involved:"
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:bFeature Extraction#: Utilizing the #:iResNet-50# model to extract features from input images.",
+            "#:bFeature Mapping#: Mapping these extracted features to the input dimensions of the #:iGPT-2# model through a linear layer.",
+            "#:bText Generation#: Processing these features via an #:iLSTM# layer to generate an initial textual description of the image.",
+            "#:bText Refinement#: Using the #:iGPT-2# model to refine the initial description into a comprehensive final image description."
+          ]
+        },
+        {
+          "type": "text",
+          "content": "The entire training procedure for my part was conducted on Kaggle's #:iGPU-P100#."
+        },
+        {
+          "type": "title",
+          "content": "Training Outcome and Analysis"
+        },
+        {
+          "type": "text",
+          "content": "After about 7 epochs of training, the loss metric of the #:iResnet + LSTM# model plateaued and did not show further improvement. In comparison with the #:iCLIP# model, there was a notable variance from the actual original prompts. The potential reasons identified for this discrepancy are:"
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:bModel Architecture#: The project required the handling of both images and text. The #:iCNN# (Convolutional Neural Network) was employed for image processing and the #:iRNN# (Recurrent Neural Network) for text processing. The interlinking layer, designed to map the output of the #:iCNN# to the input of the #:iRNN#, might have been too rigid. This potentially led to less effective feature extraction and integration compared to the #:ViT# model in #:CLIP#, known for its efficient image-text correspondence.",
+            "#:bParameter Optimization and Time Constraints#: Limited time for the project might have resulted in insufficient adjustment and optimization of certain model parameters. This could have contributed to the challenges faced in achieving effective convergence during the training process."
+          ]
+        }
       ],
       "repo": "https://github.com/GATA-Chen/COMP9417_Project",
       "paper": "http://3.25.181.130/documents/9417%20Report.pdf",
       "imageSize": 80,
       "image": [
-        "imageToPrompt/logo.svg"
+        "imageToPrompt/logo.svg",
+        "imageToPrompt/1.png",
+        "imageToPrompt/2.png",
+        "imageToPrompt/3.png",
+        "imageToPrompt/4.png"
       ]
     }
+  ],
+  "portfolio": [
+
   ]
 }

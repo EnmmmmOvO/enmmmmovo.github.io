@@ -213,7 +213,7 @@ function SidebarMenu() {
                   to="/portfolio"
                   startIcon={<HistoryEduIcon />}
                 >
-                  {content.portfolio}
+                  {content.portfolios}
                 </Button>
               </ListItem>
               <ListItem component="div">

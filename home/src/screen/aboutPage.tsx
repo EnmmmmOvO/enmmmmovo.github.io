@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box } from '@mui/material';
 import Copyright from '../components/Copyright';
+import { Box } from '@mui/material';
 
 const AboutPage: React.FC = () => {
   return (

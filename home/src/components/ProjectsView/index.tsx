@@ -62,7 +62,7 @@ const compilerSentence = (i: string) => {
   return i.split('#').map((j, index) => {
     if (j.startsWith(':b')) return <b key={index}>{j.slice(2)}</b>
     else if (j.startsWith(':i')) return <i key={index}>{j.slice(2)}</i>
-    else if (j.startsWith(':u')) return <Link
+    else if (j.startsWith(':a')) return <Link
       key={index}
       href={j.slice(2).split('[')[1].split(']')[0]}
       target="_blank"
@@ -147,7 +147,7 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
                 {detail.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {detail.description}
+                {compilerSentence(detail.description)}
               </Typography>
             </CardContent>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -173,9 +173,11 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
                       <List key={index}>
                         {
                           (i.content as string[]).map((j, indexList) => (
-                            <ListItem key={`${index}-${indexList}`} sx={{ p: 0 }}>
+                            <ListItem key={`${index}-${indexList}`} sx={{ p: 0.5 }}>
                               <FiberManualRecordIcon sx={{ fontSize: 10, mr: 1, color: "text.secondary" }} />
-                              <ListItemText primary={j} color="text.secondary" />
+                              <ListItemText sx={{ color: "text.secondary" }} >
+                                {compilerSentence(j)}
+                              </ListItemText>
                             </ListItem>
                           ))
                         }

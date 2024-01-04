@@ -6,7 +6,7 @@ const Copyright: React.FC = ()=> {
     <Typography variant="body2" color="white" align="center" sx={{ pb: 3 }}>
       {'© '}
       {new Date().getFullYear()}
-      {' EnmmmmOvO. All rights reserved.'}
+      {' Jinghan Wang. All rights reserved.'}
     </Typography>
   )
 }

@@ -11,7 +11,7 @@
   "aboutme": "关于我",
   "website": "网页",
   "friend": "友情链接",
-  "portfolio": "作品集",
+  "portfolios": "作品集",
   "paper": "论文",
   "source": "源代码",
   "jumpTitle": "服务器响应可能存在延迟",
@@ -81,15 +81,74 @@
       "logo": "kaggle.png",
       "type": "Neural Network",
       "title": "Stable Diffusion - Image to Prompts",
-      "description": "这个项目是一个基于 Kaggle 的竞赛项目，其主要目标是根据输入的图片生成与图片内容相符的提示词。",
+      "description": "这个项目是一个 #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]# 的神经网络竞赛项目，其主要目标是根据输入的图片生成与图片内容相符的提示词。",
       "content": [
+        {
+          "type": "title",
+          "content": "项目概念和模型选择"
+        },
+        {
+          "type": "text",
+          "content": "本项目灵感来源于 #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]# 竞赛。我们选择了两种不同的模型进行实现和比较分析：#:iCLIP# 模型和 #:iResnet + LSTM# 模型。目标是分别训练这两个模型，然后进行宏观层面的比较，以评估它们的优势和劣势。"
+        },
+        {
+          "type": "title",
+          "content": "模型训练与优化"
+        },
+        {
+          "type": "text",
+          "content": "每个模型都是基于其各自的预训练框架构建的。在训练过程中，我们使用了 #:iAdam# 优化器和学习率调度器，以促进模型的收敛并提高整体训练结果。对于两个模型，测试集和验证集都来自 #:aHugging Face[https://huggingface.co/datasets/poloclub/diffusiondb]# 的 #:iDiffusionDB# 数据集，并进行了适当的预处理。"
+        },
+        {
+          "type": "title",
+          "content": "我的贡献 - #:iResnet + LSTM# 模型"
+        },
+        {
+          "type": "text",
+          "content": "作为团队成员，我的责任是实现和训练 #:iResnet + LSTM# 模型。主要过程包括："
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:b特征提取#：使用 #:iResNet-50# 模型从输入图像中提取特征。",
+            "#:b特征映射#：通过线性层将这些提取的特征映射到 #:iGPT-2# 模型的输入维度。",
+            "#:b文本生成#：通过 #:iLSTM# 层处理这些特征，生成图像的初始文本描述。",
+            "#:b文本精炼#：使用 #:iGPT-2# 模型来精炼初始描述，形成全面的最终图像描述。"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "我部分的整个训练程序都在 #:iKaggle# 的 #:iGPU-P100# 上进行。"
+        },
+        {
+          "type": "title",
+          "content": "训练结果及分析"
+        },
+        {
+          "type": "text",
+          "content": "经过大约7个训练周期后，#:iResnet + LSTM# 模型的损失指标趋于稳定，没有显示出进一步的改善。与 #:iCLIP# 模型相比，与实际原始提示词存在明显的差异。确定的潜在原因包括："
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:b模型架构#：项目需要处理图像和文本。使用 #:iCNN#（卷积神经网络）进行图像处理，使用 #:iRNN#（循环神经网络）进行文本处理。设计用于将 #:iCNN# 输出映射到 #:iRNN# 输入的互联层可能过于僵硬。这可能导致与 #:iCLIP# 中的 #:iViT# 模型相比，特征提取和集成效果不够有效，#:iViT# 模型在图像-文本对应方面表现出色。",
+            "#:b参数优化和时间限制#：由于项目时间有限，可能导致某些模型参数的调整和优化不足。这可能是训练过程中实现有效收敛所面临的挑战之一。"
+          ]
+        }
       ],
       "repo": "https://github.com/GATA-Chen/COMP9417_Project",
       "paper": "http://3.25.181.130/documents/9417%20Report.pdf",
       "imageSize": 80,
       "image": [
-        "imageToPrompt/logo.svg"
+        "imageToPrompt/logo.svg",
+        "imageToPrompt/1.png",
+        "imageToPrompt/2.png",
+        "imageToPrompt/3.png",
+        "imageToPrompt/4.png"
       ]
     }
+  ],
+  "portfolio": [
+
   ]
 }
