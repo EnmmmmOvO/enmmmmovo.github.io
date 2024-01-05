@@ -153,10 +153,79 @@
       "title": "CONEX",
       "description": "连接专业人员与项目的Web平台",
       "content": [
+        {
+          "type": "title",
+          "content": "项目概览"
+        },
+        {
+          "type": "text",
+          "content": "该项目是一个团队合作的全栈项目，旨在为公司和专业用户创建一个 Web 平台。对于专业用户而言，平台允许他们申请参加并对各个项目进行评价。对于公司用户，平台提供了创建和审批项目的功能。"
+        },
+        {
+          "type": "title",
+          "content": "前端和后端技术"
+        },
+        {
+          "type": "text",
+          "content": "在前端，我们选择了动态且用户友好的 #:iReact# 框架。后端使用 #:iFastAPI#、#:iSQLAlchemy# 和 #:iSQLite3# 开发，这些技术共同增强了数据库和后端操作之间的交互。"
+        },
+        {
+          "type": "title",
+          "content": "平台特性"
+        },
+        {
+          "type": "list",
+          "content": [
+            "用户注册和登录。",
+            "公司用户发布项目和申请筛选。",
+            "专业用户的项目申请功能。",
+            "用户之间的互评系统。"
+          ]
+        },
+        {
+          "type": "title",
+          "content": "我在项目中的任务"
+        },
+        {
+          "type": "list",
+          "content": [
+            "后端开发，重点是数据库的设计和实现。",
+            "邮件功能的设计和部署。",
+            "开发特定的前端页面，包括邮件中URL重定向的逻辑。"
+          ]
+        },
+        {
+          "type": "title",
+          "content": "数据库设计和后端逻辑"
+        },
+        {
+          "type": "text",
+          "content": "数据库设计和基本后端逻辑在#:a这份文档[http://3.25.181.130/documents/backgorund%20logic.pdf]#中有详细说明。我们在数据库交互中遵循了并发原则，使用会话进行并发控制和 #:iSQLAlchemy# 事务进行并发数据库管理。"
+        },
+        {
+          "type": "title",
+          "content": "邮件功能和前端实现"
+        },
+        {
+          "type": "text",
+          "content": "对于邮件组件，我们使用了 #:iPython# 的 #:iSMTP# 库来发送带有直接用户访问 #:iURL# 的电子邮件。在前端，我们使用了 #:iReact# 的路由器来管理 #:iURL# 重定向，使用户在登录后能够返回到之前的页面。"
+        }
       ],
       "imageSize": 80,
       "image": [
-        "conex/logo.svg"
+        "conex/logo.svg",
+        "conex/1.png",
+        "conex/2.png",
+        "conex/3.png",
+        "conex/4.png",
+        "conex/5.png",
+        "conex/6.png",
+        "conex/7.png",
+        "conex/8.png",
+        "conex/9.png",
+        "conex/10.png",
+        "conex/11.png",
+        "conex/12.png"
       ]
     }
   ],

@@ -152,9 +152,81 @@
       "type": "FastAPI + React",
       "title": "CONEX",
       "description": "Web Platform for Connecting Professionals with Projects",
-      "content": [],
+      "content": [
+        {
+          "type": "title",
+          "content": "Project Overview"
+        },
+        {
+          "type": "text",
+          "content": "This project is a collaborative full-stack team initiative aimed at creating a web platform for both company and professional users. The platform is designed to facilitate professional users in applying for, participating in, and evaluating various projects. For company users, it offers functionalities to create and approve projects."
+        },
+        {
+          "type": "title",
+          "content": "Front End and Back End Technologies"
+        },
+        {
+          "type": "text",
+          "content": "For the front end, we chose the #:iReact# framework for its dynamic and user-friendly interface. The backend is developed using #:iFastAPI#, #:iSQLAlchemy#, and #:iSQLite3#, which collectively enhance the interaction between the database and backend operations."
+        },
+        {
+          "type": "title",
+          "content": "Platform Features"
+        },
+        {
+          "type": "list",
+          "content": [
+            "User registration and login.",
+            "Project posting and application filtering for company users.",
+            "Project application functionality for professional users.",
+            "A mutual evaluation system among users."
+          ]
+        },
+        {
+          "type": "title",
+          "content": "My Role in the Project"
+        },
+        {
+          "type": "list",
+          "content": [
+            "Backend development, focusing on both the design and implementation of the database.",
+            "Design and deployment of email functionalities.",
+            "Development of specific front-end pages, including the logic for URL redirections in emails."
+          ]
+        },
+        {
+          "type": "title",
+          "content": "Database Design and Backend Logic"
+        },
+        {
+          "type": "text",
+          "content": "The database design and fundamental backend logic are comprehensively outlined in #:athis document[http://3.25.181.130/documents/backgorund%20logic.pdf]#. We adhered to concurrency principles in database interactions, using sessions for concurrency control and #:iSQLAlchemy# transactions for concurrent database management."
+        },
+        {
+          "type": "title",
+          "content": "Email Functionality and Front End Implementation"
+        },
+        {
+          "type": "text",
+          "content": "For the email component, #:iPython's iSMTP# library was used for sending emails with direct user access URLs. On the front end, #:iReact's# router was employed to manage URL redirections, allowing users to navigate back to their previous page after logging in."
+        }
+      ],
       "imageSize": 80,
-      "image": [ "conex/logo.svg" ]
+      "image": [
+        "conex/logo.svg",
+        "conex/1.png",
+        "conex/2.png",
+        "conex/3.png",
+        "conex/4.png",
+        "conex/5.png",
+        "conex/6.png",
+        "conex/7.png",
+        "conex/8.png",
+        "conex/9.png",
+        "conex/10.png",
+        "conex/11.png",
+        "conex/12.png"
+      ]
     }
   ],
   "portfolio": [

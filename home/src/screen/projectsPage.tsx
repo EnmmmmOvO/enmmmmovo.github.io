@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box } from '@mui/material';
 import { LanguageContext } from '../contexts/LanguageContext';
 import ProjectsView, { ProjectDetailProps } from '../components/ProjectsView';
@@ -7,6 +7,10 @@ import Copyright from '../components/Copyright';
 
 const ProjectsPage: React.FC = () => {
   const { content } = useContext(LanguageContext);
+
+  useEffect(() => {
+    return () => { document.body.style.overflow = 'auto' }
+  }, []);
 
   return (
     <Box height='calc(100vh - 80px)'>
