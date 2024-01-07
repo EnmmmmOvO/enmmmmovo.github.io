@@ -43,11 +43,11 @@ export interface ProjectDetailProps extends JsonContent {
   key: number;
 }
 
-interface ExpandMoreProps extends IconButtonProps {
+export interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
+export const ExpandMore = styled((props: ExpandMoreProps) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
@@ -58,7 +58,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   })
 }));
 
-const compilerSentence = (i: string) => {
+export const compilerSentence = (i: string) => {
   return i.split('#').map((j, index) => {
     if (j.startsWith(':b')) return <b key={index}>{j.slice(2)}</b>
     else if (j.startsWith(':i')) return <i key={index}>{j.slice(2)}</i>

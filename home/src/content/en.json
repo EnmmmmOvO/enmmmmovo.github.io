@@ -11,6 +11,7 @@
   "aboutme": "About Me",
   "website": "Website",
   "paper": "Paper",
+  "video": "Video",
   "friend": "Friend Link",
   "portfolios": "Portfolios",
   "source": "Source code",
@@ -151,7 +152,7 @@
       "logo": "fastapi.svg",
       "type": "FastAPI + React",
       "title": "CONEX",
-      "description": "Web Platform for Connecting Professionals with Projects",
+      "description": "Web Platform for Connecting Professionals with Projects.",
       "content": [
         {
           "type": "title",
@@ -227,9 +228,85 @@
         "conex/11.png",
         "conex/12.png"
       ]
+    },
+    {
+      "logo": "js.svg",
+      "type": "Vanilla JS",
+      "title": "Slackr",
+      "description": "Multi-functional social and communication platform supporting message and image sharing.",
+      "content": [
+      ],
+      "link": "https://enmmmmovo.github.io/Slackr/",
+      "repo": "https://github.com/EnmmmmOvO/Slackr",
+      "imageSize": 50,
+      "image": [
+        "slackr/logo.svg",
+        "slackr/2.png",
+        "slackr/1.png",
+        "slackr/3.png",
+        "slackr/4.png",
+        "slackr/5.png",
+        "slackr/6.png",
+        "slackr/7.png"
+      ]
     }
   ],
   "portfolio": [
-
+    {
+      "logo": "astronomy.svg",
+      "type": "Astronomy",
+      "title": "Fantastic Celestial Objects",
+      "paper": "http://3.25.181.130/documents/APOD.pdf",
+      "description": "This is a popular science magazine geared towards readers with little or no knowledge of the cosmos. Its primary aim is to introduce various celestial bodies (stars, planets, satellites) that constitute the vast expanse of the universe, discussing their types, structures, and potential evolutionary processes. There may be instances of non-professional explanations or inaccuracies within the content, and corrections or clarifications are welcome.",
+      "image": "galaxy.png"
+    },
+    {
+      "logo": "computer.svg",
+      "type": "Computer Ethics",
+      "title": "Balancing Ethics and Efficiency: Autonomous Vehicles and Utilitarianism",
+      "paper": "http://3.25.181.130/documents/utilitarianism_and_autonomous_vehicles.pdf",
+      "description": "This article explores the ethical considerations of applying Act and Rule Utilitarianism to the collision-avoidance protocols in autonomous vehicles, analyzing the impact of each approach on decision-making in critical scenarios, and evaluating their implications for societal norms and technological design in the context of autonomous driving.",
+      "image": "utilitarianism.png"
+    },
+    {
+      "logo": "computer.svg",
+      "type": "Computer Ethics",
+      "title": "The Ethical Challenges of AI in Artistic Creation",
+      "paper": "http://3.25.181.130/documents/Drawing_AI.pdf",
+      "description": "This article delves into the ethical implications and challenges of AI drawing technologies in the realm of art, focusing on how AI is reshaping the boundaries of artistic creation, copyright, and originality, as well as the appropriateness of AI technologies in art competitions.",
+      "image": "drawingAI.png"
+    },
+    {
+      "logo": "go.svg",
+      "type": "Concurrency (Go)",
+      "title": "Suzuki-Kasami Concurrency Algorithm",
+      "video": "http://www.youtube.com/watch?v=pEkQOzhP_D4",
+      "description": "",
+      "image": "javaConcurrency.png"
+    },
+    {
+      "logo": "java.svg",
+      "type": "Concurrency (Java)",
+      "title": "Implementing Concurrent Operation of a Data Set",
+      "paper": "http://3.25.181.130/documents/Java_Concurrency.pdf",
+      "description": "",
+      "image": "javaConcurrency.png"
+    },
+    {
+      "logo": "astronomy.svg",
+      "type": "Astronomy",
+      "title": "James Webb Space Telescope",
+      "paper": "http://3.25.181.130/documents/PHYS1160_Report_2.pdf",
+      "description": "",
+      "image": "webb.webp"
+    },
+    {
+      "logo": "astronomy.svg",
+      "type": "Astronomy",
+      "title": "Short Report about Astronomy",
+      "paper": "http://3.25.181.130/documents/PHSY1160_Report_1.pdf",
+      "description": "",
+      "image": "drawingAI.png"
+    }
   ]
 }
