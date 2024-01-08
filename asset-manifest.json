@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6cbc3f05.css",
-    "main.js": "/static/js/main.a6328a49.js",
+    "main.js": "/static/js/main.eb40cd7c.js",
     "static/js/242.1f0b7375.chunk.js": "/static/js/242.1f0b7375.chunk.js",
     "static/js/630.57b597bf.chunk.js": "/static/js/630.57b597bf.chunk.js",
     "static/js/15.327fb505.chunk.js": "/static/js/15.327fb505.chunk.js",
@@ -13,7 +13,7 @@
     "static/js/723.d7b6d4fc.chunk.js": "/static/js/723.d7b6d4fc.chunk.js",
     "static/js/786.3f40ef9c.chunk.js": "/static/js/786.3f40ef9c.chunk.js",
     "static/js/75.ce7c358a.chunk.js": "/static/js/75.ce7c358a.chunk.js",
-    "static/js/38.eef33063.chunk.js": "/static/js/38.eef33063.chunk.js",
+    "static/js/38.28ae9b57.chunk.js": "/static/js/38.28ae9b57.chunk.js",
     "static/js/404.f96be79f.chunk.js": "/static/js/404.f96be79f.chunk.js",
     "static/js/279.da8e9eea.chunk.js": "/static/js/279.da8e9eea.chunk.js",
     "static/media/Hey August.woff": "/static/media/Hey August.4a8137b5d415d2d3f24a.woff",
@@ -24,7 +24,7 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.6cbc3f05.css.map": "/static/css/main.6cbc3f05.css.map",
-    "main.a6328a49.js.map": "/static/js/main.a6328a49.js.map",
+    "main.eb40cd7c.js.map": "/static/js/main.eb40cd7c.js.map",
     "242.1f0b7375.chunk.js.map": "/static/js/242.1f0b7375.chunk.js.map",
     "630.57b597bf.chunk.js.map": "/static/js/630.57b597bf.chunk.js.map",
     "15.327fb505.chunk.js.map": "/static/js/15.327fb505.chunk.js.map",
@@ -40,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.6cbc3f05.css",
-    "static/js/main.a6328a49.js"
+    "static/js/main.eb40cd7c.js"
   ]
 }
