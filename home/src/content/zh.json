@@ -263,7 +263,7 @@
     {
       "logo": "computer.svg",
       "type": "计算机伦理",
-      "title": "功利主义与自动驾驶汽车",
+      "title": "自动驾驶汽车中的伦理与效率平衡：功利主义视角",
       "paper": "http://3.25.181.130/documents/utilitarianism_and_autonomous_vehicles.pdf",
       "description": "本主题的主要论点是比较行为功利主义和规则功利主义如何以不同的方式影响自动驾驶汽车碰撞避免协议的发展，其中行为功利主义侧重于个别情境决策，而规则功利主义强调遵守预定的规则。",
       "image": "utilitarianism.png"
@@ -271,7 +271,7 @@
     {
       "logo": "computer.svg",
       "type": "计算机伦理",
-      "title": "自动驾驶汽车中的伦理与效率平衡：功利主义视角",
+      "title": "人工智能在艺术创作中的伦理挑战",
       "paper": "http://3.25.181.130/documents/Drawing_AI.pdf",
       "description": "本文探讨了在自动驾驶汽车的碰撞避免协议中应用行为功利主义和规则功利主义的伦理考量，分析了每种方法对关键情境下决策的影响，并评估了它们对社会规范和自动驾驶技术设计的影响。",
       "image": "drawingAI.png"
