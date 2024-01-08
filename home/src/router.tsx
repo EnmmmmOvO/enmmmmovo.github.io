@@ -2,8 +2,8 @@ import React, { Suspense, lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouteObject } from 'react-router';
 
-import SidebarLayout from './components/Sidebar';
-import SuspenseLoader from './components/SuspenseLoader';
+import SidebarLayout from './component/Sidebar';
+import SuspenseLoader from './component/SuspenseLoader';
 
 export const Loader = (Component: React.FC) => (props: any) =>
   (
@@ -12,7 +12,7 @@ export const Loader = (Component: React.FC) => (props: any) =>
     </Suspense>
   );
 
-const Waves = Loader(lazy(() => import('./components/Waves')));
+const Waves = Loader(lazy(() => import('./component/Waves')));
 const Home = Loader(lazy(() => import('./screen/homePage')));
 const Project = Loader(lazy(() => import('./screen/projectsPage')));
 const About = Loader(lazy(() => import('./screen/aboutPage')));

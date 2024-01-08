@@ -254,7 +254,7 @@
   "portfolio": [
     {
       "logo": "astronomy.svg",
-      "type": "宇宙",
+      "type": "天文学",
       "title": "奇妙的天体",
       "paper": "http://3.25.181.130/documents/APOD.pdf",
       "description": "这是一本面向对宇宙知识几乎没有或完全没有了解的读者的科普杂志。它的主要目的是介绍构成广阔宇宙的各种天体（星星、行星、卫星），讨论它们的类型、结构和可能的演变过程。内容中可能存在非专业的解释或不准确之处，欢迎提出更正或澄清。",
@@ -275,6 +275,40 @@
       "paper": "http://3.25.181.130/documents/Drawing_AI.pdf",
       "description": "本文探讨了在自动驾驶汽车的碰撞避免协议中应用行为功利主义和规则功利主义的伦理考量，分析了每种方法对关键情境下决策的影响，并评估了它们对社会规范和自动驾驶技术设计的影响。",
       "image": "drawingAI.png"
+    },
+    {
+      "logo": "go.svg",
+      "type": "并发算法 (Go)",
+      "title": "Suzuki-Kasami 并发算法",
+      "video": "https://www.youtube.com/watch?v=pEkQOzhP_D4",
+      "description": "本视频从学术角度深入分析了在分布式环境中基于令牌的 Suzuki-Kasami 并发算法的优点和不足，同时探讨了 Go 语言中基于通道的并发编程的优势。",
+      "image": "go.png"
+    },
+    {
+      "logo": "java.svg",
+      "type": "并发算法 (Java)",
+      "title": "数据集上实现并发操作",
+      "paper": "http://3.25.181.130/documents/Java_Concurrency.pdf",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass1",
+      "description": "本文主要利用读写锁作为主体，以确保在需要修改数据时只允许一个进程运行，如果没有写操作，允许多个进程读取数据。此外，使用信号确保数据结构的完整性。",
+      "image": "javaConcurrency.png"
+    },
+    {
+      "logo": "astronomy.svg",
+      "type": "天文学",
+      "title": "James Webb 天文望远镜",
+      "paper": "http://3.25.181.130/documents/PHYS1160_Report_2.pdf",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass2",
+      "description": "本文聚焦于哈勃望远镜的继任者詹姆斯·韦伯空间望远镜，包括其发射目的、结构、轨道以及发射原因。最后，更多关注于发射一年多后获得的成果及其对天文学的贡献。",
+      "image": "webb.webp"
+    },
+    {
+      "logo": "astronomy.svg",
+      "type": "天文学",
+      "title": "天文学的短篇报告",
+      "paper": "http://3.25.181.130/documents/PHSY1160_Report_1.pdf",
+      "description": "本文主要关注通过检查星系的结构特征以及寻找能够支持碳基生命形式的行星来探索发现外星生命的可能性。",
+      "image": "astro.png"
     }
   ]
 }

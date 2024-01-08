@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Box } from '@mui/material';
-import { LanguageContext } from '../contexts/LanguageContext';
-import ProjectsView, { ProjectDetailProps } from '../components/ProjectsView';
-import Copyright from '../components/Copyright';
+import { LanguageContext } from '../context/LanguageContext';
+import ProjectsView, { ProjectDetailProps } from '../component/ProjectsView';
+import Copyright from '../component/Copyright';
 
 
 const ProjectsPage: React.FC = () => {

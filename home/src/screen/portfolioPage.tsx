@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Box } from '@mui/material';
-import Copyright from '../components/Copyright';
-import PortfoliosView, { PortfolioDetailProps } from '../components/PortfoliosView';
-import { LanguageContext } from '../contexts/LanguageContext';
+import Copyright from '../component/Copyright';
+import PortfoliosView, { PortfolioDetailProps } from '../component/PortfoliosView';
+import { LanguageContext } from '../context/LanguageContext';
 
 const AboutPage: React.FC = () => {
 
@@ -19,6 +19,7 @@ const AboutPage: React.FC = () => {
             description={i.description}
             content={i.content}
             paper={i.paper}
+            repo={i.repo}
             imageSize={i.imageSize}
             image={i.image}
             key={index}

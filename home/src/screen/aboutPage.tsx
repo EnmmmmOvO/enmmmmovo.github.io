@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Copyright from '../components/Copyright';
+import Copyright from '../component/Copyright';
 import { Box } from '@mui/material';
 
 const AboutPage: React.FC = () => {

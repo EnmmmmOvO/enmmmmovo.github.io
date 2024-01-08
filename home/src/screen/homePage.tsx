@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, keyframes, styled, Typography } from '@mui/material';
-import { LanguageContext } from '../contexts/LanguageContext';
+import { LanguageContext } from '../context/LanguageContext';
 
 const colorChange = keyframes`
   0% { color: lightcoral; }

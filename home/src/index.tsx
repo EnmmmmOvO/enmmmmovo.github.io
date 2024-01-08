@@ -4,7 +4,7 @@ import { HashRouter } from 'react-router-dom';
 
 import 'nprogress/nprogress.css';
 import App from './App';
-import { SidebarProvider } from './contexts/SidebarContext';
+import { SidebarProvider } from './context/SidebarContext';
 
 ReactDOM.render(
   <HelmetProvider>

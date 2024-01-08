@@ -4,14 +4,14 @@ import './App.css';
 
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { LanguageContext } from './contexts/LanguageContext';
+import { LanguageContext } from './context/LanguageContext';
 
 import { CssBaseline } from '@mui/material';
 import ThemeProvider from './theme/ThemeProvider';
 import React, { useEffect, useState } from 'react';
-import { WindowContext, WindowContextProps } from './contexts/WIndowContext';
+import { WindowContext, WindowContextProps } from './context/WIndowContext';
 
-const NoticeDialog = Loader(React.lazy(() => import('./components/NoticeDialog')));
+const NoticeDialog = Loader(React.lazy(() => import('./component/NoticeDialog')));
 
 function App() {
   const [lang, setLang] = useState<string>('en');

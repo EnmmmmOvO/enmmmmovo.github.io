@@ -280,16 +280,18 @@
       "logo": "go.svg",
       "type": "Concurrency (Go)",
       "title": "Suzuki-Kasami Concurrency Algorithm",
-      "video": "http://www.youtube.com/watch?v=pEkQOzhP_D4",
-      "description": "",
-      "image": "javaConcurrency.png"
+      "video": "https://www.youtube.com/watch?v=pEkQOzhP_D4",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass2",
+      "description": "This video critically analyzes the advantages and shortcomings of the Suzuki-Kasami algorithm for token-based concurrency in distributed environments, while concurrently examining the merits of channel-based concurrent programming in the Go language from an academic perspective.",
+      "image": "go.png"
     },
     {
       "logo": "java.svg",
       "type": "Concurrency (Java)",
       "title": "Implementing Concurrent Operation of a Data Set",
       "paper": "http://3.25.181.130/documents/Java_Concurrency.pdf",
-      "description": "",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass1",
+      "description": "This article mainly utilizes read-and-write locks as the main body to ensure that only one process is allowed to run if and when the data needs to be modified, and multiple processes can read the data if there are no writes. In addition, signalling is used to ensure the integrity of the data structure.",
       "image": "javaConcurrency.png"
     },
     {
@@ -297,7 +299,7 @@
       "type": "Astronomy",
       "title": "James Webb Space Telescope",
       "paper": "http://3.25.181.130/documents/PHYS1160_Report_2.pdf",
-      "description": "",
+      "description": "This article focuses on the James Webb Space Telescope, the successor to the Hubble telescope, including its launch purpose, structure, orbit, and reasons for the launch. Finally, it pays more attention to the results obtained more than a year after the launch and its contribution to astronomy.",
       "image": "webb.webp"
     },
     {
@@ -305,8 +307,8 @@
       "type": "Astronomy",
       "title": "Short Report about Astronomy",
       "paper": "http://3.25.181.130/documents/PHSY1160_Report_1.pdf",
-      "description": "",
-      "image": "drawingAI.png"
+      "description": "The article primarily focuses on exploring the possibility of finding extraterrestrial life by examining the structural features of galaxies and searching for planets that could support carbon-based life forms.",
+      "image": "astro.png"
     }
   ]
 }
