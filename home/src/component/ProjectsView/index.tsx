@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import {
   Box,
   Button,
@@ -10,7 +10,8 @@ import {
   Collapse,
   Divider,
   IconButton,
-  IconButtonProps, Link,
+  IconButtonProps,
+  Link,
   List,
   ListItem,
   ListItemText,
@@ -23,6 +24,7 @@ import { DialogContext } from '../../context/DialogContext';
 import { ImageContext, WindowContext } from '../../context/WIndowContext';
 import { JsonContent, LanguageContext } from '../../context/LanguageContext';
 import PhotoView from './PhotoView';
+import { SERVER_URL } from '../../webConfig';
 
 interface DetailProps extends JsonContent {
   type: string;
@@ -74,14 +76,14 @@ export const compilerSentence = (i: string) => {
 }
 
 const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) => {
-  const { disabled, handleClickOpen } = React.useContext(DialogContext);
-  const [expanded, setExpanded] = React.useState<boolean>(false);
-  const { height } = React.useContext(WindowContext);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const [ imageHeight, setImageHeight ] = React.useState(0);
+  const { disabled, handleClickOpen } = useContext(DialogContext);
+  const [expanded, setExpanded] = useState<boolean>(false);
+  const { height } = useContext(WindowContext);
+  const [ imageHeight, setImageHeight ] = useState(0);
   const { content } = useContext(LanguageContext);
   const ref = useRef<HTMLDivElement>();
+  const titleRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (expanded) {
@@ -143,25 +145,20 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
               </ImageContext.Provider>
             </CardMedia>
             <CardContent ref={titleRef}>
-              <Typography gutterBottom variant="h4" component="div">
-                {detail.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {compilerSentence(detail.description)}
-              </Typography>
+              <Typography gutterBottom variant="h4" component="div">{detail.title}</Typography>
+              <Typography variant="body2" color="text.secondary">{compilerSentence(detail.description)}</Typography>
             </CardContent>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent
-                sx={{
-                  height: height - 270 - (titleRef.current?.clientHeight ?? 0) - imageHeight,
-                  overflowY: 'auto'
-                }}
+                sx={{ height: height - 270 - (titleRef.current?.clientHeight ?? 0) - imageHeight, overflowY: 'auto' }}
               >
                 {(detail.content).map((i, index) => {
                   if (i.type === 'text')
-                    return (<Typography key={index} color="text.secondary" sx={{ mb: 1 }}>
-                      {compilerSentence(i.content as string)}
-                  </Typography>)
+                    return (
+                      <Typography key={index} color="text.secondary" sx={{ mb: 1 }}>
+                        {compilerSentence(i.content as string)}
+                      </Typography>
+                    )
                   else if (i.type === 'title')
                     return (
                       <Typography gutterBottom variant="h6" sx={{ fontWeight: 600, fontFamily: 'Arial' }} key={index}>
@@ -189,14 +186,9 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
             </Collapse>
             <CardActions disableSpacing>
               {detail.link && <Button size="small" onClick={() => handleWebsite(detail.link)}>{content.website}</Button>}
-              {detail.repo && <Button size="small" href={detail.repo} target="_blank">{content.source}</Button>}
-              {detail.paper && <Button size="small" href={detail.paper as string} target="_blank">{content.paper}</Button>}
-              <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
+              {detail.repo && <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>}
+              {detail.paper && <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>}
+              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>

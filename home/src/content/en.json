@@ -21,7 +21,7 @@
   "jumpDismiss": "Don't show this again",
   "project": [
     {
-      "logo": "react.png",
+      "logo": "react.svg",
       "type": "React",
       "title": "My Airbnb",
       "description": "Web application for Property Trading similar to #:aAirbnb[https://www.airbnb.com.au/]#.",
@@ -138,7 +138,7 @@
         }
       ],
       "repo": "https://github.com/GATA-Chen/COMP9417_Project",
-      "paper": "http://3.25.181.130/documents/9417%20Report.pdf",
+      "paper": "documents/9417%20Report.pdf",
       "imageSize": 80,
       "image": [
         "imageToPrompt/logo.svg",
@@ -201,7 +201,7 @@
         },
         {
           "type": "text",
-          "content": "The database design and fundamental backend logic are comprehensively outlined in #:athis document[http://3.25.181.130/documents/backgorund%20logic.pdf]#. We adhered to concurrency principles in database interactions, using sessions for concurrency control and #:iSQLAlchemy# transactions for concurrent database management."
+          "content": "The database design and fundamental backend logic are comprehensively outlined in #:athis document[https://enmmmmovo.cloudns.be/documents/backgorund%20logic.pdf]#. We adhered to concurrency principles in database interactions, using sessions for concurrency control and #:iSQLAlchemy# transactions for concurrent database management."
         },
         {
           "type": "title",
@@ -209,7 +209,7 @@
         },
         {
           "type": "text",
-          "content": "For the email component, #:iPython's iSMTP# library was used for sending emails with direct user access URLs. On the front end, #:iReact's# router was employed to manage URL redirections, allowing users to navigate back to their previous page after logging in."
+          "content": "For the email component, #:iPython's SMTP# library was used for sending emails with direct user access URLs. On the front end, #:iReact's# router was employed to manage URL redirections, allowing users to navigate back to their previous page after logging in."
         }
       ],
       "imageSize": 80,
@@ -235,6 +235,34 @@
       "title": "Slackr",
       "description": "Multi-functional social and communication platform supporting message and image sharing.",
       "content": [
+        {
+          "type": "title",
+          "content": "Feature Description:"
+        },
+        {
+          "type": "text",
+          "content": "This project is a chat application modeled after #:aDiscord[https://discord.com/]#, with an icon derived from #:aSlack[https://slack.com/intl/en-gb/]#, upon which certain modifications have been made. It features user registration and login, channel creation and joining, sending of text and images, user profile editing, channel invitations, and more."
+        },
+        {
+          "type": "title",
+          "content": "Technology Stack:"
+        },
+        {
+          "type": "text",
+          "content": "This project is a pure #:iHTML#, #:iCSS#, and #:iJavaScript# front-end endeavor, utilizing #:iAJAX# to facilitate asynchronous web page updates through data exchanges with a backend web server. As the project employs #:iVanilla JavaScript#, all interactions are implemented as #:iJavaScript# event handlers. The #:iHTML# contains only a basic framework; specific information and functionalities are dynamically added to the #:iDOM# by #:iJavaScript#. For the UI aspect, #:iBootstrap 5# is used as the foundational framework, incorporating its components like modals, toasts, and navbars for aesthetic enhancement."
+        },
+        {
+          "type": "title",
+          "content": "Limitations:"
+        },
+        {
+          "type": "text",
+          "content": "As my first front-end project, it lacked comprehensive initial design planning, resulting in some disorganization in interactions with the backend, which was provided by another party. Without backend support for continuous retrieval of new messages, the application can only load chat data upon opening any channel, thus it does not update chat information in real-time like #:aDiscord[https://discord.com/]# or #:aSlack[https://slack.com/intl/en-gb/]#."
+        },
+        {
+          "type": "text",
+          "content": "The #:iUI# has several areas with oversized fonts, potentially affecting aesthetic appeal on mobile devices. Additionally, the photo display may not have accounted for images exceeding boundary limits, possibly leading to incomplete image visibility issues."
+        }
       ],
       "link": "https://enmmmmovo.github.io/Slackr/",
       "repo": "https://github.com/EnmmmmOvO/Slackr",
@@ -249,6 +277,24 @@
         "slackr/6.png",
         "slackr/7.png"
       ]
+    },
+    {
+      "logo": "network.svg",
+      "type": "Network Protocol",
+      "title": "Terminal chat room",
+      "description": "",
+      "content": [
+
+      ],
+      "paper": "documents/chat%20platform%20report.pdf",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign",
+      "imageSize": 80,
+      "image": [
+        "chat/logo.svg",
+        "chat/1.png",
+        "chat/2.png",
+        "chat/3.png"
+      ]
     }
   ],
   "portfolio": [
@@ -256,7 +302,7 @@
       "logo": "astronomy.svg",
       "type": "Astronomy",
       "title": "Fantastic Celestial Objects",
-      "paper": "http://3.25.181.130/documents/APOD.pdf",
+      "paper": "documents/APOD.pdf",
       "description": "This is a popular science magazine geared towards readers with little or no knowledge of the cosmos. Its primary aim is to introduce various celestial bodies (stars, planets, satellites) that constitute the vast expanse of the universe, discussing their types, structures, and potential evolutionary processes. There may be instances of non-professional explanations or inaccuracies within the content, and corrections or clarifications are welcome.",
       "image": "galaxy.png"
     },
@@ -264,7 +310,7 @@
       "logo": "computer.svg",
       "type": "Computer Ethics",
       "title": "Balancing Ethics and Efficiency: Autonomous Vehicles and Utilitarianism",
-      "paper": "http://3.25.181.130/documents/utilitarianism_and_autonomous_vehicles.pdf",
+      "paper": "documents/utilitarianism_and_autonomous_vehicles.pdf",
       "description": "This article explores the ethical considerations of applying Act and Rule Utilitarianism to the collision-avoidance protocols in autonomous vehicles, analyzing the impact of each approach on decision-making in critical scenarios, and evaluating their implications for societal norms and technological design in the context of autonomous driving.",
       "image": "utilitarianism.png"
     },
@@ -272,7 +318,7 @@
       "logo": "computer.svg",
       "type": "Computer Ethics",
       "title": "The Ethical Challenges of AI in Artistic Creation",
-      "paper": "http://3.25.181.130/documents/Drawing_AI.pdf",
+      "paper": "documents/Drawing_AI.pdf",
       "description": "This article delves into the ethical implications and challenges of AI drawing technologies in the realm of art, focusing on how AI is reshaping the boundaries of artistic creation, copyright, and originality, as well as the appropriateness of AI technologies in art competitions.",
       "image": "drawingAI.png"
     },
@@ -289,7 +335,7 @@
       "logo": "java.svg",
       "type": "Concurrency (Java)",
       "title": "Implementing Concurrent Operation of a Data Set",
-      "paper": "http://3.25.181.130/documents/Java_Concurrency.pdf",
+      "paper": "documents/Java_Concurrency.pdf",
       "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass1",
       "description": "This article mainly utilizes read-and-write locks as the main body to ensure that only one process is allowed to run if and when the data needs to be modified, and multiple processes can read the data if there are no writes. In addition, signalling is used to ensure the integrity of the data structure.",
       "image": "javaConcurrency.png"
@@ -298,7 +344,7 @@
       "logo": "astronomy.svg",
       "type": "Astronomy",
       "title": "James Webb Space Telescope",
-      "paper": "http://3.25.181.130/documents/PHYS1160_Report_2.pdf",
+      "paper": "documents/PHYS1160_Report_2.pdf",
       "description": "This article focuses on the James Webb Space Telescope, the successor to the Hubble telescope, including its launch purpose, structure, orbit, and reasons for the launch. Finally, it pays more attention to the results obtained more than a year after the launch and its contribution to astronomy.",
       "image": "webb.webp"
     },
@@ -306,7 +352,7 @@
       "logo": "astronomy.svg",
       "type": "Astronomy",
       "title": "Short Report about Astronomy",
-      "paper": "http://3.25.181.130/documents/PHSY1160_Report_1.pdf",
+      "paper": "documents/PHSY1160_Report_1.pdf",
       "description": "The article primarily focuses on exploring the possibility of finding extraterrestrial life by examining the structural features of galaxies and searching for planets that could support carbon-based life forms.",
       "image": "astro.png"
     }

@@ -21,19 +21,19 @@ const PhotoView: React.FC<{ list: string[] }> = (detail: { list: string[] }) => 
   });
 
   const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      adaptiveHeight: true,
-      autoplay: true,
-      style: {
-        height: imageHeight - 23,
-        width: '80%',
-        margin: '0 auto',
-      }
-    };
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    autoplay: true,
+    style: {
+      height: imageHeight - 23,
+      width: '80%',
+      margin: '0 auto',
+    }
+  };
 
   return (
     <Slider {...settings}>

@@ -21,7 +21,7 @@
   "jumpDismiss": "不再显示",
   "project": [
     {
-      "logo": "/logo512.png",
+      "logo": "react.svg",
       "type": "React",
       "title": "My Airbnb",
       "description": "类似于 #:aAirbnb[https://www.airbnb.com.au/]# 的房屋交易Web应用。",
@@ -138,7 +138,7 @@
         }
       ],
       "repo": "https://github.com/GATA-Chen/COMP9417_Project",
-      "paper": "http://3.25.181.130/documents/9417%20Report.pdf",
+      "paper": "documents/9417%20Report.pdf",
       "imageSize": 80,
       "image": [
         "imageToPrompt/logo.svg",
@@ -201,7 +201,7 @@
         },
         {
           "type": "text",
-          "content": "数据库设计和基本后端逻辑在#:a这份文档[http://3.25.181.130/documents/backgorund%20logic.pdf]#中有详细说明。我们在数据库交互中遵循了并发原则，使用会话进行并发控制和 #:iSQLAlchemy# 事务进行并发数据库管理。"
+          "content": "数据库设计和基本后端逻辑在#:a这份文档[https://enmmmmovo.cloudns.be/documents/backgorund%20logic.pdf]#中有详细说明。我们在数据库交互中遵循了并发原则，使用会话进行并发控制和 #:iSQLAlchemy# 事务进行并发数据库管理。"
         },
         {
           "type": "title",
@@ -235,6 +235,34 @@
       "title": "Slackr",
       "description": "支持信息与图片分享多功能的社交与通讯平台",
       "content": [
+        {
+          "type": "title",
+          "content": "功能描述："
+        },
+        {
+          "type": "text",
+          "content": "这个项目是一个仿 #:aDiscord[https://discord.com/]# 的聊天应用，其图标源自 #:aSlack[https://slack.com/intl/en-gb/]# 并做了一些修改。它支持用户注册登录、创建和加入频道、发送文本和图片、编辑用户资料、频道邀请等功能。"
+        },
+        {
+          "type": "title",
+          "content": "技术栈："
+        },
+        {
+          "type": "text",
+          "content": "这个项目是一个纯 #:iHTML#、#:iCSS#、#:iJavaScript# 的前端项目，使用 #:iAJAX# 通过与后台 Web 服务器的数据交换来异步更新网页。项目采用 #:iVanilla JavaScript#，所有交互都作为 #:iJavaScript# 事件处理函数实现。#:iHTML# 中只包含一个基本的框架；具体的信息和功能由 #:iJavaScript# 向 #:iDOM# 动态添加。在 UI 方面，使用 #:iBootstrap 5# 作为基础框架，融入了它的组件，如模态框、吐司通知和导航栏，以增强美观。"
+        },
+        {
+          "type": "title",
+          "content": "局限性："
+        },
+        {
+          "type": "text",
+          "content": "作为我第一个前端项目，由于一开始缺乏全面的设计规划，导致与后端的交互有些混乱，后端是由他人提供。由于没有后端支持持续获取新消息，应用只能在打开任意一个频道时加载聊天数据，因此它不能像 #:aDiscord[https://discord.com/]# 或 #:aSlack[https://slack.com/intl/en-gb/]# 那样实时更新聊天信息。"
+        },
+        {
+          "type": "text",
+          "content": "UI 在一些区域使用了过大的字体，可能影响移动设备的美观。此外，照片展示可能没有考虑到图片超出边界的情况，可能导致图片显示不全的问题。"
+        }
       ],
       "link": "https://enmmmmovo.github.io/Slackr/",
       "repo": "https://github.com/EnmmmmOvO/Slackr",
@@ -249,6 +277,24 @@
         "slackr/6.png",
         "slackr/7.png"
       ]
+    },
+    {
+      "logo": "network.svg",
+      "type": "Network Protocol",
+      "title": "Terminal chat room",
+      "description": "",
+      "content": [
+
+      ],
+      "paper": "documents/chat%20platform%20report.pdf",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign",
+      "imageSize": 80,
+      "image": [
+        "chat/logo.svg",
+        "chat/1.png",
+        "chat/2.png",
+        "chat/3.png"
+      ]
     }
   ],
   "portfolio": [
@@ -256,7 +302,7 @@
       "logo": "astronomy.svg",
       "type": "天文学",
       "title": "奇妙的天体",
-      "paper": "http://3.25.181.130/documents/APOD.pdf",
+      "paper": "documents/APOD.pdf",
       "description": "这是一本面向对宇宙知识几乎没有或完全没有了解的读者的科普杂志。它的主要目的是介绍构成广阔宇宙的各种天体（星星、行星、卫星），讨论它们的类型、结构和可能的演变过程。内容中可能存在非专业的解释或不准确之处，欢迎提出更正或澄清。",
       "image": "galaxy.png"
     },
@@ -264,7 +310,7 @@
       "logo": "computer.svg",
       "type": "计算机伦理",
       "title": "自动驾驶汽车中的伦理与效率平衡：功利主义视角",
-      "paper": "http://3.25.181.130/documents/utilitarianism_and_autonomous_vehicles.pdf",
+      "paper": "documents/utilitarianism_and_autonomous_vehicles.pdf",
       "description": "本主题的主要论点是比较行为功利主义和规则功利主义如何以不同的方式影响自动驾驶汽车碰撞避免协议的发展，其中行为功利主义侧重于个别情境决策，而规则功利主义强调遵守预定的规则。",
       "image": "utilitarianism.png"
     },
@@ -272,7 +318,7 @@
       "logo": "computer.svg",
       "type": "计算机伦理",
       "title": "人工智能在艺术创作中的伦理挑战",
-      "paper": "http://3.25.181.130/documents/Drawing_AI.pdf",
+      "paper": "documents/Drawing_AI.pdf",
       "description": "本文探讨了在自动驾驶汽车的碰撞避免协议中应用行为功利主义和规则功利主义的伦理考量，分析了每种方法对关键情境下决策的影响，并评估了它们对社会规范和自动驾驶技术设计的影响。",
       "image": "drawingAI.png"
     },
@@ -288,7 +334,7 @@
       "logo": "java.svg",
       "type": "并发算法 (Java)",
       "title": "数据集上实现并发操作",
-      "paper": "http://3.25.181.130/documents/Java_Concurrency.pdf",
+      "paper": "documents/Java_Concurrency.pdf",
       "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass1",
       "description": "本文主要利用读写锁作为主体，以确保在需要修改数据时只允许一个进程运行，如果没有写操作，允许多个进程读取数据。此外，使用信号确保数据结构的完整性。",
       "image": "javaConcurrency.png"
@@ -297,7 +343,7 @@
       "logo": "astronomy.svg",
       "type": "天文学",
       "title": "James Webb 天文望远镜",
-      "paper": "http://3.25.181.130/documents/PHYS1160_Report_2.pdf",
+      "paper": "documents/PHYS1160_Report_2.pdf",
       "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass2",
       "description": "本文聚焦于哈勃望远镜的继任者詹姆斯·韦伯空间望远镜，包括其发射目的、结构、轨道以及发射原因。最后，更多关注于发射一年多后获得的成果及其对天文学的贡献。",
       "image": "webb.webp"
@@ -306,7 +352,7 @@
       "logo": "astronomy.svg",
       "type": "天文学",
       "title": "天文学的短篇报告",
-      "paper": "http://3.25.181.130/documents/PHSY1160_Report_1.pdf",
+      "paper": "documents/PHSY1160_Report_1.pdf",
       "description": "本文主要关注通过检查星系的结构特征以及寻找能够支持碳基生命形式的行星来探索发现外星生命的可能性。",
       "image": "astro.png"
     }

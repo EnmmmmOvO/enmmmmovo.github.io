@@ -3,6 +3,7 @@ import { WindowContext } from '../../context/WIndowContext';
 import { JsonContent, LanguageContext } from '../../context/LanguageContext';
 import { compilerSentence } from '../ProjectsView';
 import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
+import { SERVER_URL } from '../../webConfig';
 
 export interface PortfolioDetailProps extends JsonContent {
   logo: string;
@@ -53,8 +54,8 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
               <Typography variant="body2" color="text.secondary">{compilerSentence(detail.description)}</Typography>
             </CardContent>
             <CardActions disableSpacing>
-              {detail.repo && <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>}
-              {detail.paper && <Button size="small" href={detail.paper as string} target="_blank">{content.paper}</Button>}
+              {detail.repo  && <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>}
+              {detail.paper && <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>}
               {detail.video && <Button size="small" href={detail.video as string} target="_blank">{content.video}</Button>}
             </CardActions>
           </Card>
@@ -65,3 +66,4 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
 }
 
 export default PortfoliosView;
+
