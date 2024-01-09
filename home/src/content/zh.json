@@ -281,10 +281,41 @@
     {
       "logo": "network.svg",
       "type": "Network Protocol",
-      "title": "Terminal chat room",
-      "description": "",
+      "title": "Transport Application",
+      "description": "基于udp与tcp协议的聊天室软件以及局域网传输工具",
       "content": [
-
+        {
+          "type": "title",
+          "content": "项目1：#:a简单聊天室[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign]#"
+        },
+        {
+          "type": "text",
+          "content": "该项目包括在终端环境内创建一个聊天室，具备功能如用户登录、聊天室创建、消息发送和查看、文件上传和下载。整个项目完全由#:iJava#开发，包含两个主要部分：#:b服务器端#和#:b客户端#。"
+        },
+        {
+          "type": "text",
+          "content": "两端之间的通信通过#:iUDP#（用户数据报协议）来实现，使用#:iJava DatagramSocket#。开发了一个自定义的Message类用于数据传输。服务器在收到请求后，处理并通过相同的#:iUDP#协议回应客户端。"
+        },
+        {
+          "type": "text",
+          "content": "对于文件传输部分，采用了#:iTCP#（传输控制协议）。传输前的必要条件通过两个端口确认。接收端通过#:iUDP#向发送端通报其端口号，之后发送端通过#:iTCP#协议将文件传输给接收端。"
+        },
+        {
+          "type": "title",
+          "content": "项目2：#:a局域网文件传输[https://github.com/EnmmmmOvO/Tool/tree/master/Transmission]#"
+        },
+        {
+          "type": "text",
+          "content": "该项目旨在实现#:iWindows PC#与#:iMac#之间在局域网（#:iLAN#）内的文件传输。在之前的项目基础上，对文件传输组件进行了增强，以支持#:iLAN#操作。"
+        },
+        {
+          "type": "text",
+          "content": "项目使用#:iJava Socket#编程，支持多文件及文件夹的传输。但它不支持中断传输的恢复。界面为非图形化，仅通过终端操作。文件传输需要提供接收方的#:iIP#地址和端口号，因为系统不支持自动发现#:iLAN#内的其他设备。"
+        },
+        {
+          "type": "text",
+          "content": "#:a计划[https://github.com/EnmmmmOvO/Tool/tree/master/trans]# 正在进行中，以重构此项目以支持多用户功能并加入图形用户界面。目标是实现#:iLAN#内设备的自动发现，并增加消息发送和中断传输恢复等功能。重构将使用#:iElectron#、#:iReact#和#:iNode.js#实现，旨在减少与多平台开发相关的工作量。"
+        }
       ],
       "paper": "documents/chat%20platform%20report.pdf",
       "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign",

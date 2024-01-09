@@ -281,10 +281,41 @@
     {
       "logo": "network.svg",
       "type": "Network Protocol",
-      "title": "Terminal chat room",
-      "description": "",
+      "title": "Transport Application",
+      "description": "Chat room software and local area network transfer tool based on UDP and TCP protocols.",
       "content": [
-
+        {
+          "type": "title",
+          "content": "Project 1: #:aSimple Chat Thread[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign]#"
+        },
+        {
+          "type": "text",
+          "content": "This project entails the creation of a chat thread within a terminal environment, featuring functionalities such as user login, thread creation, message sending and viewing, and file uploading and downloading. The project is entirely developed in #:iJava# and comprises two main components: #:bthe server side# and #:bthe client side#."
+        },
+        {
+          "type": "text",
+          "content": "Communication between the two entities is facilitated through the #:iUDP# (User Datagram Protocol), utilizing the #:iJava DatagramSocket#. A custom Message class has been developed for data transmission. Upon receiving a request, the server processes it and responds to the client using the same #:iUDP# protocol."
+        },
+        {
+          "type": "text",
+          "content": "For the file transfer segment, #:iTCP# (Transmission Control Protocol) is employed. The transmission prerequisites are confirmed via two ports. The receiving end communicates its port number to the sender using #:iUDP#, following which the sender transmits the file to the receiver using #:iTCP# protocol."
+        },
+        {
+          "type": "title",
+          "content": "Project 2: #:aLocal Area Network File Transfer[https://github.com/EnmmmmOvO/Tool/tree/master/Transmission]#"
+        },
+        {
+          "type": "text",
+          "content": "This project was initiated to enable file transfer between a #:iWindows PC# and a #:iMac# within a local area network (#:iLAN#). Building upon the previous project, enhancements were made to the file transfer component to allow for #:iLAN# operations."
+        },
+        {
+          "type": "text",
+          "content": "The project utilizes #:iJava Socket# programming and supports the transfer of multiple files and folders. However, it does not support resuming interrupted transfers. The interface is non-graphical and operates solely through the terminal. File transfer requires the provision of the recipient's #:iI# address and port number, as the system does not support automatic discovery of other devices within the #:iLAN#."
+        },
+        {
+          "type": "text",
+          "content": "#:aPlans[https://github.com/EnmmmmOvO/Tool/tree/master/trans]# are underway to refactor this project to support multi-user functionality and incorporate a graphical user interface. The objective is to enable automatic discovery of devices within the #:iLAN# and add features like message sending and interrupted transfer resumption. The refactoring will be implemented using #:iElectron#, #:iReact#, and #:iNode.js#, aimed at reducing the workload associated with multi-platform development."
+        }
       ],
       "paper": "documents/chat%20platform%20report.pdf",
       "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign",
@@ -294,6 +325,20 @@
         "chat/1.png",
         "chat/2.png",
         "chat/3.png"
+      ]
+    },
+    {
+      "logo": "network.svg",
+      "type": "Network Protocol",
+      "title": "Transport Application",
+      "description": "Chat room software and local area network transfer tool based on UDP and TCP protocols.",
+      "content": [
+      ],
+      "paper": "documents/chat%20platform%20report.pdf",
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign",
+      "imageSize": 80,
+      "image": [
+        "chat/logo.svg"
       ]
     }
   ],
