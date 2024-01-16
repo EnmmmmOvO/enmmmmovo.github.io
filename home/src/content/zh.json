@@ -80,7 +80,7 @@
     },
     {
       "logo": "kaggle.png",
-      "type": "Neural Network",
+      "type": "神经网络",
       "title": "Stable Diffusion - Image to Prompts",
       "description": "根据输入的图片生成与图片内容相符的提示词。",
       "content": [
@@ -280,7 +280,7 @@
     },
     {
       "logo": "network.svg",
-      "type": "Network Protocol",
+      "type": "网络协议",
       "title": "Transport Application",
       "description": "基于udp与tcp协议的聊天室软件以及局域网传输工具",
       "content": [
@@ -325,6 +325,56 @@
         "chat/1.png",
         "chat/2.png",
         "chat/3.png"
+      ]
+    },
+    {
+      "logo": "crawler.svg",
+      "type": "网络爬虫",
+      "title": "Web Scraper Application",
+      "description": "这个是一系列为了方便我的学习或者生活所做的爬虫小工具",
+      "content": [
+        {
+          "type": "title",
+          "content": "项目一：立扣爬虫"
+        },
+        {
+          "type": "text",
+          "content": "该项目使用 #:iPython# 从指定的#:a立扣[https://leetcode.com/]#页面提取特定的题目描述。这个工具的主要目的是简化我编写立扣算法题的过程，消除重复复制代码的任务。爬虫从目标网页检索内容，定位 #:iC++# 类中的代码，并将其转换为带有 main 函数的代码文件。"
+        },
+        {
+          "type": "title",
+          "content": "项目二：PRTS 爬虫"
+        },
+        {
+          "type": "text",
+          "content": "在 #:iPython# 中实现的该工具，从 #:aPRTS[https://prts.wiki/]# 网页游戏中获取游戏 (#:a明日方舟[https://ak.hypergryph.com/]#) 内容信息。根据我输入的名字，它检索游戏角色数据，并提供关于他们发展的全面信息。这有助于规划和策略使用游戏中的角色。"
+        },
+        {
+          "type": "title",
+          "content": "项目三：#:aBbcollab 视频爬虫[https://github.com/EnmmmmOvO/Tool/tree/master/Bbcollab_video_Download]#"
+        },
+        {
+          "type": "text",
+          "content": "由于需要从没有下载选项且网站有重定向特性的 #:aBbcollab[https://eu.bbcollab.com/collab/ui/scheduler/]# 下载视频文件，这个工具使用 #:iPython Selenium# 来模拟进入。一旦重定向，它就会爬取视频的 #:iURL# 进行下载。这个工具用于从我大学的在线学习平台下载讲座视频。"
+        },
+        {
+          "type": "title",
+          "content": "项目四：#:a斗鱼爬虫[https://github.com/EnmmmmOvO/douyu_helper]#"
+        },
+        {
+          "type": "text",
+          "content": "我维护和更新了一个最初由其他人开发的爬虫项目。这个工具设计用于托管在 GitHub Actions 上，并在#:a斗鱼[https://www.douyu.com]#网站上每日执行一系列操作。"
+        }
+
+      ],
+      "repo": "https://github.com/EnmmmmOvO/Tool/tree/master/Bbcollab_video_Download",
+      "imageSize": 80,
+      "image": [
+        "crawler/logo.svg",
+        "crawler/1.png",
+        "crawler/2.png",
+        "crawler/3.png",
+        "crawler/4.png"
       ]
     }
   ],

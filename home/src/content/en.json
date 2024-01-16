@@ -328,17 +328,52 @@
       ]
     },
     {
-      "logo": "network.svg",
-      "type": "Network Protocol",
-      "title": "Transport Application",
-      "description": "Chat room software and local area network transfer tool based on UDP and TCP protocols.",
+      "logo": "crawler.svg",
+      "type": "Web Scraper",
+      "title": "Web Scraper Application",
+      "description": "This document outlines a series of web scraping tools developed to facilitate my learning and daily life.",
       "content": [
+        {
+          "type": "title",
+          "content": "Project One: LeetCode Scraper"
+        },
+        {
+          "type": "text",
+          "content": "This project involves using #:iPython# to extract specific problem statements from designated #:aLeetCode[https://leetcode.com/]# pages. The primary purpose of this tool is to streamline my process of coding LeetCode algorithm questions, eliminating the repetitive task of code copying. The scraper retrieves content from the target webpage, locates the code within the #:iC++# class section, and converts it into a code file with a main function."
+        },
+        {
+          "type": "title",
+          "content": "Project Two: PRTS Scraper"
+        },
+        {
+          "type": "text",
+          "content": "Implemented in #:iPython#, this tool fetches information about game (#:aArknights[https://www.arknights.global]#) content from the #:aPRTS[https://prts.wiki/]# web game. Based on the names I input, it retrieves data regarding game characters and provides comprehensive information about their development. This aids in planning and strategizing their usage in the game."
+        },
+        {
+          "type": "title",
+          "content": "Project Three: #:aBbcollab Video Scraper[https://github.com/EnmmmmOvO/Tool/tree/master/Bbcollab_video_Download]#"
+        },
+        {
+          "type": "text",
+          "content": "Due to the need to download video files from #:aBbcollab[https://eu.bbcollab.com/collab/ui/scheduler/]# that do not have a download option and the site's redirection feature, this tool uses #:iPython Selenium# to simulate entry. Once redirected, it scrapes the video #:iURL# for downloading. This tool is used to download lecture videos from my university's online learning platform."
+        },
+        {
+          "type": "title",
+          "content": "Project Four: #:aDouyu Scraper[https://github.com/EnmmmmOvO/douyu_helper]#"
+        },
+        {
+          "type": "text",
+          "content": "I have maintained and updated a scraper project initially developed by someone else. This tool is designed to be hosted on GitHub Actions and performs a series of operations daily in #:aDouyu[https://www.douyu.com]# Website."
+        }
       ],
-      "paper": "documents/chat%20platform%20report.pdf",
-      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign",
+      "repo": "https://github.com/EnmmmmOvO/Tool/tree/master/Bbcollab_video_Download",
       "imageSize": 80,
       "image": [
-        "chat/logo.svg"
+        "crawler/logo.svg",
+        "crawler/1.png",
+        "crawler/2.png",
+        "crawler/3.png",
+        "crawler/4.png"
       ]
     }
   ],
