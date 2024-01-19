@@ -375,6 +375,80 @@
         "crawler/3.png",
         "crawler/4.png"
       ]
+    },
+    {
+      "logo": "os.svg",
+      "type": "Operation System",
+      "title": "OS 161",
+      "description": "This project aims to solve some synchronisation issues, implement #:iVFS#, and virtual memory within the #:aOS/161[http://os161.org/]# operating system.",
+      "content": [
+        {
+          "type": "title",
+          "content": "#:aSynchronisation[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass1]#"
+        },
+        {
+          "type": "text",
+          "content": "In the first part, within the software environment using the #:iOS/161# kernel, address a series of synchronization problems by attempting to implement producer-consumer, Dining Philosophers, and similar problems using semaphores and locks. "
+        },
+        {
+          "type": "text",
+          "content": "Although the synchronization issues themselves are only indirectly related to the services provided by #:iOS/161#, they solve similar concurrency problems that one would encounter when writing operating system code."
+        },
+        {
+          "type": "title",
+          "content": "#:aSystem calls and processes[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass2]#"
+        },
+        {
+          "type": "text",
+          "content": "The #:iVFS# is a crucial component that abstracts file system operations, providing a uniform interface to different file systems. The core of the second part is to ensure that these system calls correctly interact with the #:iVFS# layer to execute file operations."
+        },
+        {
+          "type": "text",
+          "content": "#:bImplementation of Specific System Calls#"
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:bopen#: Responsible for opening files. It involves not just accessing the file but also managing file descriptors.",
+            "#:bread and write#: These are used for reading from and writing to files, respectively. They involve buffer management and dealing with file offsets.",
+            "#:blseek#: This call adjusts the file offset, which is essential for reading or writing at a specific position in a file.",
+            "#:bclose#: Used to close a file, ensuring that resources are freed and the file descriptor is made available for reuse.",
+            "#:bdup2#: It duplicates file descriptors, which is essential for redirecting input/output in process management."
+          ]
+        },
+        {
+          "type": "text",
+          "content": "#:bKernel-Level Code Development#"
+        },
+        {
+          "type": "text",
+          "content": "Unlike user-level applications that interact with the kernel through system calls, your task involves writing the kernel-level code that directly implements these system calls. This requires a deep understanding of the kernel's internal mechanisms, memory management, and error handling strategies."
+        },
+        {
+          "type": "title",
+          "content": "#:aVirtual Memory[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass3]#"
+        },
+        {
+          "type": "text",
+          "content": "The third parts focuses on enhancing the virtual memory subsystem of the #:iOS/161# operating system, with a particular emphasis on page table management, virtual memory translation, and Translation Lookaside Buffer (#:iTLB#) management. Key aspects include"
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:bPage Table Management#: Implementing a hashed page table (#:iHPT#) to efficiently manage virtual memory translations for user programs. This involves handling address translation and ensuring efficient memory access.",
+            "#:bVirtual Memory Translation#: Developing a system for translating virtual memory addresses to physical addresses, which is crucial for effective memory management and optimal performance of the #:iOS#.",
+            "#:bTranslation Lookaside Buffer (TLB) Management#: Managing the #:iMIPS# software-managed #:iTLB#, a critical component in reducing the time taken for virtual address translation."
+          ]
+        }
+      ],
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231",
+      "imageSize": 90,
+      "image": [
+        "os161/logo.svg",
+        "os161/1.png",
+        "os161/2.png",
+        "os161/3.png"
+      ]
     }
   ],
   "portfolio": [

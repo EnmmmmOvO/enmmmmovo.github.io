@@ -376,6 +376,80 @@
         "crawler/3.png",
         "crawler/4.png"
       ]
+    },
+    {
+      "logo": "os.svg",
+      "type": "操作系统",
+      "title": "OS 161",
+      "description": "该项目旨在在 #:aOS/161[http://os161.org/]# 操作系统中实现一些同步问题、虚拟文件系统和虚拟内存。",
+      "content": [
+        {
+          "type": "title",
+          "content": "#:a同步[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass1]#"
+        },
+        {
+          "type": "text",
+          "content": "在第一部分中，在使用 #:iOS/161# 内核的软件环境中，通过尝试使用信号量和锁来实现生产者-消费者、哲学家就餐等问题，来解决一系列同步问题。"
+        },
+        {
+          "type": "text",
+          "content": "尽管同步问题本身与 #:iOS/161# 提供的服务只是间接相关，但它们解决了在编写操作系统代码时可能遇到的类似并发问题。"
+        },
+        {
+          "type": "title",
+          "content": "#:a系统调用和进程[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass2]#"
+        },
+        {
+          "type": "text",
+          "content": "#:iVFS# 是一个关键组件，它抽象了文件系统操作，为不同的文件系统提供了统一的接口。第二部分的核心是确保这些系统调用正确地与 #:iVFS# 层交互，以执行文件操作。"
+        },
+        {
+          "type": "text",
+          "content": "#:b特定系统调用的实现#"
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:bopen#: 负责打开文件。这不仅涉及访问文件，还包括管理文件描述符。",
+            "#:bread and write#: 这些用于分别从文件中读取和向文件写入。它们涉及缓冲区管理和处理文件偏移量。",
+            "#:blseek#: 这个调用调整文件偏移量，对于在文件的特定位置读取或写入至关重要。",
+            "#:bclose#: 用于关闭文件，确保资源被释放并且文件描述符可供重新使用。",
+            "#:bdup2#: 它复制文件描述符，对于重定向输入/输出在进程管理中至关重要。"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "#:b内核级代码开发#"
+        },
+        {
+          "type": "text",
+          "content": "与通过系统调用与内核交互的用户级应用程序不同，你的任务涉及编写直接实现这些系统调用的内核级代码。这需要深入理解内核的内部机制、内存管理和错误处理策略。"
+        },
+        {
+          "type": "title",
+          "content": "#:a虚拟内存[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass3]#"
+        },
+        {
+          "type": "text",
+          "content": "第三部分专注于增强 #:iOS/161# 操作系统的虚拟内存子系统，特别强调页表管理、虚拟内存转换和转换后援缓冲区 (#:iTLB#) 管理。关键方面包括"
+        },
+        {
+          "type": "list",
+          "content": [
+            "#:b页表管理#: 实现散列页表 (#:iHPT#)，以有效管理用户程序的虚拟内存转换。这涉及处理地址转换和确保有效的内存访问。",
+            "#:b虚拟内存转译#: 开发一个系统，用于将虚拟内存地址转换为物理地址，这对于有效的内存管理和 #:iOS# 的最佳性能至关重要。",
+            "#:b转译后备缓冲器 (TLB) 管理#: 管理 #:iMIPS# 软件管理的 #:iTLB#，这是减少虚拟地址转换所需时间的关键组件。"
+          ]
+        }
+      ],
+      "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231",
+      "imageSize": 90,
+      "image": [
+        "os161/logo.svg",
+        "os161/1.png",
+        "os161/2.png",
+        "os161/3.png"
+      ]
     }
   ],
   "portfolio": [
