@@ -2,7 +2,18 @@ import React, { useContext } from 'react';
 import { WindowContext } from '../../context/WIndowContext';
 import { JsonContent, LanguageContext } from '../../context/LanguageContext';
 import { compilerSentence } from '../ProjectsView';
-import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Divider,
+  Tooltip,
+  Typography
+} from '@mui/material';
 import { SERVER_URL } from '../../webConfig';
 
 export interface PortfolioDetailProps extends JsonContent {
@@ -54,9 +65,24 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
               <Typography variant="body2" color="text.secondary">{compilerSentence(detail.description)}</Typography>
             </CardContent>
             <CardActions disableSpacing>
-              {detail.repo  && <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>}
-              {detail.paper && <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>}
-              {detail.video && <Button size="small" href={detail.video as string} target="_blank">{content.video}</Button>}
+              {
+                detail.repo  &&
+                <Tooltip title={content.tipSource} placement="top">
+                  <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>
+                </Tooltip>
+              }
+              {
+                detail.paper &&
+                <Tooltip title={content.tipPaper} placement="top">
+                  <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>
+                </Tooltip>
+              }
+              {
+                detail.video &&
+                <Tooltip title={content.tipVideo} placement="top">
+                  <Button size="small" href={detail.video as string} target="_blank">{content.video}</Button>
+                </Tooltip>
+              }
             </CardActions>
           </Card>
         </CardContent>

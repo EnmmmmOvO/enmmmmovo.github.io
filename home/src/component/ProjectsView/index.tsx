@@ -15,7 +15,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  styled,
+  styled, Tooltip,
   Typography
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -185,11 +185,28 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
               </CardContent>
             </Collapse>
             <CardActions disableSpacing>
-              {detail.link && <Button size="small" onClick={() => handleWebsite(detail.link)}>{content.website}</Button>}
-              {detail.repo && <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>}
-              {detail.paper && <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>}
+              {
+                detail.link &&
+                <Tooltip title={content.tipWebsite} placement="top">
+                  <Button size="small" onClick={() => handleWebsite(detail.link)}>{content.website}</Button>
+                </Tooltip>
+              }
+              {
+                detail.repo &&
+                <Tooltip title={content.tipSource} placement="top">
+                  <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>
+                </Tooltip>
+              }
+              {
+                detail.paper &&
+                <Tooltip title={content.tipPaper} placement="top">
+                  <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>
+                </Tooltip>
+              }
               <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                <ExpandMoreIcon />
+                <Tooltip title={expanded ? content.showLess : content.showMore} placement="top">
+                  <ExpandMoreIcon />
+                </Tooltip>
               </ExpandMore>
             </CardActions>
           </Card>
