@@ -9,6 +9,10 @@ const ProjectsPage: React.FC = () => {
   const { content } = useContext(LanguageContext);
 
   useEffect(() => {
+    try {
+      fetch('https://enmmmmovo.cloudns.be/test/', { method: 'HEAD' })
+    } catch (error) { console.log(error) }
+
     return () => { document.body.style.overflow = 'auto' }
   }, []);
 

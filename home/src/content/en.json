@@ -16,7 +16,7 @@
   "portfolios": "Portfolios",
   "source": "Source code",
   "jumpTitle": "Potential Delay in Server Response",
-  "jumpContent": "The website takes a slight delay in receiving responses from the service. Consequently, if there is no immediate reaction upon clicking buttons, please be patient and wait for a while.",
+  "jumpContent": "The website takes a slight delay (> 200ms) in receiving responses from the service. Consequently, if there is no immediate reaction upon clicking buttons, please be patient and wait for a while.",
   "jumpButton": "I understand",
   "jumpDismiss": "Don't show this again",
   "wtgit": "Want to get in touch?",

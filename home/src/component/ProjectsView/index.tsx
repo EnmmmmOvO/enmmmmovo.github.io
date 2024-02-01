@@ -95,7 +95,24 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
 
   const handleWebsite = async (url: string) => {
     if (disabled) window.open(url, '_blank');
-    else handleClickOpen(url);
+    else {
+      const start = performance.now();
+      const timeout = 200;
+      const timeoutPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject(new Error("Request timed out"));
+        }, timeout);
+      });
+
+      const fetchPromise = fetch('https://enmmmmovo.cloudns.be/test/', { method: 'HEAD' });
+
+      Promise.race([fetchPromise, timeoutPromise])
+        .then((_res) => {
+            if (performance.now() - start > 200) handleClickOpen(url);
+            else window.open(url, '_blank')
+        })
+        .catch((_err) => { handleClickOpen(url) });
+    }
   }
 
   const handleExpandClick = () => {
