@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { Box, alpha, lighten, IconButton, Tooltip, styled, useTheme, Button } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
@@ -29,7 +29,12 @@ const HeaderWrapper = styled(Box)(
 function Header() {
   const { sidebarToggle, toggleSidebar } = useContext(SidebarContext);
   const theme = useTheme();
-  const { lang, setLang } = useContext(LanguageContext);
+  const [open, setOpen] = useState<boolean>(false);
+  const { lang, setLang, content } = useContext(LanguageContext);
+
+  useEffect(() => {
+    if (window.outerWidth < 1280) setOpen(true);
+  }, []);
 
   return (
     <HeaderWrapper
@@ -76,13 +81,9 @@ function Header() {
             display: { lg: 'none', xs: 'inline-block' }
           }}
         >
-          <Tooltip arrow title="Toggle Menu">
-            <IconButton color="primary" onClick={toggleSidebar}>
-              {!sidebarToggle ? (
-                <MenuTwoToneIcon fontSize="small" />
-              ) : (
-                <CloseTwoToneIcon fontSize="small" />
-              )}
+          <Tooltip arrow placeholder="bottom-start" title={content.showExpand ? content.showExpand : ''} open={open as boolean}>
+            <IconButton color="primary" onClick={() => { setOpen(false); toggleSidebar(); } }>
+              {!sidebarToggle ? <MenuTwoToneIcon fontSize="small" /> : <CloseTwoToneIcon fontSize="small" />}
             </IconButton>
           </Tooltip>
         </Box>

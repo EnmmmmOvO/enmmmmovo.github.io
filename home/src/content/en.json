@@ -38,6 +38,7 @@
   "tipSource": "Click to jump to the Source Code",
   "tipPaper": "Click to jump to the Paper",
   "tipVideo": "Click to jump to the Video",
+  "showExpand": "Click to Show SideBar",
   "project": [
     {
       "logo": "react.svg",

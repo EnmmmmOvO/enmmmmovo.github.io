@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
       <Box sx={{ height: '100%', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
         <Title>My Portfolio</Title>
         <SubTitle>{greeting}{content.welcome}</SubTitle>
-        <AboutButton variant="contained" onClick={() => window.location.href = '/about'}>{content.aboutme}</AboutButton>
+        <AboutButton variant="contained" onClick={() => window.location.href = '#/about'}>{content.aboutme}</AboutButton>
       </Box>
     </Box>
   );

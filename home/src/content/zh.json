@@ -38,6 +38,7 @@
   "tipSource": "点击跳转到源代码",
   "tipPaper": "点击查看论文",
   "tipVideo": "点击查看视频",
+  "showExpand": "点击展开侧边栏",
   "project": [
     {
       "logo": "react.svg",
