@@ -10,7 +10,7 @@ const ProjectsPage: React.FC = () => {
 
   useEffect(() => {
     try {
-      fetch('https://enmmmmovo.cloudns.be/test/', { method: 'HEAD' })
+      fetch('https://enmmmmovo.cloudns.be/test/', { method: 'HEAD' }).catch((err) => console.log(err))
     } catch (error) { console.log(error) }
 
     return () => { document.body.style.overflow = 'auto' }

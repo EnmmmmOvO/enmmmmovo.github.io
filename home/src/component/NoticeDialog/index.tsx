@@ -1,5 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Button, Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import {
+  Button,
+  Checkbox,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Typography
+} from '@mui/material';
 import { DialogContext } from '../../context/DialogContext';
 import { LanguageContext } from '../../context/LanguageContext';
 
@@ -58,7 +67,10 @@ const NoticeDialog: React.FC<ChildrenProps> = ({ children }) => {
             <DialogContentText id="alert-dialog-description" sx={{ mt: 1, mb: 1 }}>
               {content.jumpContent}
             </DialogContentText>
-            <Checkbox value={disabled} onChange={handleCheckbox} /> {content.jumpDismiss}
+            <label htmlFor="myCheckbox">
+              <Checkbox id="myCheckbox" value={disabled} onChange={handleCheckbox} />
+              <span style={{ cursor: 'pointer' }}>{content.jumpDismiss}</span>
+            </label>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} autoFocus>
