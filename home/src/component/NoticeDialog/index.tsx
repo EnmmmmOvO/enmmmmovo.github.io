@@ -6,8 +6,7 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle,
-  Typography
+  DialogTitle
 } from '@mui/material';
 import { DialogContext } from '../../context/DialogContext';
 import { LanguageContext } from '../../context/LanguageContext';

@@ -221,7 +221,7 @@
         },
         {
           "type": "text",
-          "content": "数据库设计和基本后端逻辑在#:a这份文档[https://enmmmmovo.cloudns.be/documents/backgorund%20logic.pdf]#中有详细说明。我们在数据库交互中遵循了并发原则，使用会话进行并发控制和 #:iSQLAlchemy# 事务进行并发数据库管理。"
+          "content": "数据库设计和基本后端逻辑在#:a这份文档[SERVER_URLdocuments/backgorund%20logic.pdf]#中有详细说明。我们在数据库交互中遵循了并发原则，使用会话进行并发控制和 #:iSQLAlchemy# 事务进行并发数据库管理。"
         },
         {
           "type": "title",

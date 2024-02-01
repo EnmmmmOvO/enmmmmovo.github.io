@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Box, Button, Grid, styled, TextField, Tooltip, Typography } from '@mui/material';
 import Copyright from '../component/Copyright';
 import { LanguageContext } from '../context/LanguageContext';
+import { SERVER_URL } from '../webConfig';
 
 const ContactBox = styled(Box)({
   display: 'flex',
@@ -49,7 +50,7 @@ const ContactPage: React.FC = () => {
     const email = formData.get('email') as string;
     const content = formData.get('content') as string;
 
-    fetch('https://enmmmmovo.cloudns.be/contact/', {
+    fetch(`${SERVER_URL}contact/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

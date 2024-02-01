@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import { LanguageContext } from '../context/LanguageContext';
 import ProjectsView, { ProjectDetailProps } from '../component/ProjectsView';
 import Copyright from '../component/Copyright';
+import { SERVER_URL } from '../webConfig';
 
 
 const ProjectsPage: React.FC = () => {
@@ -10,7 +11,7 @@ const ProjectsPage: React.FC = () => {
 
   useEffect(() => {
     try {
-      fetch('https://enmmmmovo.cloudns.be/test/', { method: 'HEAD' }).catch((err) => console.log(err))
+      fetch(`${SERVER_URL}test/`, { method: 'HEAD' }).catch((err) => console.log(err))
     } catch (error) { console.log(error) }
 
     return () => { document.body.style.overflow = 'auto' }

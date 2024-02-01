@@ -221,7 +221,7 @@
         },
         {
           "type": "text",
-          "content": "The database design and fundamental backend logic are comprehensively outlined in #:athis document[https://enmmmmovo.cloudns.be/documents/backgorund%20logic.pdf]#. We adhered to concurrency principles in database interactions, using sessions for concurrency control and #:iSQLAlchemy# transactions for concurrent database management."
+          "content": "The database design and fundamental backend logic are comprehensively outlined in #:athis document[SERVER_URLdocuments/backgorund%20logic.pdf]#. We adhered to concurrency principles in database interactions, using sessions for concurrency control and #:iSQLAlchemy# transactions for concurrent database management."
         },
         {
           "type": "title",
