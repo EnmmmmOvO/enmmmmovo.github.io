@@ -129,10 +129,10 @@ const ContactPage: React.FC = () => {
                 </ContactBox>
               </Tooltip>
               {emailAddress && <Typography sx={{ mt: 1, textAlign: 'center' }}>{content.copyEmailSuccess}</Typography>}
-              <Tooltip title="Not available at the moment ~ " placement="top">
-                <ContactBox mt={2}>
+              <Tooltip title={content.jumpLinkedin} placement="top">
+                <ContactBox mt={2} onClick={() => window.open('https://www.linkedin.com/in/wang-jinghan-722144309/')}>
                   <img src='/static/images/logo/linkedin.svg' style={{ height: '40px' }} alt="linkedin icon"/>
-                  <Typography sx={{color: "white", ml: 2}}></Typography>
+                  <Typography sx={{color: "white", ml: 2}}>Jinghan Wang</Typography>
                 </ContactBox>
               </Tooltip>
             </div>
