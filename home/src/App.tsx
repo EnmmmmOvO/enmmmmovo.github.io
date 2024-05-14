@@ -10,6 +10,7 @@ import { CssBaseline } from '@mui/material';
 import ThemeProvider from './theme/ThemeProvider';
 import React, { useEffect, useState } from 'react';
 import { WindowContext, WindowContextProps } from './context/WIndowContext';
+import { MouseProvider } from './context/MouseContext';
 
 const NoticeDialog = Loader(React.lazy(() => import('./component/NoticeDialog')));
 
@@ -43,12 +44,14 @@ function App() {
     <ThemeProvider>
       <LanguageContext.Provider value={{ lang, content, setLang }}>
         <WindowContext.Provider value={ windowSize }>
-          <NoticeDialog>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <CssBaseline />
-              {useRoutes(router)}
-            </LocalizationProvider>
-          </NoticeDialog>
+          <MouseProvider>
+            <NoticeDialog>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <CssBaseline />
+                {useRoutes(router)}
+              </LocalizationProvider>
+            </NoticeDialog>
+          </MouseProvider>
         </WindowContext.Provider>
       </LanguageContext.Provider>
     </ThemeProvider>

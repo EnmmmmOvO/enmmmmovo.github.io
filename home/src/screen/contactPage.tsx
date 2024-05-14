@@ -15,30 +15,20 @@ const ContactBox = styled(Box)({
 });
 
 const ContactPage: React.FC = () => {
-  const [email, setEmail] = useState<boolean>(false);
-  const [emailAddress, setEmailAddress] = useState<boolean>(false);
-  const [wechat, setWechat] = useState<boolean>(false);
   const { content } = useContext(LanguageContext);
+  const [email, setEmail] = useState<boolean>(false);
+  const [emailAddress, setEmailAddress] = useState<string>(content.copyEmail as string);
+  const [wechat, setWechat] = useState<string>(content.copyWechat as string);
 
   const wechatSuccess = () => {
     navigator.clipboard.writeText('wjh20000218')
-      .then(() => {
-        setWechat(true);
-        setEmailAddress(false);
-        setEmail(false);
-        setTimeout(() => setWechat(false), 1000)
-      })
+      .then(() => setWechat(content.copyWechatSuccess as string))
       .catch((err) => console.log(err));
   }
 
   const emailSuccess = () => {
     navigator.clipboard.writeText('wangjinghan0218@gmail.com')
-      .then(() => {
-        setEmailAddress(true);
-        setWechat(false);
-        setEmail(false);
-        setTimeout(() => setEmailAddress(false), 1000)
-      })
+      .then(() => setEmailAddress(content.copyEmailSuccess as string))
       .catch((err) => console.log(err));
   }
 
@@ -67,7 +57,6 @@ const ContactPage: React.FC = () => {
 
     e.currentTarget.reset();
   }
-
 
   return (
     <Box sx={{
@@ -115,20 +104,18 @@ const ContactPage: React.FC = () => {
                   <Typography sx={{color: "white", ml: 2}}>EnmmmmOvO</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={content.copyWechat} placement="top">
+              <Tooltip title={wechat} placement="top" onMouseLeave={() => setWechat(content.copyWechat as string)}>
                 <ContactBox mt={2} onClick={wechatSuccess}>
                   <img src='/static/images/logo/wechat.svg' style={{ height: '40px' }} alt="wechat icon"/>
                   <Typography sx={{color: "white", ml: 2}}>wjh20000218</Typography>
                 </ContactBox>
               </Tooltip>
-              {wechat && <Typography sx={{ mt: 1, textAlign: 'center' }}>{content.copyWechatSuccess}</Typography>}
-              <Tooltip title={content.copyEmail} placement="top">
+              <Tooltip title={emailAddress} placement="top" onMouseLeave={() => setEmailAddress(content.copyEmail as string)}>
                 <ContactBox mt={2} onClick={emailSuccess}>
                   <img src='/static/images/logo/email.svg' style={{ height: '40px' }} alt="email icon"/>
                   <Typography sx={{color: "white", ml: 2}}>wangjinghan0218@gmail.com</Typography>
                 </ContactBox>
               </Tooltip>
-              {emailAddress && <Typography sx={{ mt: 1, textAlign: 'center' }}>{content.copyEmailSuccess}</Typography>}
               <Tooltip title={content.jumpLinkedin} placement="top">
                 <ContactBox mt={2} onClick={() => window.open('https://www.linkedin.com/in/wang-jinghan-722144309/')}>
                   <img src='/static/images/logo/linkedin.svg' style={{ height: '40px' }} alt="linkedin icon"/>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, keyframes, styled, Typography } from '@mui/material';
 import { LanguageContext } from '../context/LanguageContext';
+import { MouseContext } from '../context/MouseContext';
 
 const colorChange = keyframes`
   0% { color: lightcoral; }
@@ -16,6 +17,7 @@ const Title = styled(Typography)({
   fontFamily: 'Hey August',
   fontWeight: 900,
   fontSize: '10vw',
+  cursor: 'default',
   '@media (max-width: 600px)': {
     fontSize: '12vw',
   },
@@ -24,12 +26,12 @@ const Title = styled(Typography)({
 const SubTitle = styled(Typography)({
   zIndex: 1,
   fontSize: '2vw',
+  cursor: 'default',
   fontWeight: 600,
   '@media (max-width: 600px)': {
     fontSize: '3vw',
   },
 });
-
 
 const AboutButton = styled(Button)({
   marginTop: '5vh',
@@ -44,6 +46,7 @@ const AboutButton = styled(Button)({
 const HomePage: React.FC = () => {
   const [greeting, setGreeting] = useState('');
   const { content } = useContext(LanguageContext);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -61,7 +64,14 @@ const HomePage: React.FC = () => {
       <Box sx={{ height: '100%', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
         <Title>My Portfolio</Title>
         <SubTitle>{greeting}{content.welcome}</SubTitle>
-        <AboutButton variant="contained" onClick={() => window.location.href = '#/about'}>{content.aboutme}</AboutButton>
+        <AboutButton
+          onMouseOver={hoverOn}
+          onMouseOut={hoverOff}
+          variant="contained"
+          onClick={() => window.location.href = '#/about'}
+        >
+          {content.aboutme}
+        </AboutButton>
       </Box>
     </Box>
   );
