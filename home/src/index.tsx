@@ -5,8 +5,15 @@ import { HashRouter } from 'react-router-dom';
 import 'nprogress/nprogress.css';
 import App from './App';
 import { SidebarProvider } from './context/SidebarContext';
-import MouseTracker from './component/MouseTracker';
 import React from 'react';
+
+const removePreloader = () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader != null) {
+    setTimeout(() => preloader.classList.add('preloaded'), 800);
+    setTimeout(() => preloader.parentNode?.removeChild(preloader), 2000);
+  }
+};
 
 ReactDOM.render(
   <HelmetProvider>
@@ -16,5 +23,6 @@ ReactDOM.render(
       </HashRouter>
     </SidebarProvider>
   </HelmetProvider>,
-  document.getElementById('root')
+  document.getElementById('root'),
+  removePreloader
 );
