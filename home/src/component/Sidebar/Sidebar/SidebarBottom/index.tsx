@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { Box, Divider, IconButton, Tooltip, useTheme } from '@mui/material';
 import { LanguageContext } from '../../../../context/LanguageContext';
 import { Article, LinkedIn, GitHub } from '@mui/icons-material';
+import { MouseContext } from '../../../../context/MouseContext';
 
 const SidebarBottom: React.FC = () => {
   const theme = useTheme();
   const { lang, content } = useContext(LanguageContext);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
 
   return (
     <>
@@ -15,6 +17,10 @@ const SidebarBottom: React.FC = () => {
           <IconButton
             aria-label="delete"
             color="inherit"
+
+            onMouseOver={hoverOn}
+            onMouseOut={hoverOff}
+
             href={
               lang === "en"
                 ? "https://enmmmmovo.cloudns.be/resume/index_en.html"
@@ -36,6 +42,8 @@ const SidebarBottom: React.FC = () => {
           <IconButton
             aria-label="delete"
             color="inherit"
+            onMouseOver={hoverOn}
+            onMouseOut={hoverOff}
             href="https://www.linkedin.com/in/wang-jinghan-722144309/"
             target="_blank"
             sx={{
@@ -53,6 +61,8 @@ const SidebarBottom: React.FC = () => {
           <IconButton
             aria-label="delete"
             color="inherit"
+            onMouseOver={hoverOn}
+            onMouseOut={hoverOff}
             href="https://github.com/enmmmmovo"
             target="_blank"
             sx={{

@@ -6,6 +6,7 @@ import { SidebarContext } from '../../../context/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
 import { LanguageContext } from '../../../context/LanguageContext';
+import { MouseContext } from '../../../context/MouseContext';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -31,6 +32,7 @@ function Header() {
   const theme = useTheme();
   const [open, setOpen] = useState<boolean>(false);
   const { lang, setLang, content } = useContext(LanguageContext);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
 
   useEffect(() => {
     if (window.outerWidth < 1280) setOpen(true);
@@ -62,6 +64,11 @@ function Header() {
           <Button
             variant={ lang === 'en' ? "contained" : "text" }
             color="primary"
+            onMouseOver={() => {
+              if (lang === 'en') return;
+              hoverOn();
+            }}
+            onMouseOut={hoverOff}
             onClick={() => setLang('en')}
           >
             EN
@@ -69,6 +76,11 @@ function Header() {
           <Button
             onClick={() => setLang('zh')}
             color="primary"
+            onMouseOver={() => {
+              if (lang === 'zh') return;
+              hoverOn();
+            }}
+            onMouseOut={hoverOff}
             variant={ lang === 'zh' ? "contained" : "text" }
           >
             中
@@ -83,7 +95,9 @@ function Header() {
         >
           <Tooltip arrow placeholder="bottom-start" title={content.showExpand ? content.showExpand : ''} open={open as boolean}>
             <IconButton color="primary" onClick={() => { setOpen(false); toggleSidebar(); } }>
-              {!sidebarToggle ? <MenuTwoToneIcon fontSize="small" /> : <CloseTwoToneIcon fontSize="small" />}
+              {!sidebarToggle
+                ? <MenuTwoToneIcon onMouseOver={hoverOn} onMouseOut={hoverOff} fontSize="small" />
+                : <CloseTwoToneIcon onMouseOver={hoverOn} onMouseOut={hoverOff} fontSize="small" />}
             </IconButton>
           </Tooltip>
         </Box>

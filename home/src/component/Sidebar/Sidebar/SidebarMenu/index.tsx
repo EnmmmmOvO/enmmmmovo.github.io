@@ -8,7 +8,7 @@ import {
   Button,
   ListItem
 } from '@mui/material';
-import { NavLink as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 import { SidebarContext } from '../../../../context/SidebarContext';
 import { LanguageContext } from '../../../../context/LanguageContext';
 
@@ -17,6 +17,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import { MouseContext } from '../../../../context/MouseContext';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -163,6 +164,8 @@ const SubMenuWrapper = styled(Box)(
 function SidebarMenu() {
   const { closeSidebar } = useContext(SidebarContext);
   const { content } = useContext(LanguageContext);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
+  const location = useLocation();
 
   return (
     <>
@@ -175,6 +178,11 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
+                  onMouseOver={() => {
+                    if (location.pathname === '/home') return;
+                    hoverOn();
+                  }}
+                  onMouseOut={hoverOff}
                   to="/home"
                   startIcon={<HomeIcon />}
                 >
@@ -186,6 +194,11 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
+                  onMouseOver={() => {
+                    if (location.pathname === '/about') return;
+                    hoverOn();
+                  }}
+                  onMouseOut={hoverOff}
                   to="/about"
                   startIcon={<PersonIcon />}
                 >
@@ -197,6 +210,11 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
+                  onMouseOver={() => {
+                    if (location.pathname === '/project') return;
+                    hoverOn();
+                  }}
+                  onMouseOut={hoverOff}
                   to="/project"
                   startIcon={<AssignmentIcon />}
                 >
@@ -209,29 +227,28 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
+                  onMouseOver={() => {
+                    if (location.pathname === '/portfolio') return;
+                    hoverOn();
+                  }}
+                  onMouseOut={hoverOff}
                   to="/portfolio"
                   startIcon={<HistoryEduIcon />}
                 >
                   {content.portfolios}
                 </Button>
               </ListItem>
-              {/*<ListItem component="div">*/}
-              {/*  <Button*/}
-              {/*    disableRipple*/}
-              {/*    component={RouterLink}*/}
-              {/*    onClick={closeSidebar}*/}
-              {/*    to="/friend"*/}
-              {/*    startIcon={<PeopleAltIcon />}*/}
-              {/*  >*/}
-              {/*    {content.friend}*/}
-              {/*  </Button>*/}
-              {/*</ListItem>*/}
 
               <ListItem component="div">
                 <Button
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
+                  onMouseOver={() => {
+                    if (location.pathname === '/contact') return;
+                    hoverOn();
+                  }}
+                  onMouseOut={hoverOff}
                   to="/contact"
                   startIcon={<AlternateEmailIcon />}
                 >

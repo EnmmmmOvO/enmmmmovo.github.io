@@ -25,6 +25,7 @@ import { ImageContext, WindowContext } from '../../context/WIndowContext';
 import { JsonContent, LanguageContext } from '../../context/LanguageContext';
 import PhotoView from './PhotoView';
 import { SERVER_URL } from '../../webConfig';
+import { MouseContext } from '../../context/MouseContext';
 
 interface DetailProps extends JsonContent {
   type: string;
@@ -88,6 +89,7 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
   const ref = useRef<HTMLDivElement>();
   const titleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
 
   useEffect(() => {
     if (expanded) {
@@ -209,23 +211,51 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
               {
                 detail.link &&
                 <Tooltip title={content.tipWebsite} placement="top">
-                  <Button size="small" onClick={() => handleWebsite(detail.link)}>{content.website}</Button>
+                  <Button
+                    size="small"
+                    onMouseOver={hoverOn}
+                    onMouseOut={hoverOff}
+                    onClick={() => handleWebsite(detail.link)}
+                  >
+                    {content.website}
+                  </Button>
                 </Tooltip>
               }
               {
                 detail.repo &&
                 <Tooltip title={content.tipSource} placement="top">
-                  <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>
+                  <Button
+                    size="small"
+                    href={detail.repo as string}
+                    target="_blank"
+                    onMouseOver={hoverOn}
+                    onMouseOut={hoverOff}
+                  >
+                    {content.source}
+                  </Button>
                 </Tooltip>
               }
               {
                 detail.paper &&
                 <Tooltip title={content.tipPaper} placement="top">
-                  <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>
+                  <Button
+                    size="small"
+                    href={SERVER_URL + detail.paper as string}
+                    onMouseOver={hoverOn}
+                    onMouseOut={hoverOff}
+                    target="_blank"
+                  >
+                    {content.paper}
+                  </Button>
                 </Tooltip>
               }
               <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                <Tooltip title={expanded ? content.showLess : content.showMore} placement="top">
+                <Tooltip
+                  title={expanded ? content.showLess : content.showMore}
+                  placement="top"
+                  onMouseOver={hoverOn}
+                  onMouseOut={hoverOff}
+                >
                   <ExpandMoreIcon />
                 </Tooltip>
               </ExpandMore>

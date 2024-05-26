@@ -41,6 +41,7 @@ const AboutButton = styled(Button)({
   '@media (max-width: 600px)': {
     fontSize: '1.5vw',
   },
+
 });
 
 const HomePage: React.FC = () => {

@@ -3,6 +3,7 @@ import { Box, Button, Grid, styled, TextField, Tooltip, Typography } from '@mui/
 import Copyright from '../component/Copyright';
 import { LanguageContext } from '../context/LanguageContext';
 import { SERVER_URL } from '../webConfig';
+import { MouseContext } from '../context/MouseContext';
 
 const ContactBox = styled(Box)({
   display: 'flex',
@@ -19,6 +20,7 @@ const ContactPage: React.FC = () => {
   const [email, setEmail] = useState<boolean>(false);
   const [emailAddress, setEmailAddress] = useState<string>(content.copyEmail as string);
   const [wechat, setWechat] = useState<string>(content.copyWechat as string);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
 
   const wechatSuccess = () => {
     navigator.clipboard.writeText('wjh20000218')
@@ -98,25 +100,25 @@ const ContactPage: React.FC = () => {
               <Typography sx={{ fontSize: 16, fontFamily: 'Arial', textAlign: 'center', fontWeight: 600  }}>
                 {content.ctmt}
               </Typography>
-              <Tooltip title={content.jumpGithub} placement="top">
+              <Tooltip title={content.jumpGithub} placement="top" onMouseOver={hoverOn} onMouseOut={hoverOff}>
                 <ContactBox mt={4} onClick={() => window.open('https://github.com/enmmmmovo', '_blank')}>
                   <img src='/static/images/logo/github.svg' style={{ height: '40px' }} alt="github icon"/>
                   <Typography sx={{color: "white", ml: 2}}>EnmmmmOvO</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={wechat} placement="top" onMouseLeave={() => setWechat(content.copyWechat as string)}>
+              <Tooltip title={wechat} placement="top" onMouseLeave={() => setWechat(content.copyWechat as string)} onMouseOver={hoverOn} onMouseOut={hoverOff}>
                 <ContactBox mt={2} onClick={wechatSuccess}>
                   <img src='/static/images/logo/wechat.svg' style={{ height: '40px' }} alt="wechat icon"/>
                   <Typography sx={{color: "white", ml: 2}}>wjh20000218</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={emailAddress} placement="top" onMouseLeave={() => setEmailAddress(content.copyEmail as string)}>
+              <Tooltip title={emailAddress} placement="top" onMouseLeave={() => setEmailAddress(content.copyEmail as string)} onMouseOver={hoverOn} onMouseOut={hoverOff}>
                 <ContactBox mt={2} onClick={emailSuccess}>
                   <img src='/static/images/logo/email.svg' style={{ height: '40px' }} alt="email icon"/>
                   <Typography sx={{color: "white", ml: 2}}>wangjinghan0218@gmail.com</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={content.jumpLinkedin} placement="top">
+              <Tooltip title={content.jumpLinkedin} placement="top" onMouseOver={hoverOn} onMouseOut={hoverOff}>
                 <ContactBox mt={2} onClick={() => window.open('https://www.linkedin.com/in/wang-jinghan-722144309/')}>
                   <img src='/static/images/logo/linkedin.svg' style={{ height: '40px' }} alt="linkedin icon"/>
                   <Typography sx={{color: "white", ml: 2}}>Jinghan Wang</Typography>
@@ -224,7 +226,13 @@ const ContactPage: React.FC = () => {
                   },
                 }}
               />
-              <Button variant="contained" sx={{ mt: 2, width: '100%' }} type="submit">{content.send}</Button>
+              <Button
+                onMouseOver={hoverOn}
+                onMouseOut={hoverOff}
+                variant="contained"
+                sx={{ mt: 2, width: '100%' }}
+                type="submit"
+              >{content.send}</Button>
               {email && <Typography sx={{ mt: 1, textAlign: 'center' }}>{content.messageSuccess}</Typography>}
             </form>
           </Grid>

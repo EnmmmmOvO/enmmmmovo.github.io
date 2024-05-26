@@ -15,6 +15,7 @@ import {
   Typography
 } from '@mui/material';
 import { SERVER_URL } from '../../webConfig';
+import { MouseContext } from '../../context/MouseContext';
 
 export interface PortfolioDetailProps extends JsonContent {
   logo: string;
@@ -31,6 +32,7 @@ export interface PortfolioDetailProps extends JsonContent {
 const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailProps) => {
   const { height } = useContext(WindowContext);
   const { content } = useContext(LanguageContext);
+  const { hoverOn, hoverOff } = useContext(MouseContext);
 
   return (
     <Box sx={{ p: height > 800 ? 2 : 1, boxSizing: 'border-box' }}>
@@ -68,19 +70,42 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
               {
                 detail.repo  &&
                 <Tooltip title={content.tipSource} placement="top">
-                  <Button size="small" href={detail.repo as string} target="_blank">{content.source}</Button>
+                  <Button
+                    size="small"
+                    onMouseOver={hoverOn}
+                    onMouseOut={hoverOff}
+                    href={detail.repo as string}
+                    target="_blank">
+                    {content.source}
+                  </Button>
                 </Tooltip>
               }
               {
                 detail.paper &&
                 <Tooltip title={content.tipPaper} placement="top">
-                  <Button size="small" href={SERVER_URL + detail.paper as string} target="_blank">{content.paper}</Button>
+                  <Button
+                    size="small"
+                    onMouseOver={hoverOn}
+                    onMouseOut={hoverOff}
+                    href={SERVER_URL + detail.paper as string}
+                    target="_blank"
+                  >
+                    {content.paper}
+                  </Button>
                 </Tooltip>
               }
               {
                 detail.video &&
                 <Tooltip title={content.tipVideo} placement="top">
-                  <Button size="small" href={detail.video as string} target="_blank">{content.video}</Button>
+                  <Button
+                    size="small"
+                    onMouseOver={hoverOn}
+                    onMouseOut={hoverOff}
+                    href={detail.video as string}
+                    target="_blank"
+                  >
+                    {content.video}
+                  </Button>
                 </Tooltip>
               }
             </CardActions>
