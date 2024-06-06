@@ -5,6 +5,7 @@ import type { PropsWithChildren, ReactElement } from "react"
 import { Provider } from "react-redux"
 import type { AppStore, RootState } from "../app/store"
 import { makeStore } from "../app/store"
+import React from 'react';
 
 /**
  * This type extends the default options for
@@ -44,6 +45,7 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, "queries"> {
 export const renderWithProviders = (
   ui: ReactElement,
   extendedRenderOptions: ExtendedRenderOptions = {},
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-module-boundary-types
 ) => {
   const {
     preloadedState = {},
@@ -52,7 +54,7 @@ export const renderWithProviders = (
     ...renderOptions
   } = extendedRenderOptions
 
-  const Wrapper = ({ children }: PropsWithChildren) => (
+  const Wrapper = ({ children }: PropsWithChildren) : React.ReactElement => (
     <Provider store={store}>{children}</Provider>
   )
 
