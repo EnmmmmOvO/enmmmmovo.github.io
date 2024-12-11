@@ -60,11 +60,11 @@ const NoticeDialog: React.FC<ChildrenProps> = ({ children }) => {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {content.jumpTitle}
+            {content.serverClose}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description" sx={{ mt: 1, mb: 1 }}>
-              {content.jumpContent}
+              {content.serverCloseContent}
             </DialogContentText>
             <label htmlFor="myCheckbox">
               <Checkbox id="myCheckbox" value={disabled} onChange={handleCheckbox} />

@@ -14,7 +14,6 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
-import { SERVER_URL } from '../../webConfig';
 import { MouseContext } from '../../context/MouseContext';
 
 export interface PortfolioDetailProps extends JsonContent {
@@ -87,7 +86,7 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
                     size="small"
                     onMouseOver={hoverOn}
                     onMouseOut={hoverOff}
-                    href={SERVER_URL + detail.paper as string}
+                    href={detail.paper as string}
                     target="_blank"
                   >
                     {content.paper}

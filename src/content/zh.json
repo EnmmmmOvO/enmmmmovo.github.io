@@ -17,6 +17,8 @@
   "source": "源代码",
   "jumpTitle": "服务器响应可能存在延迟",
   "jumpContent": "网站从服务器接收响应时可能存在轻微的延迟（> 200ms）。因此，如果点击按钮后没有立即反应，请耐心等待一会儿～",
+  "serverClose": "服务器已关闭",
+  "serverCloseContent": "服务器已关闭，可能无法与后端交互。抱歉给您带来不便。",
   "jumpButton": "我明白",
   "jumpDismiss": "不再显示",
   "wtgit": "想要联系我吗？",

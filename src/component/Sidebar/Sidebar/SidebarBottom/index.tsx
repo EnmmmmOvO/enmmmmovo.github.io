@@ -23,8 +23,8 @@ const SidebarBottom: React.FC = () => {
 
             href={
               lang === "en"
-                ? "https://enmmmmovo.cloudns.be/resume/index_en.html"
-                : "https://enmmmmovo.cloudns.be/resume/index.html"
+                ? "https://enmmmmovo.github.io/resume/index_en.html"
+                : "https://enmmmmovo.github.io/resume/index.html"
             }
             sx={{
               '&:hover': {

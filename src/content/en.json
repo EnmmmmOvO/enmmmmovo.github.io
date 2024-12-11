@@ -17,6 +17,8 @@
   "source": "Source code",
   "jumpTitle": "Potential Delay in Server Response",
   "jumpContent": "The website takes a slight delay (> 200ms) in receiving responses from the service. Consequently, if there is no immediate reaction upon clicking buttons, please be patient and wait for a while.",
+  "serverClose": "Server Closed",
+  "serverCloseContent": "The server is down and may not be able to interact with the backend. Sorry for the inconvenience.",
   "jumpButton": "I understand",
   "jumpDismiss": "Don't show this again",
   "wtgit": "Want to get in touch?",
@@ -478,7 +480,7 @@
       "logo": "astronomy.svg",
       "type": "Astronomy",
       "title": "Fantastic Celestial Objects",
-      "paper": "documents/APOD.pdf",
+      "paper": "https://drive.google.com/file/d/1LEx983DAfX-0Ibig3ud_1mhiGzPhTphu/view?usp=sharing",
       "description": "This is a popular science magazine geared towards readers with little or no knowledge of the cosmos. Its primary aim is to introduce various celestial bodies (stars, planets, satellites) that constitute the vast expanse of the universe, discussing their types, structures, and potential evolutionary processes. There may be instances of non-professional explanations or inaccuracies within the content, and corrections or clarifications are welcome.",
       "image": "galaxy.png"
     },
@@ -486,7 +488,7 @@
       "logo": "computer.svg",
       "type": "Computer Ethics",
       "title": "Balancing Ethics and Efficiency: Autonomous Vehicles and Utilitarianism",
-      "paper": "documents/utilitarianism_and_autonomous_vehicles.pdf",
+      "paper": "https://drive.google.com/file/d/1sz8pPYi16MHyVu3qyPcTMqc1bwt8VoDC/view?usp=sharing",
       "description": "This article explores the ethical considerations of applying Act and Rule Utilitarianism to the collision-avoidance protocols in autonomous vehicles, analyzing the impact of each approach on decision-making in critical scenarios, and evaluating their implications for societal norms and technological design in the context of autonomous driving.",
       "image": "utilitarianism.png"
     },
@@ -494,7 +496,7 @@
       "logo": "computer.svg",
       "type": "Computer Ethics",
       "title": "The Ethical Challenges of AI in Artistic Creation",
-      "paper": "documents/Drawing_AI.pdf",
+      "paper": "https://drive.google.com/file/d/1c_9yNOnXvGUIFWMUF-l9ZpXho8JbwIOf/view?usp=sharing",
       "description": "This article delves into the ethical implications and challenges of AI drawing technologies in the realm of art, focusing on how AI is reshaping the boundaries of artistic creation, copyright, and originality, as well as the appropriateness of AI technologies in art competitions.",
       "image": "drawingAI.png"
     },
@@ -511,7 +513,7 @@
       "logo": "java.svg",
       "type": "Concurrency (Java)",
       "title": "Implementing Concurrent Operation of a Data Set",
-      "paper": "documents/Java_Concurrency.pdf",
+      "paper": "https://drive.google.com/file/d/1FG5M2fx02VeZN2vp8X0dJmI4K_gtZ2tz/view?usp=sharing",
       "repo": "https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3151/23T2/ass1",
       "description": "This article mainly utilizes read-and-write locks as the main body to ensure that only one process is allowed to run if and when the data needs to be modified, and multiple processes can read the data if there are no writes. In addition, signalling is used to ensure the integrity of the data structure.",
       "image": "javaConcurrency.png"
@@ -520,7 +522,7 @@
       "logo": "astronomy.svg",
       "type": "Astronomy",
       "title": "James Webb Space Telescope",
-      "paper": "documents/PHYS1160_Report_2.pdf",
+      "paper": "https://drive.google.com/file/d/1x0GI6TcaCb_NVOUJGxf-iQ40oZGs887B/view?usp=sharing",
       "description": "This article focuses on the James Webb Space Telescope, the successor to the Hubble telescope, including its launch purpose, structure, orbit, and reasons for the launch. Finally, it pays more attention to the results obtained more than a year after the launch and its contribution to astronomy.",
       "image": "webb.webp"
     },
@@ -528,7 +530,7 @@
       "logo": "astronomy.svg",
       "type": "Astronomy",
       "title": "Short Report about Astronomy",
-      "paper": "documents/PHSY1160_Report_1.pdf",
+      "paper": "https://drive.google.com/file/d/1atjfM2VD6-NVtkhVwm6arXfcCw8CmQ4p/view?usp=sharing",
       "description": "The article primarily focuses on exploring the possibility of finding extraterrestrial life by examining the structural features of galaxies and searching for planets that could support carbon-based life forms.",
       "image": "astro.png"
     }
