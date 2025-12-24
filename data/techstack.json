@@ -1,0 +1,9 @@
+[
+  { "name": "React", "icon": "/img/tech/icon-react.svg" },
+  { "name": "PostgreSQL", "icon": "/img/tech/icon-postgresql.svg" },
+  { "name": "Pytorch", "icon": "/img/tech/icon-pytorch.svg" },
+  { "name": "FastAPI", "icon": "/img/tech/icon-fastapi.svg" },
+  { "name": "Flutter", "icon": "/img/tech/icon-flutter.svg" },
+  { "name": "Dotnet", "icon": "/img/tech/icon-dotnet.svg" },
+  { "name": "Hardhat", "icon": "/img/tech/icon-hardhat.svg" }
+]

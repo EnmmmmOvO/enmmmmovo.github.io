@@ -1,0 +1,173 @@
+import Link from "next/link";
+import Image from "next/image";
+
+import Logo from '@/components/headers/Logo';
+import AllRights from '@/components/common/AllRights';
+
+type Footer1Props = {
+  title: string;
+  links: { label: string; href: string }[];
+}
+
+type FooterSection = | Footer1Props | { groups: Footer1Props[]; };
+
+export default function Footer1() {
+  const footerNavData = [
+    {
+      title: "My Pages",
+      links: [
+        { label: "Home", href: "/" },
+        { label: "Projects", href: "/projects" },
+        { label: "Portfolios", href: "/portfolios" },
+        { label: "Contact", href: "/contact" },
+        { label: "Old Version", href: "https://enmmmmovo.github.io/" },
+      ],
+    } as Footer1Props,
+    {
+      title: "Links",
+      links: [
+        { label: "Github", href: "https://github.com/enmmmmovo" },
+        { label: "Email", href: "mailto:william.wang@willcode.io" },
+        { label: "Linkedin", href: "https://www.linkedin.com/in/wang-jinghan-722144309/" },
+        { label: "Resume", href: "/Jinghan_Wang_Resume.pdf" },
+      ],
+    }
+  ] as FooterSection[];
+
+  return (
+    <footer className="mxd-demo-footer">
+      {/* Footer Background Start */}
+      <div className="mxd-demo-footer__bg">
+        <Image
+          alt="Rayo Image"
+          width={1920}
+          height={580}
+          src="/img/demo/01-footer.webp"
+        />
+      </div>
+      {/* Footer Background End */}
+      {/* Footer Container Start */}
+      <div className="mxd-container grid-container">
+        {/* Footer Block - Content Block Start */}
+        <div className="mxd-block">
+          <div className="container-fluid p-0">
+            <div className="row g-0">
+              <div className="col-12 col-xl-6 mxd-demo-footer__item">
+                <nav className="mxd-demo-footer__nav">
+                  <div className="container-fluid p-0">
+                    <div className="row g-0">
+                      {footerNavData.map((section, index) => (
+                        <div
+                          key={index}
+                          className="col-12 col-md-4 mxd-grid-item mxd-footer-nav__item"
+                        >
+                          {/* Check if this section contains grouped blocks */}
+                          {"groups" in section ? (
+                            section.groups.map((group, gIndex) => (
+                              <div
+                                key={gIndex}
+                                className="mxd-footer-nav__block"
+                              >
+                                <div className="mxd-footer-nav__title anim-uni-in-up">
+                                  <p className="t-140 t-bright t-caption">
+                                    {group.title}
+                                  </p>
+                                </div>
+                                <div className="mxd-footer-nav__list">
+                                  <ul>
+                                    {group.links.map((link, lIndex) => (
+                                      <li key={lIndex}>
+                                        <Link
+                                          className="anim-uni-in-up"
+                                          href={link.href}
+                                          target="_blank"
+                                        >
+                                          {link.label}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="mxd-footer-nav__block">
+                              <div className="mxd-footer-nav__title anim-uni-in-up">
+                                <p className="t-140 t-bright t-caption">
+                                  {section.title}
+                                </p>
+                              </div>
+                              <div className="mxd-footer-nav__list">
+                                <ul>
+                                  {section.links.map((link, lIndex) => (
+                                    <li key={lIndex}>
+                                      <Link
+                                        className="anim-uni-in-up"
+                                        href={link.href}
+                                        target="_blank"
+                                      >
+                                        {link.label}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </nav>
+              </div>
+              <div className="col-12 col-xl-3 mxd-demo-footer__item mxd-grid-item" />
+              <div className="col-12 col-xl-3 mxd-demo-footer__item mxd-grid-item">
+                <div className="mxd-demo-footer__logo anim-uni-in-up">
+                  <a href="#" className="mxd-logo">
+                    {/* logo icon */}
+                    <Logo className="footer-icons"/>
+                    {/* logo text */}
+                    <span className="mxd-logo__text">
+                      WillCode
+                    </span>
+                  </a>
+                </div>
+                <div className="mxd-demo-footer__slogan anim-uni-in-up">
+                  <p className="t-small t-bright">
+                    ⚙️ Where Will(iam) meets Code —
+                    Exploring ideas through working software.
+                  </p>
+                </div>
+                <div className="mxd-demo-footer__btn anim-uni-in-up">
+                  <AllRights />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Footer Block - Content Block End */}
+        {/* Footer Block - Fullwidth Text Start */}
+        <div className="mxd-block">
+          <div className="mxd-demo-footer__mixdesign mxd-grid-item no-margin">
+            {/*<a*/}
+            {/*  className="anim-uni-in-up"*/}
+            {/*  href="https://themeforest.net/item/rayo-digital-agency-personal-portfolio-nextjs-template/60468451"*/}
+            {/*  target="_blank"*/}
+            {/*>*/}
+            {/*  <svg*/}
+            {/*    xmlns="http://www.w3.org/2000/svg"*/}
+            {/*    version="1.1"*/}
+            {/*    viewBox="0 0 400 74"*/}
+            {/*    fill="currentColor"*/}
+            {/*  >*/}
+            {/*    <path d="M283.7,33.4h10.1v40.6h-10.1v-40.6ZM303.9,64.2c-1.5-3.1-2.3-6.8-2.3-11,0-6.3,1.7-11.4,5.2-15.1,3.5-3.7,8.2-5.6,14.3-5.6s6.2.6,8.6,1.9c2.4,1.3,4.3,3.1,5.8,5.4h2.8v-6.5h10.4v10.1h-5.1v29.6c0,.3,0,.6,0,.9h-9.8c0-.4,0-.7,0-1.1v-5.8h-.3c-1.2,2.3-2.9,4-5.1,5.1-2.2,1.2-4.9,1.8-7.9,1.8s-7.1-.8-10-2.5c-2.8-1.7-5-4.1-6.6-7.2ZM311.7,53.3c0,3.8,1,6.7,2.9,8.8,2,2.1,4.7,3.1,8.3,3.1s5.8-.9,7.7-2.7c1.9-1.8,2.8-4.3,2.8-7.4v-3.7c0-3.1-1-5.5-2.9-7.3-1.9-1.8-4.5-2.7-7.7-2.7s-6.3,1-8.3,3.1c-2,2.1-2.9,5-2.9,8.8ZM358.7,74h10.1v-22.6c0-3.2.9-5.6,2.6-7.3,1.7-1.7,4.2-2.5,7.5-2.5s5.9.8,7.5,2.5c1.7,1.7,2.5,4.1,2.5,7.3v22.6h10.1v-24.5c0-5.1-1.5-9.2-4.6-12.3-3-3.1-7.3-4.6-12.9-4.6s-6.4.6-8.8,1.9c-2.4,1.3-4.4,3-5.9,5.3h-2.8v-6.5h-10.4v10.1h5v30.5ZM81.5,74h10.1v-40.6h-10.1v40.6ZM288.7,28.9c1.6,0,2.9-.6,4-1.7,1.1-1.1,1.7-2.4,1.7-4s-.6-2.9-1.7-4c-1.1-1.1-2.4-1.7-4-1.7s-2.9.6-4,1.7c-1.1,1.1-1.7,2.4-1.7,4s.6,2.9,1.7,4c1.1,1.1,2.4,1.7,4,1.7ZM86.5,28.9c1.6,0,2.9-.6,4-1.7,1.1-1.1,1.7-2.4,1.7-4s-.6-2.9-1.7-4c-1.1-1.1-2.4-1.7-4-1.7s-2.9.6-4,1.7-1.7,2.4-1.7,4,.6,2.9,1.7,4c1.1,1.1,2.4,1.7,4,1.7ZM107.7,74l10.6-13.9,10.5,13.9h11.3l-15.9-20.8,15.1-19.8h-11.1l-9.8,12.8-9.8-12.8h-11.2l15.1,19.8-15.9,20.8h11.2ZM259.4,67c-3.1,0-5.4-.5-7-1.5-1.6-1-2.6-2.6-2.9-4.7h-9.8c.3,4.4,2.1,7.9,5.5,10.3,1.8,1.3,4,2.3,6.5,2.9h14.7c2.3-.6,4.2-1.5,5.8-2.6,3-2.3,4.5-5.5,4.5-9.6s-1-5.8-2.9-7.7c-1.9-1.9-5-3.3-9.1-4.1l-9.1-1.8c-1.7-.3-2.9-.8-3.7-1.4-.8-.6-1.2-1.5-1.2-2.5s.6-2.5,1.8-3.2c1.2-.7,3-1.1,5.3-1.1s4.5.5,5.9,1.4c1.4.9,2.3,2.4,2.8,4.4h9.8c-.4-4.2-2.1-7.5-5.2-9.9-3.1-2.3-7.4-3.5-12.8-3.5s-9.4,1.1-12.5,3.4c-3,2.3-4.5,5.3-4.5,9.2,0,6,3.9,9.7,11.8,11.2l9,1.7c1.9.4,3.2.9,4,1.6.8.7,1.2,1.6,1.2,2.9,0,3-2.6,4.5-7.8,4.5ZM5,74h10.1v-22.8c0-3.2.8-5.6,2.3-7.2,1.5-1.6,3.8-2.4,6.8-2.4,6.2,0,9.3,3.2,9.3,9.6v22.8h10.1v-22.8c0-6.4,3-9.6,9.1-9.6s9.2,3.2,9.2,9.6v22.8h10.1v-24.6c0-5.1-1.5-9.2-4.5-12.2-3-3-7.1-4.5-12.3-4.5s-10.9,2.4-13.9,7.1h-.2c-1.4-2.3-3.3-4.1-5.6-5.3-2.3-1.2-5.1-1.8-8.3-1.8s-6.2.6-8.4,1.9c-2.3,1.3-4.1,3-5.5,5.3h-3v-6.5H0v10.1h5v30.5ZM144,64.8c-1.5-3.2-2.3-6.9-2.3-11.1s.7-8,2.2-11.2c1.5-3.2,3.6-5.6,6.4-7.3,2.8-1.7,6.1-2.6,10-2.6s5.7.6,7.9,1.7c2.2,1.2,3.9,2.8,5.1,5h.3v-22.1h10.1v46.8h5v10.1h-10.3v-6.5h-2.8c-1.4,2.3-3.4,4.2-5.8,5.4-.8.4-1.7.8-2.7,1.1h-12.3c-1.5-.4-3-1-4.2-1.8-2.9-1.7-5.1-4.2-6.6-7.4ZM151.8,53.7c0,3.9.9,6.9,2.8,9.1,1.9,2.2,4.6,3.3,8.3,3.3s5.8-.9,7.8-2.7,2.9-4.3,2.9-7.4v-4.5c0-3.1-1-5.6-2.9-7.4-1.9-1.8-4.5-2.7-7.8-2.7s-6.4,1.1-8.3,3.3c-1.9,2.2-2.8,5.2-2.8,9.1ZM196.1,64.8c-1.7-3.2-2.6-6.9-2.6-11.3s.9-8.1,2.6-11.2c1.7-3.1,4.2-5.6,7.3-7.2,3.2-1.7,6.9-2.5,11.1-2.5s7.7.8,10.7,2.4c3,1.6,5.3,3.9,6.9,6.9,1.6,3,2.4,6.6,2.4,10.7v3.5h-31.4c.4,3.4,1.6,6.1,3.6,7.9,2,1.8,4.7,2.7,8,2.7s4.5-.5,6.1-1.4c1.6-.9,2.7-2.3,3.3-4.2h10.2c-.9,4.3-3.1,7.6-6.5,10.1-1.8,1.3-3.9,2.2-6.2,2.8h-13.4c-1.7-.4-3.2-1-4.6-1.8-3.2-1.7-5.7-4.2-7.4-7.4ZM203.4,49.2h21.4c-.4-2.8-1.4-4.9-3.2-6.4-1.8-1.5-4.2-2.2-7.1-2.2s-5.3.7-7.2,2.2c-1.9,1.5-3.2,3.6-3.8,6.4Z" />*/}
+            {/*  </svg>*/}
+            {/*</a>*/}
+          </div>
+        </div>
+        {/* Footer Block - Fullwidth Text End */}
+      </div>
+      {/* Footer Container End */}
+    </footer>
+  );
+}

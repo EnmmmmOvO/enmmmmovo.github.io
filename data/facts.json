@@ -1,0 +1,40 @@
+[
+  {
+    "number": 5,
+    "suffix": "+",
+    "description": "Years of experience\nin software\nengineering and\nsystem development",
+    "image": "/img/illustrations/800x800_card-image-01.png",
+
+    "imageWidth": 800,
+    "imageHeight": 800,
+    "cardClass": "mxd-stats-cards__inner align-end bg-accent radius-m padding-4",
+    "counterId": "stats-counter-1",
+    "numberClass": "mxd-counter__number mxd-stats-number opposite",
+    "descrClass": "mxd-counter__descr t-140 t-bright opposite",
+    "imageClass": "mxd-stats-cards__image mxd-stats-cards-image-1",
+    "colClass": "col-12 col-xl-5 mxd-stats-cards__item mxd-grid-item anim-uni-scale-in-right"
+  },
+  {
+    "number": 10,
+    "suffix": "+",
+    "description": "Personal and academic projects completed",
+    "image": "/img/illustrations/800x800_card-image-02.webp",
+    "imageWidth": 800,
+    "imageHeight": 800,
+    "avatars": [
+      { "svg": true }
+    ],
+    "button": {
+      "text": "Project",
+      "href": "/projects",
+      "iconClass": "ph-bold ph-arrow-down-right",
+      "btnClass": "btn btn-anim btn-default btn-outline slide-right-down"
+    },
+    "cardClass": "mxd-stats-cards__inner align-end bg-base-tint radius-m padding-4",
+    "counterId": "stats-counter-2",
+    "numberClass": "mxd-counter__number mxd-stats-number",
+    "descrClass": "mxd-counter__descr t-140 t-bright",
+    "imageClass": "mxd-stats-cards__image mxd-stats-cards-image-2",
+    "colClass": "col-12 col-xl-7 mxd-stats-cards__item mxd-grid-item anim-uni-scale-in-left"
+  }
+]

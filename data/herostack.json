@@ -1,0 +1,10 @@
+[
+  { "name": "Rust", "icon": "/img/tech/icon-rust.svg" },
+  { "name": "TypeScript", "icon": "/img/tech/icon-typescript.svg" },
+  { "name": "Python", "icon": "/img/tech/icon-python.svg" },
+  { "name": "React", "icon": "/img/tech/icon-react.svg" },
+  { "name": "PostgreSQL", "icon": "/img/tech/icon-postgresql.svg" },
+  { "name": "Pytorch", "icon": "/img/tech/icon-pytorch.svg" },
+  { "name": "Dotnet", "icon": "/img/tech/icon-dotnet.svg" },
+  { "name": "Hardhat", "icon": "/img/tech/icon-hardhat.svg" }
+]

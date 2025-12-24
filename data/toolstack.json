@@ -1,0 +1,11 @@
+[
+  { "name": "Word", "icon": "/img/tech/icon-word.svg" },
+  { "name": "Excel", "icon": "/img/tech/icon-excel.svg" },
+  { "name": "PowerPoint", "icon": "/img/tech/icon-ppt.svg" },
+  { "name": "Notion", "icon": "/img/tech/icon-notion.svg" },
+  { "name": "Figma", "icon": "/img/tech/icon-figma.svg" },
+  { "name": "Latex", "icon": "/img/tech/icon-latex.svg" },
+  { "name": "Markdown", "icon": "/img/tech/icon-markdown.svg" },
+  { "name": "PhotoShop", "icon": "/img/tech/icon-photoshop.svg" },
+  { "name": "Premiere Pro", "icon": "/img/tech/icon-premiere.svg" }
+]

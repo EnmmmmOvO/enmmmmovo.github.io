@@ -1,0 +1,14 @@
+[
+  { "title": "Home", "href": "/" },
+  { "title": "Projects", "href": "/projects" },
+  { "title": "Portfolios", "href": "/portfolios" },
+  { "title": "Contact", "href": "/contact" },
+  {
+    "title": "Links",
+    "submenu": [
+      { "label": "Github", "href": "https://github.com/enmmmmovo" },
+      { "label": "Linkedin", "href": "https://www.linkedin.com/in/wang-jinghan-722144309/" },
+      { "label": "Resume", "href": "/Jinghan_Wang_Resume.pdf" }
+    ]
+  }
+]

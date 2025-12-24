@@ -1,0 +1,15 @@
+[
+  {
+    "label": "Home",
+    "href": "/home-main"
+  },
+  {
+    "label": "Projects",
+    "href": "/works-simple",
+    "counter": 10
+  },
+  {
+    "label": "Contact",
+    "href": "/contact"
+  }
+]

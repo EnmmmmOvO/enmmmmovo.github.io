@@ -1,0 +1,34 @@
+[
+  {
+    "role": "Full-Stack Engineer",
+    "agency": "Digital Capital Group",
+    "agencyUrl": "https://www.dcglobal.com.au",
+    "desc": "Developed and maintained multiple internal and external web applications, including company landing pages, event-focused websites, and supporting backend services.\n\nDesigned and implemented backend APIs and database architectures to support diverse business requirements, focusing on data integrity, system stability, and maintainability.\n\nBuilt and integrated blockchain-based web applications involving digital asset payment workflows and smart contract interactions.\n\nTook ownership of production environments, managing multiple servers, deployments, monitoring, and routine maintenance to ensure high availability and operational reliability.\n\nInvestigated and resolved urgent production issues and system bugs through structured troubleshooting and code-level debugging.\n\nCollaborated with cross-functional teams and external technical partners to diagnose issues and improve existing systems, contributing to long-term platform stability.",
+    "year": "2024 - Present",
+    "logo": "/img/works/icon-dcg.svg"
+  },
+  {
+    "role": "Robotics Department (Internship)",
+    "agency": "Baosight Software (Anhui) Co., Ltd.",
+    "agencyUrl": "https://www.baosight.com/en/",
+    "desc": "Worked within the robotics department on robot programming and simulation tasks, using ABB RobotStudio to model and optimise complex workstation operations.\n\nAssisted in developing and validating simulation demonstrations, including path planning, motion sequencing, and collision detection, ensuring alignment between theoretical design and practical implementation.",
+    "year": "2023 – 2024",
+    "logo": "/img/works/icon-baosight.svg"
+  },
+  {
+    "role": "Smart Application Department (Internship)",
+    "agency": "Phima Intelligence Technology Co., Ltd.",
+    "agencyUrl": "https://www.baosight.com/en/",
+    "desc": "Reviewed source code and technical documentation to understand the functional architecture and execution flow of a Spring Boot–based ERP system.\n\nSupported system testing and bug resolution by participating in issue reproduction, code-level debugging, and verification, contributing to improved system stability and reliability.",
+    "year": "2021 – 2022",
+    "logo": "/img/works/icon-baosight.svg"
+  },
+  {
+    "role": "Internship Product Specialist",
+    "agency": "Anhui Cloud Rail Information Technology Co., Ltd.",
+    "agencyUrl": "http://www.ahyungui.com",
+    "desc": "Assisted in the deployment of a factory dashboard system by contributing to test planning for critical modules, reporting issues, and supporting bug localisation efforts.\n\nSupported improvements to user data management workflows by handling data entry, validation, and integrity checks to ensure accurate and reliable system data.",
+    "year": "2021",
+    "logo": "/img/works/icon-cloudrail.png"
+  }
+]
