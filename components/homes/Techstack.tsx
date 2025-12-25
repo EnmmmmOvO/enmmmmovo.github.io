@@ -8,7 +8,7 @@ export default function Techstack({ techStack, direction, topic }: {
   topic?: string
 }) {
   return (
-    <div className="mxd-section padding-grid-pre-pinned">
+    <div className="mxd-section padding-grid-pre-pinned loading__fade">
       <div className="mxd-container fullwidth-container">
         {/* Block - Tech Stack Marquee One Line Start */}
         <div className="mxd-block">

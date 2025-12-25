@@ -1,11 +1,10 @@
 import PortfolioMasonry from "@/components/projects/PortfolioMasonry";
 import { Metadata } from "next";
+import { MetaTitle } from '@/data/metadata';
 
 export const metadata: Metadata = {
-  title:
-    "Work Masonry || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
-  description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: "Project List" + MetaTitle,
+  description: "Technical portfolio of Jinghan Wang, focusing on applied machine learning, NLP systems, end-to-end encryption, and production-grade data platforms."
 };
 
 export default function WorksMasonryPage() {

@@ -24,7 +24,7 @@ export default function FeaturedProjects() {
                 <AnimatedButton
                   text="View More"
                   className="btn btn-anim btn-default btn-outline slide-right-up"
-                  href={`/about-us`}
+                  href={`/projects`}
                 >
                   <i className="ph-bold ph-arrow-up-right" />
                 </AnimatedButton>
@@ -37,7 +37,7 @@ export default function FeaturedProjects() {
                 <div className="mxd-services-stack__controls">
                   <Link
                     className="btn btn-round btn-round-large btn-additional slide-right-up anim-no-delay"
-                    href={`/services`}
+                    href="/projects/seek"
                   >
                     <i className="ph ph-arrow-up-right" />
                   </Link>
@@ -87,7 +87,7 @@ export default function FeaturedProjects() {
                 <div className="mxd-services-stack__controls">
                   <Link
                     className="btn btn-round btn-round-large btn-opposite slide-right-up anim-no-delay"
-                    href={`/services`}
+                    href="/projects/signal"
                   >
                     <i className="ph ph-arrow-up-right" />
                   </Link>
@@ -140,7 +140,7 @@ export default function FeaturedProjects() {
                 <div className="mxd-services-stack__controls">
                   <Link
                     className="btn btn-round btn-round-large btn-base slide-right-up anim-no-delay"
-                    href={`/services`}
+                    href="#"
                   >
                     <i className="ph ph-arrow-up-right" />
                   </Link>

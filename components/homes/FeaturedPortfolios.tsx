@@ -27,7 +27,7 @@ export default function FeaturedPortfolios() {
                     <AnimatedButton
                       text="View More"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
-                      href={`/portfolio`}
+                      href={`/portfolios`}
                     >
                       <i className="ph-bold ph-arrow-up-right" />
                     </AnimatedButton>
@@ -50,7 +50,7 @@ export default function FeaturedPortfolios() {
                   >
                     <Link
                       className="mxd-blog-preview__media"
-                      href={`/blog-article`}
+                      href={item.url}
                     >
                       <BackgroundParallax
                         className={`mxd-blog-preview__image parallax-img-small`}

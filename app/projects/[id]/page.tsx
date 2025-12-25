@@ -8,14 +8,24 @@ import { type ProjectProps } from '@/types/project';
 import ImageGalley from '@/components/projects/ImageGalley';
 import ParallaxDivider from '@/components/projects/ParallaxDivider';
 import { MetaTitle } from '@/data/metadata';
-import ScrollToTop from '@/components/projects/ScrollToTop';
 
-export const metadata: Metadata = {
-  title:
-    "Project Details" + MetaTitle,
-  description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
-};
+export async function generateMetadata({ params } : {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+
+  try {
+    const mod = await import(`@/data/projects/${id}`);
+    const project: ProjectProps = mod.default;
+
+    return {
+      title: project.detail.name + MetaTitle,
+      description: "Technical portfolio of Jinghan Wang, focusing on applied machine learning, NLP systems, end-to-end encryption, and production-grade data platforms."
+    };
+  } catch {
+    return { title: "Project Not Found" + MetaTitle };
+  }
+}
 
 export default async function ProjectDetailsPage({ params } : {
   params: Promise<{ id: string }>;
@@ -28,7 +38,6 @@ export default async function ProjectDetailsPage({ params } : {
 
     return (
       <>
-        <ScrollToTop />
         <main
           id="mxd-page-content"
           className="mxd-page-content inner-page-content"
