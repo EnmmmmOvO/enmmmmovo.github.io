@@ -1,39 +1,63 @@
-import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
-
-import Challages from "@/components/portfolios/Challages";
-import DetailsHero from "@/components/portfolios/DetailsHero";
-import Feedback from "@/components/portfolios/Feedback";
-import NextPrevNavigation from "@/components/portfolios/NextPrevNavigation";
-import ParallaxDivider2 from "@/components/portfolios/ParallaxDivider2";
-import Solutions from "@/components/portfolios/Solutions";
+import DetailsHero from "@/components/projects/DetailsHero";
+import NextPrevNavigation from "@/components/projects/NextPrevNavigation";
+import ParallaxDivider2 from "@/components/projects/ParallaxDivider2";
+import Content from "@/components/projects/Content";
 import { Metadata } from "next";
+import { notFound } from 'next/dist/client/components/not-found';
+import { type ProjectProps } from '@/types/project';
+import ImageGalley from '@/components/projects/ImageGalley';
+import ParallaxDivider from '@/components/projects/ParallaxDivider';
+import { MetaTitle } from '@/data/metadata';
+import ScrollToTop from '@/components/projects/ScrollToTop';
+
 export const metadata: Metadata = {
   title:
-    "Project Details || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+    "Project Details" + MetaTitle,
   description:
     "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
 };
-export default function ProjectDetailsPage() {
-  return (
-    <>
-      <main
-        id="mxd-page-content"
-        className="mxd-page-content inner-page-content"
-      >
-        <DetailsHero />
-        <ParallaxDivider2 />
-        <div className="mxd-section mxd-project overflow-hidden">
-          <div className="mxd-container grid-container">
-            <Challages />
-            <Solutions />
-            <Feedback />
-            <NextPrevNavigation />
+
+export default async function ProjectDetailsPage({ params } : {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  try {
+    const mod = await import(`@/data/projects/${id}`);
+    const project : ProjectProps = mod.default
+
+    return (
+      <>
+        <ScrollToTop />
+        <main
+          id="mxd-page-content"
+          className="mxd-page-content inner-page-content"
+        >
+          <DetailsHero detail={project.detail} links={project.links} />
+          <ParallaxDivider2 file={project.img1} />
+          <div className="mxd-section mxd-project overflow-hidden">
+            <div className="mxd-container grid-container">
+              {
+                project.content.map((item, index) => {
+                  if (item.type === 'content') {
+                    return <Content key={index} detail={item} />
+                  } else if (item.type === 'image-gallery') {
+                    return <ImageGalley key={index} detail={item} />
+                  } else if (item.type === 'image') {
+                    return <ParallaxDivider key={index} file={item.src} />
+                  } else {
+                    return <></>;
+                  }
+                })
+              }
+              <NextPrevNavigation related={project.related} />
+            </div>
           </div>
-        </div>
-        <Cta />
-      </main>
-      <Footer2 />
-    </>
-  );
+        </main>
+      </>
+    );
+  } catch {
+    notFound();
+  }
 }
+

@@ -13,6 +13,7 @@ type UkiyoBgProps<T extends HtmlTag = "div"> = {
   willChange?: boolean; // default true
   wrapperClass?: string; // optional ukiyo wrapper class
   children?: React.ReactNode;
+  style?: React.CSSProperties;
 } & Omit<React.ComponentPropsWithoutRef<T>, "as" | "className">;
 
 const BackgroundParallax = <T extends HtmlTag = "div">({
@@ -23,6 +24,7 @@ const BackgroundParallax = <T extends HtmlTag = "div">({
   willChange = true,
   wrapperClass,
   children,
+  style
 }: UkiyoBgProps<T>) => {
   const elRef = useRef<HTMLElement | null>(null);
   const Tag = (as ?? "div") as ElementType;
@@ -48,7 +50,7 @@ const BackgroundParallax = <T extends HtmlTag = "div">({
   }, [scale, speed, willChange, wrapperClass]);
 
   return (
-    <Tag ref={elRef} className={className}>
+    <Tag ref={elRef} className={className} style={style}>
       {children}
     </Tag>
   );
