@@ -1,18 +1,17 @@
 import BackgroundParallax from "@/components/animation/BackgroundParallax";
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
-import Cta from "@/components/common/Cta";
-import ContactForm from "@/components/other-pages/contact/ContactForm";
-import Locations from "@/components/other-pages/contact/Locations";
-import PageTitle from "@/components/other-pages/contact/PageTitle";
-import Socials from "@/components/other-pages/contact/Socials";
+import ContactForm from "@/components/contact/ContactForm";
+import PageTitle from "@/components/contact/PageTitle";
+import Socials from "@/components/contact/Socials";
 import { Metadata } from "next";
-import Footer1 from '@/components/footers/Footer1';
+
 export const metadata: Metadata = {
   title:
     "Contact || Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
   description:
     "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
 };
+
 export default function ContactPage() {
   return (
     <>
@@ -72,7 +71,6 @@ export default function ContactPage() {
         </div>
         <Socials />
       </main>
-      <Footer1 />
     </>
   );
 }
