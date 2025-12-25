@@ -1,6 +1,6 @@
 import { type ProjectProps } from '@/types/project';
 
-const seek : ProjectProps = {
+const data : ProjectProps = {
   detail: {
     name: "E2E Platform",
     desc: "Rather than building a full messaging product, this project focuses on faithfully reproducing the cryptographic workflow of the Signal Protocol, including asynchronous key exchange, per-message key evolution, and forward secrecy guarantees.",
@@ -120,8 +120,9 @@ const seek : ProjectProps = {
     { href: "https://www.youtube.com/watch?v=o6H-fr7C9h4", text: "Presentation" }
   ],
   related: {
-    prev: { href: "/projects/seek", title: "NLP × SEEK" }
+    prev: { href: "/projects/seek", title: "NLP × SEEK" },
+    next: { href: "/projects/data_clean", title: "Data Cleaning Platform" }
   }
 };
 
-export default seek;
+export default data;
