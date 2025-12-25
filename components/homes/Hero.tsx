@@ -1,6 +1,4 @@
 import TypedText from "@/components/common/TypedText";
-import AnimateRotation from '@/components/animation/AnimateRotation';
-import Image from 'next/image';
 
 export default function Hero() {
   return (

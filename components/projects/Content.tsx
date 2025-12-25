@@ -1,6 +1,4 @@
 import RevealText from "../animation/RevealText";
-import BackgroundParallax from "../animation/BackgroundParallax";
-import ReactMarkdown from 'react-markdown';
 import Markdown from '@/components/projects/Markdown';
 import { ContentProps } from '@/types/project';
 

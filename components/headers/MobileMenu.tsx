@@ -127,7 +127,7 @@ export default function MobileMenu() {
                 className="mxd-menu__caption fade-in-elm"
                 style={{ transitionDelay: "0.4s" }}
               >
-                🦄 Welcome to the whimsical world of William's portfolio!
+                🦄 Welcome to the whimsical world of William&#39;s portfolio!
               </p>
               <div className="main-menu">
                 <nav className="main-menu__content">

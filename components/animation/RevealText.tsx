@@ -37,6 +37,9 @@ export default function RevealText<T extends HtmlTag = "span">({
   const splitRef = useRef<SplitType | null>(null);
 
   useEffect(() => {
+    const el = elRef.current;
+    if (!el) return;
+
     const createAnimation = () => {
       if (!elRef.current) return;
 
@@ -82,7 +85,7 @@ export default function RevealText<T extends HtmlTag = "span">({
 
       // Clean up ScrollTrigger instances for this element
       ScrollTrigger.getAll()
-        .filter((t) => t.vars.trigger === elRef.current)
+        .filter((t) => t.vars.trigger === el)
         .forEach((t) => t.kill());
 
       // No global refresh listener to remove
