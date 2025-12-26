@@ -1,9 +1,5 @@
 import { createContext } from 'react';
-
-export interface WindowContextProps {
-  width: number;
-  height: number;
-}
+import type { WindowContextProps } from '../type/types.ts';
 
 export const WindowContext = createContext<WindowContextProps>({
   width: 0,

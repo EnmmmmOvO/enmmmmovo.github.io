@@ -1,26 +1,20 @@
 import { useRoutes } from 'react-router-dom';
-import router, { Loader } from './router';
-import './App.css';
-
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { LanguageContext } from './context/LanguageContext';
+import router from './router';
 
 import { CssBaseline } from '@mui/material';
 import ThemeProvider from './theme/ThemeProvider';
-import React, { useEffect, useState } from 'react';
-import { WindowContext, WindowContextProps } from './context/WIndowContext';
-import { MouseProvider } from './context/MouseContext';
-
-const NoticeDialog = Loader(React.lazy(() => import('./component/NoticeDialog')));
+import { WindowContext } from './context/WIndowContext';
+import { useEffect, useState } from 'react';
+import { MouseProvider } from './context/MouseProvider.tsx';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import type { WindowContextProps } from './type/types.ts';
 
 function App() {
-  const [lang, setLang] = useState<string>('en');
   const [windowSize, setWindowSize] = useState<WindowContextProps>({
     width: 0,
     height: 0
   });
-  const [content, setContent] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,26 +28,16 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    import(`./content/${lang}.json`)
-      .then(data => setContent(data.default))
-      .catch(_error => setLang('en'));
-  }, [lang]);
-
   return (
     <ThemeProvider>
-      <LanguageContext.Provider value={{ lang, content, setLang }}>
-        <WindowContext.Provider value={ windowSize }>
-          <MouseProvider>
-            <NoticeDialog>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <CssBaseline />
-                {useRoutes(router)}
-              </LocalizationProvider>
-            </NoticeDialog>
-          </MouseProvider>
-        </WindowContext.Provider>
-      </LanguageContext.Provider>
+      <WindowContext.Provider value={ windowSize }>
+        <MouseProvider>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <CssBaseline />
+            {useRoutes(router)}
+          </LocalizationProvider>
+        </MouseProvider>
+      </WindowContext.Provider>
     </ThemeProvider>
   );
 }

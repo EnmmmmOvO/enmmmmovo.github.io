@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Box, Divider, IconButton, Tooltip, useTheme } from '@mui/material';
-import { LanguageContext } from '../../../../context/LanguageContext';
 import { Article, LinkedIn, GitHub } from '@mui/icons-material';
-import { MouseContext } from '../../../../context/MouseContext';
+import MouseContext from '../../../../context/MouseContext.tsx';
+import { useTranslation } from 'react-i18next';
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL_EN, RESUME_URL_ZH } from '../../../../data/metadata.ts';
 
 const SidebarBottom: React.FC = () => {
   const theme = useTheme();
-  const { lang, content } = useContext(LanguageContext);
+  const { t, i18n } = useTranslation();
   const { hoverOn, hoverOff } = useContext(MouseContext);
 
   return (
     <>
       <Divider sx={{ background: theme.colors.alpha.trueWhite[10] }} />
       <Box sx={{ p: 2, pb: 0, width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <Tooltip title={content.jumpResume ? content.jumpResume : ''} placeholder="top-start">
+        <Tooltip title={t("jumpResume")}>
           <IconButton
             aria-label="delete"
             color="inherit"
@@ -21,11 +22,7 @@ const SidebarBottom: React.FC = () => {
             onMouseOver={hoverOn}
             onMouseOut={hoverOff}
 
-            href={
-              lang === "en"
-                ? "https://enmmmmovo.github.io/resume/index_en.html"
-                : "https://enmmmmovo.github.io/resume/index.html"
-            }
+            href={i18n.language === 'en' ? RESUME_URL_EN : RESUME_URL_ZH}
             sx={{
               '&:hover': {
                 transform: 'rotate(360deg)',
@@ -38,13 +35,13 @@ const SidebarBottom: React.FC = () => {
             <Article />
           </IconButton>
         </Tooltip>
-        <Tooltip title={content.jumpLinkedin ? content.jumpLinkedin : ''} placeholder="top-start">
+        <Tooltip title={t("jumpLinkedin")}>
           <IconButton
             aria-label="delete"
             color="inherit"
             onMouseOver={hoverOn}
             onMouseOut={hoverOff}
-            href="https://www.linkedin.com/in/wang-jinghan-722144309/"
+            href={LINKEDIN_URL}
             target="_blank"
             sx={{
               '&:hover': {
@@ -57,13 +54,13 @@ const SidebarBottom: React.FC = () => {
             <LinkedIn />
           </IconButton>
         </Tooltip>
-        <Tooltip title={content.jumpGithub ? content.jumpGithub : ''} placeholder="top-start">
+        <Tooltip title={t("jumpGithub")}>
           <IconButton
             aria-label="delete"
             color="inherit"
             onMouseOver={hoverOn}
             onMouseOut={hoverOff}
-            href="https://github.com/enmmmmovo"
+            href={GITHUB_URL}
             target="_blank"
             sx={{
               '&:hover': {

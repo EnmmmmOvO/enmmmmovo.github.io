@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React, { type FC, useState } from 'react';
 import { ThemeProvider } from '@mui/material';
 import { themeCreator } from './base';
-import { StylesProvider } from '@mui/styles';
+import { CacheProvider, ThemeContext } from '@emotion/react';
+import { muiCache } from './emotionCache.ts';
 
-export const ThemeContext = React.createContext(
-  (themeName: string): void => {}
-);
-
-const ThemeProviderWrapper: React.FC = (props) => {
+const ThemeProviderWrapper: FC<React.PropsWithChildren> = ({ children }) => {
   const curThemeName = localStorage.getItem('appTheme') || 'PureLightTheme';
   const [themeName, _setThemeName] = useState(curThemeName);
   const theme = themeCreator(themeName);
-  const setThemeName = (themeName: string): void => {
-    localStorage.setItem('appTheme', themeName);
-    _setThemeName(themeName);
+
+  const setThemeName = (name: string): void => {
+    localStorage.setItem('appTheme', name);
+    _setThemeName(name);
   };
 
   return (
-    <StylesProvider injectFirst>
+    <CacheProvider value={muiCache}>
       <ThemeContext.Provider value={setThemeName}>
-        <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          {children}
+        </ThemeProvider>
       </ThemeContext.Provider>
-    </StylesProvider>
+    </CacheProvider>
   );
 };
 

@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
+import { type FC, useContext } from 'react';
 import { WindowContext } from '../../context/WIndowContext';
-import { JsonContent, LanguageContext } from '../../context/LanguageContext';
-import { compilerSentence } from '../ProjectsView';
 import {
   Box,
   Button,
@@ -14,23 +12,15 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
-import { MouseContext } from '../../context/MouseContext';
+import MouseContext from '../../context/MouseContext.tsx';
+import { useTranslation } from 'react-i18next';
+import { compilerSentence } from '../../utils/compile.tsx';
+import type { PortfolioDetailProps } from '../../type/types.ts';
 
-export interface PortfolioDetailProps extends JsonContent {
-  logo: string;
-  type: string;
-  title: string;
-  video: string;
-  description: string;
-  paper: string;
-  repo: string;
-  image: string;
-  key: number;
-}
 
-const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailProps) => {
+const PortfoliosView: FC<{ detail: PortfolioDetailProps }> = ({ detail }) => {
   const { height } = useContext(WindowContext);
-  const { content } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const { hoverOn, hoverOff } = useContext(MouseContext);
 
   return (
@@ -38,7 +28,7 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
       <Card sx={{ mb: 3 }}>
         <CardHeader
           avatar={<img src={`/static/images/logo/${detail.logo}`} style={{ height: '20px', width: 'auto', margin: 0, padding: 0 }}  alt="react logo"/>}
-          title={detail.type}
+          title={t(detail.type)}
           sx={{ color : 'black' }}
         />
         <Divider />
@@ -62,48 +52,48 @@ const PortfoliosView: React.FC<PortfolioDetailProps> = (detail: PortfolioDetailP
               />
             </CardMedia>
             <CardContent>
-              <Typography gutterBottom variant="h4" component="div">{detail.title}</Typography>
-              <Typography variant="body2" color="text.secondary">{compilerSentence(detail.description)}</Typography>
+              <Typography gutterBottom variant="h4" component="div">{t(detail.title)}</Typography>
+              <Typography variant="body2" color="text.secondary">{compilerSentence(t(detail.description))}</Typography>
             </CardContent>
             <CardActions disableSpacing>
               {
                 detail.repo  &&
-                <Tooltip title={content.tipSource} placement="top">
+                <Tooltip title={t("tipSource")} placement="top">
                   <Button
                     size="small"
                     onMouseOver={hoverOn}
                     onMouseOut={hoverOff}
-                    href={detail.repo as string}
+                    href={detail.repo}
                     target="_blank">
-                    {content.source}
+                    {t("source")}
                   </Button>
                 </Tooltip>
               }
               {
                 detail.paper &&
-                <Tooltip title={content.tipPaper} placement="top">
+                <Tooltip title={t("tipPaper")} placement="top">
                   <Button
                     size="small"
                     onMouseOver={hoverOn}
                     onMouseOut={hoverOff}
-                    href={detail.paper as string}
+                    href={detail.paper}
                     target="_blank"
                   >
-                    {content.paper}
+                    {t("paper")}
                   </Button>
                 </Tooltip>
               }
               {
                 detail.video &&
-                <Tooltip title={content.tipVideo} placement="top">
+                <Tooltip title={t("tipVideo")} placement="top">
                   <Button
                     size="small"
                     onMouseOver={hoverOn}
                     onMouseOut={hoverOff}
-                    href={detail.video as string}
+                    href={detail.video}
                     target="_blank"
                   >
-                    {content.video}
+                    {t("video")}
                   </Button>
                 </Tooltip>
               }

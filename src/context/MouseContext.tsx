@@ -1,23 +1,10 @@
-import { FC, useState, createContext } from 'react';
-import MouseTracker from '../component/MouseTracker';
-type MouseType = {
-  hover: boolean;
-  hoverOn: () => void;
-  hoverOff: () => void;
-};
+import { createContext } from 'react';
+import type { MouseProps } from '../type/types.ts';
 
-export const MouseContext = createContext<MouseType>({} as MouseType);
+const MouseProvider = createContext<MouseProps>({
+  hover: false,
+  hoverOn: () => {},
+  hoverOff: () => {}
+});
 
-export const MouseProvider: FC = ({ children }) => {
-  const [hover, setHover] = useState(false);
-
-  const hoverOn = () => setHover(true);
-  const hoverOff = () => setHover(false);
-
-  return (
-    <MouseContext.Provider value={{ hover, hoverOn, hoverOff }}>
-      <MouseTracker />
-      {children}
-    </MouseContext.Provider>
-  );
-};
+export default MouseProvider;

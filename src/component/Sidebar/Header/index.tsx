@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Box, alpha, lighten, IconButton, Tooltip, styled, useTheme, Button } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
-import { SidebarContext } from '../../../context/SidebarContext';
+import SidebarContext from '../../../context/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
-import { LanguageContext } from '../../../context/LanguageContext';
-import { MouseContext } from '../../../context/MouseContext';
+import MouseContext from '../../../context/MouseContext';
+import { useTranslation } from 'react-i18next';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -30,11 +30,12 @@ const HeaderWrapper = styled(Box)(
 function Header() {
   const { sidebarToggle, toggleSidebar } = useContext(SidebarContext);
   const theme = useTheme();
+  const { i18n, t } = useTranslation();
   const [open, setOpen] = useState<boolean>(false);
-  const { lang, setLang, content } = useContext(LanguageContext);
   const { hoverOn, hoverOff } = useContext(MouseContext);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (window.outerWidth < 1280) setOpen(true);
   }, []);
 
@@ -62,26 +63,28 @@ function Header() {
       <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <Box>
           <Button
-            variant={ lang === 'en' ? "contained" : "text" }
+            variant={ i18n.language == "en" ? "contained" : "text" }
             color="primary"
             onMouseOver={() => {
-              if (lang === 'en') return;
-              hoverOn();
+              if (i18n.language == "en") {
+                hoverOn();
+              }
             }}
             onMouseOut={hoverOff}
-            onClick={() => setLang('en')}
+            onClick={() => i18n.changeLanguage('en')}
           >
             EN
           </Button>
           <Button
-            onClick={() => setLang('zh')}
+            onClick={() => i18n.changeLanguage('zh')}
             color="primary"
             onMouseOver={() => {
-              if (lang === 'zh') return;
-              hoverOn();
+              if (i18n.language == "zh") {
+                hoverOn();
+              }
             }}
             onMouseOut={hoverOff}
-            variant={ lang === 'zh' ? "contained" : "text" }
+            variant={ i18n.language == "zh" ? "contained" : "text" }
           >
             中
           </Button>
@@ -93,7 +96,7 @@ function Header() {
             display: { lg: 'none', xs: 'inline-block' }
           }}
         >
-          <Tooltip arrow placeholder="bottom-start" title={content.showExpand ? content.showExpand : ''} open={open as boolean}>
+          <Tooltip arrow title={t("showExpand")} open={open as boolean}>
             <IconButton color="primary" onClick={() => { setOpen(false); toggleSidebar(); } }>
               {!sidebarToggle
                 ? <MenuTwoToneIcon onMouseOver={hoverOn} onMouseOut={hoverOff} fontSize="small" />

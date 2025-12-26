@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
+import { useState, useContext, useEffect, useRef, type FC } from 'react';
 import {
   Box,
   Button,
@@ -10,8 +10,6 @@ import {
   Collapse,
   Divider,
   IconButton,
-  IconButtonProps,
-  Link,
   List,
   ListItem,
   ListItemText,
@@ -20,38 +18,16 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { DialogContext } from '../../context/DialogContext';
 import { ImageContext, WindowContext } from '../../context/WIndowContext';
-import { JsonContent, LanguageContext } from '../../context/LanguageContext';
 import PhotoView from './PhotoView';
-import { SERVER_URL } from '../../webConfig';
-import { MouseContext } from '../../context/MouseContext';
-
-interface DetailProps extends JsonContent {
-  type: string;
-  content: string | string[];
-}
-
-export interface ProjectDetailProps extends JsonContent {
-  logo: string;
-  type: string;
-  title: string;
-  description: string;
-  content: DetailProps[];
-  link: string;
-  repo: string;
-  paper: string;
-  imageSize: number | string;
-  image: string[];
-  key: number;
-}
-
-export interface ExpandMoreProps extends IconButtonProps {
-  expand: boolean;
-}
+import MouseContext from '../../context/MouseContext.tsx';
+import { useTranslation } from 'react-i18next';
+import { compilerSentence } from '../../utils/compile.tsx';
+import { SERVER_URL } from '../../data/metadata';
+import type { ExpandMoreProps, ProjectDetailProps } from '../../type/types.ts';
 
 export const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
+  const { expand: _expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
@@ -61,65 +37,33 @@ export const ExpandMore = styled((props: ExpandMoreProps) => {
   })
 }));
 
-export const compilerSentence = (i: string) => {
-  i.replace('SERVER_URL', SERVER_URL);
-  return i.split('#').map((j, index) => {
-    if (j.startsWith(':b')) return <b key={index}>{j.slice(2)}</b>
-    else if (j.startsWith(':i')) return <i key={index}>{j.slice(2)}</i>
-    else if (j.startsWith(':a')) {
-      j = j.replaceAll('SERVER_URL', SERVER_URL);
-      return <Link
-        key={index}
-        href={j.slice(2).split('[')[1].split(']')[0]}
-        target="_blank"
-      >
-        {j.slice(2).split('[')[0]}
-      </Link>
-    }
-    else return (<span key={index}>{j}</span>)
-  })
-}
 
-const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) => {
-  const { disabled, handleClickOpen } = useContext(DialogContext);
+const ProjectsPage: FC<{ detail: ProjectDetailProps }> = ({ detail }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
+  const { t } = useTranslation();
   const { height } = useContext(WindowContext);
   const [ imageHeight, setImageHeight ] = useState(0);
-  const { content } = useContext(LanguageContext);
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const { hoverOn, hoverOff } = useContext(MouseContext);
 
+  const [titleHeight, setTitleHeight] = useState(0);
+
+  useEffect(() => {
+    if (!titleRef.current) return;
+
+    setTitleHeight(titleRef.current.clientHeight);
+  }, [expanded]);
+
   useEffect(() => {
     if (expanded) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setImageHeight((height > 800 ? 0.33 : 0.25) * height)
     } else {
       setImageHeight(height > 800 ? 140 : 100)
     }
   }, [expanded, height]);
-
-  const handleWebsite = async (url: string) => {
-    if (disabled) window.open(url, '_blank');
-    else {
-      const start = performance.now();
-      const timeout = 200;
-      const timeoutPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          reject(new Error("Request timed out"));
-        }, timeout);
-      });
-
-      const fetchPromise = fetch(`${SERVER_URL}test/`, { method: 'HEAD' });
-
-      Promise.race([fetchPromise, timeoutPromise])
-        .then((_res) => {
-            if (performance.now() - start > 200) handleClickOpen(url);
-            else window.open(url, '_blank')
-        })
-        .catch((_err) => { handleClickOpen(url) });
-    }
-  }
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -142,7 +86,7 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
       <Card sx={{ mb: 3 }}>
         <CardHeader
           avatar={<img src={`/static/images/logo/${detail.logo}`} style={{ height: '20px', width: 'auto', margin: 0, padding: 0 }}  alt="react logo"/>}
-          title={detail.type}
+          title={t(detail.type)}
           sx={{ color : 'black' }}
         />
         <Divider />
@@ -168,35 +112,40 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
               </ImageContext.Provider>
             </CardMedia>
             <CardContent ref={titleRef}>
-              <Typography gutterBottom variant="h4" component="div">{detail.title}</Typography>
-              <Typography variant="body2" color="text.secondary">{compilerSentence(detail.description)}</Typography>
+              <Typography gutterBottom variant="h4" component="div">{t(detail.title)}</Typography>
+              <Typography variant="body2" color="text.secondary">
+                {compilerSentence(t(detail.description))}
+              </Typography>
             </CardContent>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent
-                sx={{ height: height - 270 - (titleRef.current?.clientHeight ?? 0) - imageHeight, overflowY: 'auto' }}
+                sx={{
+                  height: height - 270 - titleHeight - imageHeight,
+                  overflowY: 'auto',
+                }}
               >
                 {(detail.content).map((i, index) => {
                   if (i.type === 'text')
                     return (
                       <Typography key={index} color="text.secondary" sx={{ mb: 1 }}>
-                        {compilerSentence(i.content as string)}
+                        {compilerSentence(t(i.key || ''))}
                       </Typography>
                     )
                   else if (i.type === 'title')
                     return (
                       <Typography gutterBottom variant="h6" sx={{ fontWeight: 600, fontFamily: 'Arial' }} key={index}>
-                        {compilerSentence(i.content as string)}
+                        {compilerSentence(t(i.key || ''))}
                       </Typography>
                     )
                   else if (i.type === 'list')
                     return (
                       <List key={index}>
                         {
-                          (i.content as string[]).map((j, indexList) => (
+                          (i.items as string[]).map((j, indexList) => (
                             <ListItem key={`${index}-${indexList}`} sx={{ p: 0.5 }}>
                               <FiberManualRecordIcon sx={{ fontSize: 10, mr: 1, color: "text.secondary" }} />
                               <ListItemText sx={{ color: "text.secondary" }} >
-                                {compilerSentence(j)}
+                                {compilerSentence(t(j))}
                               </ListItemText>
                             </ListItem>
                           ))
@@ -210,20 +159,20 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
             <CardActions disableSpacing>
               {
                 detail.link &&
-                <Tooltip title={content.tipWebsite} placement="top">
+                <Tooltip title={t("tipWebsite")} placement="top">
                   <Button
                     size="small"
                     onMouseOver={hoverOn}
                     onMouseOut={hoverOff}
-                    onClick={() => handleWebsite(detail.link)}
+                    href={detail.link}
                   >
-                    {content.website}
+                    {t("website")}
                   </Button>
                 </Tooltip>
               }
               {
                 detail.repo &&
-                <Tooltip title={content.tipSource} placement="top">
+                <Tooltip title={t("tipSource")} placement="top">
                   <Button
                     size="small"
                     href={detail.repo as string}
@@ -231,13 +180,13 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
                     onMouseOver={hoverOn}
                     onMouseOut={hoverOff}
                   >
-                    {content.source}
+                    {t("source")}
                   </Button>
                 </Tooltip>
               }
               {
                 detail.paper &&
-                <Tooltip title={content.tipPaper} placement="top">
+                <Tooltip title={t("tipPaper")} placement="top">
                   <Button
                     size="small"
                     href={SERVER_URL + detail.paper as string}
@@ -245,13 +194,13 @@ const ProjectsPage: React.FC<ProjectDetailProps> = (detail: ProjectDetailProps) 
                     onMouseOut={hoverOff}
                     target="_blank"
                   >
-                    {content.paper}
+                    {t("paper")}
                   </Button>
                 </Tooltip>
               }
               <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                 <Tooltip
-                  title={expanded ? content.showLess : content.showMore}
+                  title={expanded ? t("showLess") : t("showMore")}
                   placement="top"
                   onMouseOver={hoverOn}
                   onMouseOut={hoverOff}

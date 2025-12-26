@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Box, Button, keyframes, styled, Typography } from '@mui/material';
-import { LanguageContext } from '../context/LanguageContext';
-import { MouseContext } from '../context/MouseContext';
+import MouseContext from '../context/MouseContext';
+import { useTranslation } from 'react-i18next';
 
 const colorChange = keyframes`
   0% { color: lightcoral; }
@@ -44,34 +44,25 @@ const AboutButton = styled(Button)({
 
 });
 
-const HomePage: React.FC = () => {
-  const [greeting, setGreeting] = useState('');
-  const { content } = useContext(LanguageContext);
+const HomePage = () => {
+  const { t } = useTranslation();
   const { hoverOn, hoverOff } = useContext(MouseContext);
-
-  useEffect(() => {
-    const hour = new Date().getHours();
-    if (hour < 12) {
-      setGreeting(content.morning as string);
-    } else if (hour < 18) {
-      setGreeting(content.afternoon as string);
-    } else {
-      setGreeting(content.evening as string);
-    }
-  }, [content]);
+  const time = new Date().getHours();
 
   return (
     <Box sx={{ height: 'calc(100vh - 80px)' }}>
       <Box sx={{ height: '100%', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
         <Title>My Portfolio</Title>
-        <SubTitle>{greeting}{content.welcome}</SubTitle>
+        <SubTitle>{
+          time < 12 ? t("morning") : time < 18 ? t("afternoon") : t("evening")
+        }{t("welcome")}</SubTitle>
         <AboutButton
           onMouseOver={hoverOn}
           onMouseOut={hoverOff}
           variant="contained"
-          onClick={() => window.location.href = '#/about'}
+          onClick={() => window.location.href = '#/project'}
         >
-          {content.aboutme}
+          {t("projects")}
         </AboutButton>
       </Box>
     </Box>

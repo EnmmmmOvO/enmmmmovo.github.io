@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 import {
   alpha,
@@ -9,15 +9,15 @@ import {
   ListItem
 } from '@mui/material';
 import { NavLink as RouterLink, useLocation } from 'react-router-dom';
-import { SidebarContext } from '../../../../context/SidebarContext';
-import { LanguageContext } from '../../../../context/LanguageContext';
 
 import HomeIcon from '@mui/icons-material/Home';
-import PersonIcon from '@mui/icons-material/Person';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
-import { MouseContext } from '../../../../context/MouseContext';
+import SidebarContext from '../../../../context/SidebarContext.tsx';
+import { useTranslation } from 'react-i18next';
+import MouseContext from '../../../../context/MouseContext.tsx';
+import { NEW_WEBSITE_URL } from '../../../../data/metadata.ts';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -163,7 +163,7 @@ const SubMenuWrapper = styled(Box)(
 
 function SidebarMenu() {
   const { closeSidebar } = useContext(SidebarContext);
-  const { content } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const { hoverOn, hoverOff } = useContext(MouseContext);
   const location = useLocation();
 
@@ -186,23 +186,7 @@ function SidebarMenu() {
                   to="/home"
                   startIcon={<HomeIcon />}
                 >
-                  {content.home}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  onMouseOver={() => {
-                    if (location.pathname === '/about') return;
-                    hoverOn();
-                  }}
-                  onMouseOut={hoverOff}
-                  to="/about"
-                  startIcon={<PersonIcon />}
-                >
-                  {content.about}
+                  {t("home")}
                 </Button>
               </ListItem>
               <ListItem component="div">
@@ -218,7 +202,7 @@ function SidebarMenu() {
                   to="/project"
                   startIcon={<AssignmentIcon />}
                 >
-                  {content.projects}
+                  {t("projects")}
                 </Button>
               </ListItem>
 
@@ -235,7 +219,7 @@ function SidebarMenu() {
                   to="/portfolio"
                   startIcon={<HistoryEduIcon />}
                 >
-                  {content.portfolios}
+                  {t("portfolios")}
                 </Button>
               </ListItem>
 
@@ -252,7 +236,24 @@ function SidebarMenu() {
                   to="/contact"
                   startIcon={<AlternateEmailIcon />}
                 >
-                  {content.contact}
+                  {t("contact")}
+                </Button>
+              </ListItem>
+
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  onMouseOver={() => {
+                    if (location.pathname === '/contact') return;
+                    hoverOn();
+                  }}
+                  onMouseOut={hoverOff}
+                  to={NEW_WEBSITE_URL}
+                  startIcon={<AlternateEmailIcon />}
+                >
+                  {t("newWebsite")}
                 </Button>
               </ListItem>
 

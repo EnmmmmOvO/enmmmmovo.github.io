@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Scrollbar from '../../Scrollbar';
-import { SidebarContext } from '../../../context/SidebarContext';
 
 import {
   Box,
@@ -14,8 +13,9 @@ import {
 } from '@mui/material';
 
 import SidebarMenu from './SidebarMenu';
-import { LanguageContext } from '../../../context/LanguageContext';
 import SidebarBottom from './SidebarBottom';
+import SidebarContext from '../../../context/SidebarContext.tsx';
+import { useTranslation } from 'react-i18next';
 
 const SidebarWrapper = styled(Box)(
   ({ theme }) => `
@@ -31,7 +31,7 @@ const SidebarWrapper = styled(Box)(
 
 function Sidebar() {
   const { sidebarToggle, toggleSidebar } = useContext(SidebarContext);
-  const { content } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const closeSidebar = () => toggleSidebar();
   const theme = useTheme();
 
@@ -82,7 +82,7 @@ function Sidebar() {
                 display: 'flex',
                 alignItems: 'center'
               }}>
-                {content.name}
+                {t("name")}
               </Box>
             </Box>
           </Box>
@@ -140,7 +140,7 @@ function Sidebar() {
                 display: 'flex',
                 alignItems: 'center'
               }}>
-                {content.name}
+                {t("name")}
               </Box>
             </Box>
             <Divider

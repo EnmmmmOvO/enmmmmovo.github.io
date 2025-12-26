@@ -1,29 +1,8 @@
-import { FC, useState, createContext } from 'react';
-type SidebarContext = {
-  sidebarToggle: any;
-  toggleSidebar: () => void;
-  closeSidebar: () => void;
-};
+import { createContext } from 'react';
+import type { SidebarContextProps } from '../type/types.ts';
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-export const SidebarContext = createContext<SidebarContext>(
-  {} as SidebarContext
+const SidebarContext = createContext<SidebarContextProps>(
+  {} as SidebarContextProps
 );
 
-export const SidebarProvider: FC = ({ children }) => {
-  const [sidebarToggle, setSidebarToggle] = useState(false);
-  const toggleSidebar = () => {
-    setSidebarToggle(!sidebarToggle);
-  };
-  const closeSidebar = () => {
-    setSidebarToggle(false);
-  };
-
-  return (
-    <SidebarContext.Provider
-      value={{ sidebarToggle, toggleSidebar, closeSidebar }}
-    >
-      {children}
-    </SidebarContext.Provider>
-  );
-};
+export default SidebarContext;

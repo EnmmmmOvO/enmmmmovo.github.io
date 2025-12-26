@@ -1,17 +1,18 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { MouseContext } from '../../context/MouseContext';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { Box } from '@mui/material';
+import MouseContext from '../../context/MouseContext.tsx';
 
 const MouseTracker = () => {
   const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
   const [dotPosition, setDotPosition] = useState({ x: 0, y: 0 });
   const [targetPosition, setTargetPosition] = useState({ x: -100, y: -100 });
   const [isMouseDevice, setIsMouseDevice] = useState(false);
-  const circleRequestRef = useRef<any>(null);
-  const dotRequestRef = useRef<any>(null);
+  const circleRequestRef = useRef<number | null>(null);
+  const dotRequestRef = useRef<number | null>(null);
   const { hover } = useContext(MouseContext);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMouseDevice(window.matchMedia('(pointer: fine)').matches);
     const handleMouseMove = (event: MouseEvent) => setTargetPosition({ x: event.clientX, y: event.clientY });
     window.addEventListener('mousemove', handleMouseMove);
@@ -45,8 +46,13 @@ const MouseTracker = () => {
     circleRequestRef.current = requestAnimationFrame(animateCircle);
     dotRequestRef.current = requestAnimationFrame(animateDot);
     return () => {
-      cancelAnimationFrame(circleRequestRef.current);
-      cancelAnimationFrame(dotRequestRef.current);
+      if (circleRequestRef.current) {
+        cancelAnimationFrame(circleRequestRef.current);
+      }
+
+      if (dotRequestRef.current) {
+        cancelAnimationFrame(dotRequestRef.current);
+      }
     };
   }, [animateCircle, animateDot, targetPosition]);
 

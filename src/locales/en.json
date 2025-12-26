@@ -1,0 +1,233 @@
+{
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "projects": "Projects",
+  "name": "Jinghan Wang",
+  "morning": "Good Morning, ",
+  "afternoon": "Good Afternoon, ",
+  "evening": "Good Evening, ",
+  "welcome": "Welcome to my website!",
+  "newWebsite": "New Website",
+  "aboutme": "About Me",
+  "website": "Website",
+  "paper": "Paper",
+  "video": "Video",
+  "friend": "Friend Link",
+  "portfolios": "Portfolios",
+  "source": "Source code",
+  "jumpTitle": "Potential Delay in Server Response",
+  "jumpContent": "The website takes a slight delay (> 200ms) in receiving responses from the service. Consequently, if there is no immediate reaction upon clicking buttons, please be patient and wait for a while.",
+  "serverClose": "Server Closed",
+  "serverCloseContent": "The server is down and may not be able to interact with the backend. Sorry for the inconvenience.",
+  "jumpButton": "I understand",
+  "jumpDismiss": "Don't show this again",
+  "wtgit": "Want to get in touch?",
+  "ctmt": "Contact me though these...",
+  "jumpGithub": "Click to jump to my Github Page",
+  "jumpLinkedin": "Click to jump to my Linkedin Page",
+  "jumpResume": "Click to jump to my Resume",
+  "copyEmail": "Click to Copy Email Address to Clipboard",
+  "copyEmailSuccess": "Copied Email Address to Clipboard!",
+  "copyWechat": "Click to Copy Wechat Number to Clipboard",
+  "copyWechatSuccess": "Copied Wechat Number to Clipboard!",
+  "leaveMessage": "Or leave me a message here...",
+  "preferredName": "Your Preferred Name",
+  "email": "Your Email",
+  "content": "Content",
+  "messageSuccess": "Message Send Success",
+  "send": "Send",
+  "showMore": "Click to Show More",
+  "showLess": "Click to Shrink",
+  "tipWebsite": "Click to jump to the Website",
+  "tipSource": "Click to jump to the Source Code",
+  "tipPaper": "Click to jump to the Paper",
+  "tipVideo": "Click to jump to the Video",
+  "showExpand": "Click to Show SideBar",
+  "project": {
+    "my-airbnb": {
+      "type": "React",
+      "title": "My Airbnb",
+      "description": "Web application for Property Trading similar to #:aAirbnb[https://www.airbnb.com.au/]#.",
+      "content": {
+        "title-1": "Feature Description:",
+        "text-1": "This project designed to provide a convenient intermediary platform for landlords and renters, allows landlords to publicly share their property information, while renters can easily browse, search, and book these listings. Specifically, the app supports the following features:",
+        "list-1": {
+          "item-1": "User Registration and Login",
+          "item-2": "Uploading Property Photos and Information",
+          "item-3": "Search and Filter Functionality",
+          "item-4": "Online Booking Functionality"
+        },
+        "title-2": "Technology Stack:",
+        "text-2": "This project was my first major assignment using the React framework. I adopted TypeScript to ensure high code quality and maintainability. For routing management, I used React Router's BrowserRouter component to create a dynamic and responsive single-page application (SPA). Due to the minimal need for global state, I chose React's Context API over Redux for state management, which met the application's needs while keeping the architecture simple.",
+        "text-3": "In terms of interface design, I used Material UI (MUI) as the main UI framework, which not only sped up development but also ensured a modern and responsive look for the application.",
+        "text-4": "To ensure code stability and quality, as per the assignment requirements, I used Jest for unit testing three key components. Additionally, I used Cypress for end-to-end UI testing to ensure overall application stability and user experience.",
+        "text-5": "Overall, this project enhanced my front-end development skills, especially in using React and related technology stacks. A shortcoming, however, was the tight coupling of multiple components within the React framework due to extensive data interactions between different components. This strategy avoided complex management of global state to some extent but reduced code reusability and limited testing convenience. In future projects, a more refined component division is needed to reduce inter-component coupling and enhance code maintainability, testability, and scalability."
+      }
+    },
+    "stable-diffusion---image-to-prompts": {
+      "type": "Neural Network",
+      "title": "Stable Diffusion - Image to Prompts",
+      "description": "Generate prompt words that align with the content of the input images.",
+      "content": {
+        "title-1": "Project Concept and Model Selection",
+        "text-1": "This project is inspired by a #:aKaggle[https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts]# competition. We selected two distinct models for implementation and comparative analysis: the #:iCLIP# model and the #:iResnet + LSTM# model. The objective was to train both models separately and then conduct a macro-level comparison to evaluate their strengths and weaknesses.",
+        "title-2": "Model Training and Optimization",
+        "text-2": "Each model was built upon its respective pre-trained framework. We employed the Adam optimizer and a learning rate scheduler during the training process to facilitate model convergence and enhance the overall training results. For both models, the test and validation sets were sourced from the #:iDiffusionDB# dataset in #:aHugging Face[https://huggingface.co/datasets/poloclub/diffusiondb]#, following adequate preprocessing.",
+        "title-3": "My Contribution - #:iResnet + LSTM# Model",
+        "text-3": "As a member of the team, my responsibility was to implement and train the #:Resnet + LSTM# model. The primary process involved:",
+        "list-1": {
+          "item-1": "#:bFeature Extraction#: Utilizing the #:iResNet-50# model to extract features from input images.",
+          "item-2": "#:bFeature Mapping#: Mapping these extracted features to the input dimensions of the #:iGPT-2# model through a linear layer.",
+          "item-3": "#:bText Generation#: Processing these features via an #:iLSTM# layer to generate an initial textual description of the image.",
+          "item-4": "#:bText Refinement#: Using the #:iGPT-2# model to refine the initial description into a comprehensive final image description."
+        },
+        "text-4": "The entire training procedure for my part was conducted on Kaggle's #:iGPU-P100#.",
+        "title-4": "Training Outcome and Analysis",
+        "text-5": "After about 7 epochs of training, the loss metric of the #:iResnet + LSTM# model plateaued and did not show further improvement. In comparison with the #:iCLIP# model, there was a notable variance from the actual original prompts. The potential reasons identified for this discrepancy are:",
+        "list-2": {
+          "item-1": "#:bModel Architecture#: The project required the handling of both images and text. The #:iCNN# (Convolutional Neural Network) was employed for image processing and the #:iRNN# (Recurrent Neural Network) for text processing. The interlinking layer, designed to map the output of the #:iCNN# to the input of the #:iRNN#, might have been too rigid. This potentially led to less effective feature extraction and integration compared to the #:ViT# model in #:CLIP#, known for its efficient image-text correspondence.",
+          "item-2": "#:bParameter Optimization and Time Constraints#: Limited time for the project might have resulted in insufficient adjustment and optimization of certain model parameters. This could have contributed to the challenges faced in achieving effective convergence during the training process."
+        }
+      }
+    },
+    "conex": {
+      "type": "FastAPI + React",
+      "title": "CONEX",
+      "description": "Web Platform for Connecting Professionals with Projects.",
+      "content": {
+        "title-1": "Project Overview",
+        "text-1": "This project is a collaborative full-stack team initiative aimed at creating a web platform for both company and professional users. The platform is designed to facilitate professional users in applying for, participating in, and evaluating various projects. For company users, it offers functionalities to create and approve projects.",
+        "title-2": "Front End and Back End Technologies",
+        "text-2": "For the front end, we chose the #:iReact# framework for its dynamic and user-friendly interface. The backend is developed using #:iFastAPI#, #:iSQLAlchemy#, and #:iSQLite3#, which collectively enhance the interaction between the database and backend operations.",
+        "title-3": "Platform Features",
+        "list-1": {
+          "item-1": "User registration and login.",
+          "item-2": "Project posting and application filtering for company users.",
+          "item-3": "Project application functionality for professional users.",
+          "item-4": "A mutual evaluation system among users."
+        },
+        "title-4": "My Role in the Project",
+        "list-2": {
+          "item-1": "Backend development, focusing on both the design and implementation of the database.",
+          "item-2": "Design and deployment of email functionalities.",
+          "item-3": "Development of specific front-end pages, including the logic for URL redirections in emails."
+        },
+        "title-5": "Database Design and Backend Logic",
+        "text-3": "The database design and fundamental backend logic are comprehensively outlined in #:athis document[SERVER_URLdocuments/backgorund%20logic.pdf]#. We adhered to concurrency principles in database interactions, using sessions for concurrency control and #:iSQLAlchemy# transactions for concurrent database management.",
+        "title-6": "Email Functionality and Front End Implementation",
+        "text-4": "For the email component, #:iPython's SMTP# library was used for sending emails with direct user access URLs. On the front end, #:iReact's# router was employed to manage URL redirections, allowing users to navigate back to their previous page after logging in."
+      }
+    },
+    "slackr": {
+      "type": "Vanilla JS",
+      "title": "Slackr",
+      "description": "Multi-functional social and communication platform supporting message and image sharing.",
+      "content": {
+        "title-1": "Feature Description:",
+        "text-1": "This project is a chat application modeled after #:aDiscord[https://discord.com/]#, with an icon derived from #:aSlack[https://slack.com/intl/en-gb/]#, upon which certain modifications have been made. It features user registration and login, channel creation and joining, sending of text and images, user profile editing, channel invitations, and more.",
+        "title-2": "Technology Stack:",
+        "text-2": "This project is a pure #:iHTML#, #:iCSS#, and #:iJavaScript# front-end endeavor, utilizing #:iAJAX# to facilitate asynchronous web page updates through data exchanges with a backend web server. As the project employs #:iVanilla JavaScript#, all interactions are implemented as #:iJavaScript# event handlers. The #:iHTML# contains only a basic framework; specific information and functionalities are dynamically added to the #:iDOM# by #:iJavaScript#. For the UI aspect, #:iBootstrap 5# is used as the foundational framework, incorporating its components like modals, toasts, and navbars for aesthetic enhancement.",
+        "title-3": "Limitations:",
+        "text-3": "As my first front-end project, it lacked comprehensive initial design planning, resulting in some disorganization in interactions with the backend, which was provided by another party. Without backend support for continuous retrieval of new messages, the application can only load chat data upon opening any channel, thus it does not update chat information in real-time like #:aDiscord[https://discord.com/]# or #:aSlack[https://slack.com/intl/en-gb/]#.",
+        "text-4": "The #:iUI# has several areas with oversized fonts, potentially affecting aesthetic appeal on mobile devices. Additionally, the photo display may not have accounted for images exceeding boundary limits, possibly leading to incomplete image visibility issues."
+      }
+    },
+    "transport-application": {
+      "type": "Network Protocol",
+      "title": "Transport Application",
+      "description": "Chat room software and local area network transfer tool based on UDP and TCP protocols.",
+      "content": {
+        "title-1": "Project 1: #:aSimple Chat Thread[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3331/assign]#",
+        "text-1": "This project entails the creation of a chat thread within a terminal environment, featuring functionalities such as user login, thread creation, message sending and viewing, and file uploading and downloading. The project is entirely developed in #:iJava# and comprises two main components: #:bthe server side# and #:bthe client side#.",
+        "text-2": "Communication between the two entities is facilitated through the #:iUDP# (User Datagram Protocol), utilizing the #:iJava DatagramSocket#. A custom Message class has been developed for data transmission. Upon receiving a request, the server processes it and responds to the client using the same #:iUDP# protocol.",
+        "text-3": "For the file transfer segment, #:iTCP# (Transmission Control Protocol) is employed. The transmission prerequisites are confirmed via two ports. The receiving end communicates its port number to the sender using #:iUDP#, following which the sender transmits the file to the receiver using #:iTCP# protocol.",
+        "title-2": "Project 2: #:aLocal Area Network File Transfer[https://github.com/EnmmmmOvO/Tool/tree/master/Transmission]#",
+        "text-4": "This project was initiated to enable file transfer between a #:iWindows PC# and a #:iMac# within a local area network (#:iLAN#). Building upon the previous project, enhancements were made to the file transfer component to allow for #:iLAN# operations.",
+        "text-5": "The project utilizes #:iJava Socket# programming and supports the transfer of multiple files and folders. However, it does not support resuming interrupted transfers. The interface is non-graphical and operates solely through the terminal. File transfer requires the provision of the recipient's #:iI# address and port number, as the system does not support automatic discovery of other devices within the #:iLAN#.",
+        "text-6": "#:aPlans[https://github.com/EnmmmmOvO/Tool/tree/master/trans]# are underway to refactor this project to support multi-user functionality and incorporate a graphical user interface. The objective is to enable automatic discovery of devices within the #:iLAN# and add features like message sending and interrupted transfer resumption. The refactoring will be implemented using #:iElectron#, #:iReact#, and #:iNode.js#, aimed at reducing the workload associated with multi-platform development."
+      }
+    },
+    "web-scraper-application": {
+      "type": "Web Scraper",
+      "title": "Web Scraper Application",
+      "description": "This document outlines a series of web scraping tools developed to facilitate my learning and daily life.",
+      "content": {
+        "title-1": "Project One: LeetCode Scraper",
+        "text-1": "This project involves using #:iPython# to extract specific problem statements from designated #:aLeetCode[https://leetcode.com/]# pages. The primary purpose of this tool is to streamline my process of coding LeetCode algorithm questions, eliminating the repetitive task of code copying. The scraper retrieves content from the target webpage, locates the code within the #:iC++# class section, and converts it into a code file with a main function.",
+        "title-2": "Project Two: PRTS Scraper",
+        "text-2": "Implemented in #:iPython#, this tool fetches information about game (#:aArknights[https://www.arknights.global]#) content from the #:aPRTS[https://prts.wiki/]# web game. Based on the names I input, it retrieves data regarding game characters and provides comprehensive information about their development. This aids in planning and strategizing their usage in the game.",
+        "title-3": "Project Three: #:aBbcollab Video Scraper[https://github.com/EnmmmmOvO/Tool/tree/master/Bbcollab_video_Download]#",
+        "text-3": "Due to the need to download video files from #:aBbcollab[https://eu.bbcollab.com/collab/ui/scheduler/]# that do not have a download option and the site's redirection feature, this tool uses #:iPython Selenium# to simulate entry. Once redirected, it scrapes the video #:iURL# for downloading. This tool is used to download lecture videos from my university's online learning platform.",
+        "title-4": "Project Four: #:aDouyu Scraper[https://github.com/EnmmmmOvO/douyu_helper]#",
+        "text-4": "I have maintained and updated a scraper project initially developed by someone else. This tool is designed to be hosted on GitHub Actions and performs a series of operations daily in #:aDouyu[https://www.douyu.com]# Website."
+      }
+    },
+    "os-161": {
+      "type": "Operation System",
+      "title": "OS 161",
+      "description": "This project aims to solve some synchronisation issues, implement #:iVFS#, and virtual memory within the #:aOS/161[http://os161.org/]# operating system.",
+      "content": {
+        "title-1": "#:aSynchronisation[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass1]#",
+        "text-1": "In the first part, within the software environment using the #:iOS/161# kernel, address a series of synchronization problems by attempting to implement producer-consumer, Dining Philosophers, and similar problems using semaphores and locks. ",
+        "text-2": "Although the synchronization issues themselves are only indirectly related to the services provided by #:iOS/161#, they solve similar concurrency problems that one would encounter when writing operating system code.",
+        "title-2": "#:aSystem calls and processes[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass2]#",
+        "text-3": "The #:iVFS# is a crucial component that abstracts file system operations, providing a uniform interface to different file systems. The core of the second part is to ensure that these system calls correctly interact with the #:iVFS# layer to execute file operations.",
+        "text-4": "#:bImplementation of Specific System Calls#",
+        "list-1": {
+          "item-1": "#:bopen#: Responsible for opening files. It involves not just accessing the file but also managing file descriptors.",
+          "item-2": "#:bread and write#: These are used for reading from and writing to files, respectively. They involve buffer management and dealing with file offsets.",
+          "item-3": "#:blseek#: This call adjusts the file offset, which is essential for reading or writing at a specific position in a file.",
+          "item-4": "#:bclose#: Used to close a file, ensuring that resources are freed and the file descriptor is made available for reuse.",
+          "item-5": "#:bdup2#: It duplicates file descriptors, which is essential for redirecting input/output in process management."
+        },
+        "text-5": "#:bKernel-Level Code Development#",
+        "text-6": "Unlike user-level applications that interact with the kernel through system calls, your task involves writing the kernel-level code that directly implements these system calls. This requires a deep understanding of the kernel's internal mechanisms, memory management, and error handling strategies.",
+        "title-3": "#:aVirtual Memory[https://github.com/EnmmmmOvO/UNSW-Computer-Science/tree/master/COMP3231/ass3]#",
+        "text-7": "The third parts focuses on enhancing the virtual memory subsystem of the #:iOS/161# operating system, with a particular emphasis on page table management, virtual memory translation, and Translation Lookaside Buffer (#:iTLB#) management. Key aspects include",
+        "list-2": {
+          "item-1": "#:bPage Table Management#: Implementing a hashed page table (#:iHPT#) to efficiently manage virtual memory translations for user programs. This involves handling address translation and ensuring efficient memory access.",
+          "item-2": "#:bVirtual Memory Translation#: Developing a system for translating virtual memory addresses to physical addresses, which is crucial for effective memory management and optimal performance of the #:iOS#.",
+          "item-3": "#:bTranslation Lookaside Buffer (TLB) Management#: Managing the #:iMIPS# software-managed #:iTLB#, a critical component in reducing the time taken for virtual address translation."
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "fantastic-celestial-objects": {
+      "type": "Astronomy",
+      "title": "Fantastic Celestial Objects",
+      "description": "This is a popular science magazine geared towards readers with little or no knowledge of the cosmos. Its primary aim is to introduce various celestial bodies (stars, planets, satellites) that constitute the vast expanse of the universe, discussing their types, structures, and potential evolutionary processes. There may be instances of non-professional explanations or inaccuracies within the content, and corrections or clarifications are welcome."
+    },
+    "balancing-ethics-and-efficiency": {
+      "type": "Computer Ethics",
+      "title": "Balancing Ethics and Efficiency: Autonomous Vehicles and Utilitarianism",
+      "description": "This article explores the ethical considerations of applying Act and Rule Utilitarianism to the collision-avoidance protocols in autonomous vehicles, analyzing the impact of each approach on decision-making in critical scenarios, and evaluating their implications for societal norms and technological design in the context of autonomous driving."
+    },
+    "the-ethical-challenges-of-ai-in-artistic-creation": {
+      "type": "Computer Ethics",
+      "title": "The Ethical Challenges of AI in Artistic Creation",
+      "description": "This article delves into the ethical implications and challenges of AI drawing technologies in the realm of art, focusing on how AI is reshaping the boundaries of artistic creation, copyright, and originality, as well as the appropriateness of AI technologies in art competitions."
+    },
+    "suzuki-kasami-concurrency-algorithm": {
+      "type": "Concurrency (Go)",
+      "title": "Suzuki-Kasami Concurrency Algorithm",
+      "description": "This video critically analyzes the advantages and shortcomings of the Suzuki-Kasami algorithm for token-based concurrency in distributed environments, while concurrently examining the merits of channel-based concurrent programming in the Go language from an academic perspective."
+    },
+    "implementing-concurrent-operation-of-a-data-set": {
+      "type": "Concurrency (Java)",
+      "title": "Implementing Concurrent Operation of a Data Set",
+      "description": "This article mainly utilizes read-and-write locks as the main body to ensure that only one process is allowed to run if and when the data needs to be modified, and multiple processes can read the data if there are no writes. In addition, signalling is used to ensure the integrity of the data structure."
+    },
+    "james-webb-space-telescope": {
+      "type": "Astronomy",
+      "title": "James Webb Space Telescope",
+      "description": "This article focuses on the James Webb Space Telescope, the successor to the Hubble telescope, including its launch purpose, structure, orbit, and reasons for the launch. Finally, it pays more attention to the results obtained more than a year after the launch and its contribution to astronomy."
+    },
+    "short-report-about-astronomy": {
+      "type": "Astronomy",
+      "title": "Short Report about Astronomy",
+      "description": "The article primarily focuses on exploring the possibility of finding extraterrestrial life by examining the structural features of galaxies and searching for planets that could support carbon-based life forms."
+    }
+  }
+}

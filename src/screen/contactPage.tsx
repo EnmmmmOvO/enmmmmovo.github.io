@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import { type FormEvent, useContext, useState } from 'react';
 import { Box, Button, Grid, styled, TextField, Tooltip, Typography } from '@mui/material';
 import Copyright from '../component/Copyright';
-import { LanguageContext } from '../context/LanguageContext';
-import { SERVER_URL } from '../webConfig';
-import { MouseContext } from '../context/MouseContext';
+import MouseContext from '../context/MouseContext';
+import { useTranslation } from 'react-i18next';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, SERVER_URL, WECHAT_CODE } from '../data/metadata.ts';
 
 const ContactBox = styled(Box)({
   display: 'flex',
@@ -15,26 +15,26 @@ const ContactBox = styled(Box)({
   }
 });
 
-const ContactPage: React.FC = () => {
-  const { content } = useContext(LanguageContext);
+const ContactPage = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState<boolean>(false);
-  const [emailAddress, setEmailAddress] = useState<string>(content.copyEmail as string);
-  const [wechat, setWechat] = useState<string>(content.copyWechat as string);
+  const [emailAddress, setEmailAddress] = useState<string>(t("copyEmail"));
+  const [wechat, setWechat] = useState<string>(t("copyWechat"));
   const { hoverOn, hoverOff } = useContext(MouseContext);
 
   const wechatSuccess = () => {
-    navigator.clipboard.writeText('wjh20000218')
-      .then(() => setWechat(content.copyWechatSuccess as string))
+    navigator.clipboard.writeText(WECHAT_CODE)
+      .then(() => setWechat(t("copyWechatSuccess")))
       .catch((err) => console.log(err));
   }
 
   const emailSuccess = () => {
-    navigator.clipboard.writeText('wangjinghan0218@gmail.com')
-      .then(() => setEmailAddress(content.copyEmailSuccess as string))
+    navigator.clipboard.writeText(EMAIL)
+      .then(() => setEmailAddress(t("copyEmailSuccess")))
       .catch((err) => console.log(err));
   }
 
-  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
@@ -81,12 +81,12 @@ const ContactPage: React.FC = () => {
             marginTop: '300px',
           }
         }}>
-          {content.wtgit}
+          {t("wtgit")}
         </Typography>
       </Box>
       <Box width='100%'>
         <Grid container mb={4} mt={4}>
-          <Grid item xs={12} md={6} sx={{
+          <Grid size={{ xs: 12, md: 6 }} sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -98,43 +98,43 @@ const ContactPage: React.FC = () => {
           }}>
             <div>
               <Typography sx={{ fontSize: 16, fontFamily: 'Arial', textAlign: 'center', fontWeight: 600  }}>
-                {content.ctmt}
+                {t("ctmt")}
               </Typography>
-              <Tooltip title={content.jumpGithub} placement="top" onMouseOver={hoverOn} onMouseOut={hoverOff}>
-                <ContactBox mt={4} onClick={() => window.open('https://github.com/enmmmmovo', '_blank')}>
+              <Tooltip title={t("jumpGithub")} placement="top" onMouseOver={hoverOn} onMouseOut={hoverOff}>
+                <ContactBox mt={4} onClick={() => window.open(GITHUB_URL, '_blank')}>
                   <img src='/static/images/logo/github.svg' style={{ height: '40px' }} alt="github icon"/>
                   <Typography sx={{color: "white", ml: 2}}>EnmmmmOvO</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={wechat} placement="top" onMouseLeave={() => setWechat(content.copyWechat as string)} onMouseOver={hoverOn} onMouseOut={hoverOff}>
+              <Tooltip title={wechat} placement="top" onMouseLeave={() => setWechat(t("copyWechat"))} onMouseOver={hoverOn} onMouseOut={hoverOff}>
                 <ContactBox mt={2} onClick={wechatSuccess}>
                   <img src='/static/images/logo/wechat.svg' style={{ height: '40px' }} alt="wechat icon"/>
-                  <Typography sx={{color: "white", ml: 2}}>wjh20000218</Typography>
+                  <Typography sx={{color: "white", ml: 2}}>{WECHAT_CODE}</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={emailAddress} placement="top" onMouseLeave={() => setEmailAddress(content.copyEmail as string)} onMouseOver={hoverOn} onMouseOut={hoverOff}>
+              <Tooltip title={emailAddress} placement="top" onMouseLeave={() => setEmailAddress(t("copyEmail"))} onMouseOver={hoverOn} onMouseOut={hoverOff}>
                 <ContactBox mt={2} onClick={emailSuccess}>
                   <img src='/static/images/logo/email.svg' style={{ height: '40px' }} alt="email icon"/>
-                  <Typography sx={{color: "white", ml: 2}}>wangjinghan0218@gmail.com</Typography>
+                  <Typography sx={{color: "white", ml: 2}}>{EMAIL}</Typography>
                 </ContactBox>
               </Tooltip>
-              <Tooltip title={content.jumpLinkedin} placement="top" onMouseOver={hoverOn} onMouseOut={hoverOff}>
-                <ContactBox mt={2} onClick={() => window.open('https://www.linkedin.com/in/wang-jinghan-722144309/')}>
+              <Tooltip title={t("jumpLinkedin")} placement="top" onMouseOver={hoverOn} onMouseOut={hoverOff}>
+                <ContactBox mt={2} onClick={() => window.open(LINKEDIN_URL)}>
                   <img src='/static/images/logo/linkedin.svg' style={{ height: '40px' }} alt="linkedin icon"/>
                   <Typography sx={{color: "white", ml: 2}}>Jinghan Wang</Typography>
                 </ContactBox>
               </Tooltip>
             </div>
           </Grid>
-          <Grid item xs={12} md={6} p={3}>
+          <Grid size={{ xs: 12, md: 6 }} p={3}>
              <Typography sx={{ fontSize: 16, fontFamily: 'Arial', textAlign: 'center', fontWeight: 600  }}>
-               {content.leaveMessage}
+               {t("leaveMessage")}
              </Typography>
             <form onSubmit={submit}>
               <TextField
                 variant="outlined"
                 fullWidth
-                label={content.preferredName}
+                label={t("preferredName")}
                 name='name'
                 InputLabelProps={{
                   style: {color: '#fff'},
@@ -165,7 +165,7 @@ const ContactPage: React.FC = () => {
                 variant="outlined"
                 fullWidth
                 name='email'
-                label={content.email}
+                label={t("email")}
                 InputLabelProps={{
                   style: {color: '#fff'},
                 }}
@@ -197,7 +197,7 @@ const ContactPage: React.FC = () => {
                 rows={5}
                 multiline
                 name='content'
-                label={content.content}
+                label={t("content")}
                 InputLabelProps={{
                   style: { color: '#fff' },
                 }}
@@ -232,8 +232,8 @@ const ContactPage: React.FC = () => {
                 variant="contained"
                 sx={{ mt: 2, width: '100%' }}
                 type="submit"
-              >{content.send}</Button>
-              {email && <Typography sx={{ mt: 1, textAlign: 'center' }}>{content.messageSuccess}</Typography>}
+              >{t("send")}</Button>
+              {email && <Typography sx={{ mt: 1, textAlign: 'center' }}>{t("messageSuccess")}</Typography>}
             </form>
           </Grid>
         </Grid>
