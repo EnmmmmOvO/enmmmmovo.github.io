@@ -2,9 +2,10 @@ import AnimatedButton from "../animation/AnimatedButton";
 import { type DetailProjectProps, LinkProps } from '@/types/project';
 import Markdown from '@/components/projects/Markdown';
 
-export default function DetailsHero({ detail, links } : {
+export default function DetailsHero({ detail, links, portfolio } : {
   detail : DetailProjectProps,
-  links: LinkProps[]
+  links: LinkProps[],
+  portfolio?: boolean
 }) {
 
   const chunks = Array.from(
@@ -23,7 +24,7 @@ export default function DetailsHero({ detail, links } : {
               <div className="col-12 col-xl-2 mxd-grid-item no-margin">
                 <div className="mxd-block__name name-project-link loading__fade">
                   <AnimatedButton
-                    text="Project Page"
+                    text={portfolio ? "Portfolio Page" : "Project Page"}
                     as={"a"}
                     className="btn btn-anim btn-line-small btn-muted slide-right-up"
                     href="/projects"

@@ -1,13 +1,9 @@
 import DetailsHero from "@/components/common/DetailsHero";
 import NextPrevNavigation from "@/components/projects/NextPrevNavigation";
-import ParallaxDivider from "@/components/projects/ParallaxDivider";
-import Content from "@/components/projects/Content";
 import { Metadata } from "next";
 import { notFound } from 'next/dist/client/components/not-found';
-import { type ProjectProps } from '@/types/project';
-import ImageGalley from '@/components/projects/ImageGalley';
 import { MetaTitle } from '@/data/metadata';
-import ImageLarge from '@/components/projects/ImageLarge';
+import { PortfolioProps } from '@/types/portfolio';
 
 export async function generateMetadata({ params } : {
   params: Promise<{ id: string }>;
@@ -16,7 +12,7 @@ export async function generateMetadata({ params } : {
 
   try {
     const mod = await import(`@/data/projects/${id}`);
-    const project: ProjectProps = mod.default;
+    const project: PortfolioProps = mod.default;
 
     return {
       title: project.detail.name + MetaTitle,
@@ -34,7 +30,7 @@ export default async function ProjectDetailsPage({ params } : {
 
   try {
     const mod = await import(`@/data/projects/${id}`);
-    const project : ProjectProps = mod.default
+    const project : PortfolioProps = mod.default
 
     return (
       <>
@@ -42,21 +38,9 @@ export default async function ProjectDetailsPage({ params } : {
           id="mxd-page-content"
           className="mxd-page-content inner-page-content"
         >
-          <DetailsHero detail={project.detail} links={project.links} />
-          {project.img1 && <ParallaxDivider file={project.img1}/>}
+          <DetailsHero detail={project.detail} links={project.links} portfolio />
           <div className="mxd-section mxd-project overflow-hidden">
             <div className="mxd-container grid-container">
-              {
-                project.content.map((item, index) => {
-                  if (item.type === 'content') {
-                    return <Content key={index} detail={item} />
-                  } else if (item.type === 'image-gallery') {
-                    return <ImageGalley key={index} detail={item} />
-                  } else {
-                    return <ImageLarge key={index} detail={item} />
-                  }
-                })
-              }
               <NextPrevNavigation related={project.related} />
             </div>
           </div>

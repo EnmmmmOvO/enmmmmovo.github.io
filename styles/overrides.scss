@@ -135,6 +135,16 @@
   .inner-headline__margin {
     margin-top: 2rem;
   }
+
+  .mxd-project-cards__large img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .headline-img-07::before {
+    background-image: url(/img/illustrations/400x200_hdl-07.webp);
+  }
 }
 
 .mxd-demo-footer__bg {
@@ -142,14 +152,14 @@
 }
 
 .menu-promo__svg {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 @media only screen and (min-width: 1200px) {
   .menu-promo__svg {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
   }
 }
 
@@ -169,7 +179,6 @@
 .mxd-demo-footer__btn p {
   margin-bottom: 5rem;
 }
-
 //main {
 //  cursor: default;
 //}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Creative studio",
+    "description": "template for modern agencies",
+    "src": "https://v1.willcode.io/static/images/projects/airbnb/logo.svg",
+    "tags": ["UI/UX", "Web design", "Illustrations"],
+    "anim": "anim-uni-in-up",
+    "date": "2023-01-15"
+  }
+]

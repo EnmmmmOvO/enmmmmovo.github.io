@@ -15,7 +15,7 @@ const data : ProjectProps = {
       },
       {
         title: "Technologies",
-        content: "Rust, Cryptographic Protocols"
+        content: "Cryptographic Protocols"
       },
       {
         title: "Context",
@@ -121,7 +121,7 @@ const data : ProjectProps = {
   ],
   related: {
     prev: { href: "/projects/seek", title: "NLP × SEEK" },
-    next: { href: "/projects/data_clean", title: "Data Cleaning Platform" }
+    next: { href: "/projects/data-clean", title: "Data Cleaning Platform" }
   }
 };
 

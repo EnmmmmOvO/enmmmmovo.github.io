@@ -1,6 +1,7 @@
-import PortfolioMasonry from "@/components/projects/PortfolioMasonry";
+import ProjectsMasonry from "@/components/projects/ProjectsMasonry";
 import { Metadata } from "next";
 import { MetaTitle } from '@/data/metadata';
+import PortfolioList from '@/components/portfolios/PortfolioList';
 
 export const metadata: Metadata = {
   title: "Project List" + MetaTitle,
@@ -13,7 +14,8 @@ export default function WorksMasonryPage() {
       <main
         id="mxd-page-content" className="mxd-page-content inner-page-content"
       >
-        <PortfolioMasonry />
+        <ProjectsMasonry />
+        <PortfolioList />
       </main>
     </>
   );

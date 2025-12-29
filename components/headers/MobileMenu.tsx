@@ -9,7 +9,7 @@ import Flip from "gsap/Flip";
 import { usePathname } from "next/navigation";
 import AnimatedButton from "../animation/AnimatedButton";
 import AllRights from '@/components/common/AllRights';
-import Logo from '@/components/headers/Logo';
+import Image from 'next/image';
 
 gsap.registerPlugin(Flip);
 
@@ -212,7 +212,9 @@ export default function MobileMenu() {
             <div className="mxd-menu__right">
               <div className="menu-promo">
                 <div className="menu-promo__content">
-                  <Logo className="menu-promo__caption menu-promo__svg fade-in-elm" />
+                  <div className="menu-promo__caption menu-promo__svg fade-in-elm">
+                    <Image src="/img/icons/800_800_coder.png" alt="Coder Icon" width={800} height={800} />
+                  </div>
                   <p
                     className="menu-promo__caption fade-in-elm"
                     style={{ transitionDelay: "0.4s" }}
