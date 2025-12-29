@@ -142,8 +142,11 @@
     object-fit: cover;
   }
 
-  .headline-img-07::before {
-    background-image: url(/img/illustrations/400x200_hdl-07.webp);
+  .contact-title span {
+    font-size: 6rem;
+  }
+  .contact-title i {
+    font-size: 6rem;
   }
 }
 

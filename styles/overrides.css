@@ -113,8 +113,11 @@
   height: auto;
   object-fit: cover;
 }
-.mxd-page-content .headline-img-07::before {
-  background-image: url(/img/illustrations/400x200_hdl-07.webp);
+.mxd-page-content .contact-title span {
+  font-size: 6rem;
+}
+.mxd-page-content .contact-title i {
+  font-size: 6rem;
 }
 
 .mxd-demo-footer__bg {

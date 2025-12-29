@@ -42,25 +42,23 @@ export default function PageTitle() {
                   <div className="mxd-block__inner-headline loading__item">
                     <h1 className="inner-headline__title">
                       Let&apos;s talk
-                      <br />
-                      about your project!
                       {/* <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:example@example.com?subject=Message%20from%20your%20site">
                     <span class="btn-caption">hello@rayo.com</span>
                     <i class="ph-bold ph-arrow-up-right"></i>
                   </a> */}
                     </h1>
                     <a
-                      className="btn btn-line-headline slide-right-up anim-no-delay"
+                      className="btn btn-line-headline slide-right-up anim-no-delay contact-title"
                       href="mailto:william.wang@willcode.io?subject=Inquiry%20from%20Website"
                     >
                       <span className="btn-caption">william.wang@willcode.io</span>
                       <i className="ph-bold ph-arrow-up-right" />
                     </a>
                     <p className="inner-headline__text t-large t-bright loading__item">
-                      Have questions? We&apos;ve got the answers! Here,
-                      you&apos;ll find clear and concise information about our
-                      services, process, and what to expect when working with
-                      us. If you need more details, feel free to reach out!
+                      I’m a junior developer, recently graduated, and still learning every day.
+                      I like building things, breaking them, and learning from the process.
+
+                      If you want to get in touch or talk about ideas, feel free to drop me a message.
                     </p>
                   </div>
                 </div>

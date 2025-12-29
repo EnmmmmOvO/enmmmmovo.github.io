@@ -1,5 +1,5 @@
 import DetailsHero from "@/components/common/DetailsHero";
-import NextPrevNavigation from "@/components/projects/NextPrevNavigation";
+import NextPrevNavigation from "@/components/common/NextPrevNavigation";
 import ParallaxDivider from "@/components/projects/ParallaxDivider";
 import Content from "@/components/projects/Content";
 import { Metadata } from "next";

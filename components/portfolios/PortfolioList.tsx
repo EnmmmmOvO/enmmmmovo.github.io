@@ -31,7 +31,7 @@ export default function PortfolioList() {
               <Link
                 key={item.id}
                 className="mxd-projects-list__item hover-reveal__item"
-                href={`/project-details`}
+                href={item.url}
               >
                 <div className="mxd-projects-list__border anim-uni-in-up" />
                 <div className="mxd-projects-list__inner">

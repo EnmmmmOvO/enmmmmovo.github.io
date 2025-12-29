@@ -7,7 +7,7 @@
       "before": "Balancing Ethics and Efficiency:",
       "highlight": "Autonomous Vehicles and Utilitarianism"
     },
-    "url": "#"
+    "url": "/portfolios/autonomous-vehicles-and-utilitarianism"
   },
   {
     "id": 18,
@@ -17,7 +17,7 @@
       "highlight": "Suzuki-Kasami",
       "after": "Concurrency Algorithm"
     },
-    "url": "#"
+    "url": "/portfolios/suzuki-kasami-concurrency-algorithm"
   },
   {
     "id": 19,
@@ -27,6 +27,6 @@
       "highlight": "James Webb",
       "after": "Space Telescope"
     },
-    "url": "#"
+    "url": "/portfolios/james-webb-space-telescope"
   }
 ]

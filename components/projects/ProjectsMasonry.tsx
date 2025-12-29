@@ -35,7 +35,7 @@ export default function ProjectsMasonry() {
                   >
                     <Link
                       className="mxd-project-item__media masonry-media"
-                      href={`/project-details`}
+                      href={item.url}
                     >
                       <BackgroundParallax
                         className={`mxd-project-item__preview masonry-preview parallax-img-small`}

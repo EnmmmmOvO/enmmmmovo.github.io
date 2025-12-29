@@ -1,5 +1,5 @@
 import DetailsHero from "@/components/common/DetailsHero";
-import NextPrevNavigation from "@/components/projects/NextPrevNavigation";
+import NextPrevNavigation from "@/components/common/NextPrevNavigation";
 import { Metadata } from "next";
 import { notFound } from 'next/dist/client/components/not-found';
 import { MetaTitle } from '@/data/metadata';
@@ -11,7 +11,7 @@ export async function generateMetadata({ params } : {
   const { id } = await params;
 
   try {
-    const mod = await import(`@/data/projects/${id}`);
+    const mod = await import(`@/data/portfolios/${id}`);
     const project: PortfolioProps = mod.default;
 
     return {
@@ -29,7 +29,7 @@ export default async function ProjectDetailsPage({ params } : {
   const { id } = await params;
 
   try {
-    const mod = await import(`@/data/projects/${id}`);
+    const mod = await import(`@/data/portfolios/${id}`);
     const project : PortfolioProps = mod.default
 
     return (

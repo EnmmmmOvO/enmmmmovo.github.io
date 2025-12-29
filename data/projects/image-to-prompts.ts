@@ -19,10 +19,10 @@ const data: ProjectProps = {
       },
       {
         title: "Context",
-        content: "Academic Coursework Project"
+        content: "Industry–Academic Collaboration"
       }
     ],
-    tags: [ "Frontend", "React", "TypeScript", "Cypress" ]
+    tags: [ "CV", "NLP", "ML", "Image-to-Text" ]
   },
   img1: "/img/project/image-to-prompts/2730_1535_home.png",
   content: [
