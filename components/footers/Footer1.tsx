@@ -28,7 +28,7 @@ export default function Footer1() {
         { label: "Github", href: "https://github.com/enmmmmovo" },
         { label: "Email", href: "mailto:william.wang@willcode.io" },
         { label: "Linkedin", href: "https://www.linkedin.com/in/wang-jinghan-722144309/" },
-        { label: "Resume", href: "/Jinghan_Wang_Resume.pdf" },
+        { label: "Resume", href: "https://drive.willcode.io/Jinghan-Wang-Resume.pdf" },
       ],
     }
   ] as FooterSection[];
