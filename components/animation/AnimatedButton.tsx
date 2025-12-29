@@ -66,6 +66,7 @@ export default function AnimatedButton<As extends ElementType = "div">(
   const letters = useMemo(() => splitToLetters(text), [text]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
   }, []);
 

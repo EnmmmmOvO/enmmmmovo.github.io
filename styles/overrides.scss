@@ -135,17 +135,34 @@
   .inner-headline__margin {
     margin-top: 2rem;
   }
+
+  .mxd-project-cards__large img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .contact-title span {
+    font-size: 6rem;
+  }
+  .contact-title i {
+    font-size: 6rem;
+  }
+}
+
+.mxd-demo-footer__bg {
+  z-index: -10;
 }
 
 .menu-promo__svg {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 @media only screen and (min-width: 1200px) {
   .menu-promo__svg {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
   }
 }
 
@@ -165,7 +182,6 @@
 .mxd-demo-footer__btn p {
   margin-bottom: 5rem;
 }
-
 //main {
 //  cursor: default;
 //}

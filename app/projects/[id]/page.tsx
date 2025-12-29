@@ -1,13 +1,13 @@
-import DetailsHero from "@/components/projects/DetailsHero";
-import NextPrevNavigation from "@/components/projects/NextPrevNavigation";
-import ParallaxDivider2 from "@/components/projects/ParallaxDivider2";
+import DetailsHero from "@/components/common/DetailsHero";
+import NextPrevNavigation from "@/components/common/NextPrevNavigation";
+import ParallaxDivider from "@/components/projects/ParallaxDivider";
 import Content from "@/components/projects/Content";
 import { Metadata } from "next";
 import { notFound } from 'next/dist/client/components/not-found';
 import { type ProjectProps } from '@/types/project';
 import ImageGalley from '@/components/projects/ImageGalley';
-import ParallaxDivider from '@/components/projects/ParallaxDivider';
 import { MetaTitle } from '@/data/metadata';
+import ImageLarge from '@/components/projects/ImageLarge';
 
 export async function generateMetadata({ params } : {
   params: Promise<{ id: string }>;
@@ -43,7 +43,7 @@ export default async function ProjectDetailsPage({ params } : {
           className="mxd-page-content inner-page-content"
         >
           <DetailsHero detail={project.detail} links={project.links} />
-          <ParallaxDivider2 file={project.img1} />
+          {project.img1 && <ParallaxDivider file={project.img1}/>}
           <div className="mxd-section mxd-project overflow-hidden">
             <div className="mxd-container grid-container">
               {
@@ -52,10 +52,8 @@ export default async function ProjectDetailsPage({ params } : {
                     return <Content key={index} detail={item} />
                   } else if (item.type === 'image-gallery') {
                     return <ImageGalley key={index} detail={item} />
-                  } else if (item.type === 'image') {
-                    return <ParallaxDivider key={index} file={item.src} />
                   } else {
-                    return <></>;
+                    return <ImageLarge key={index} detail={item} />
                   }
                 })
               }

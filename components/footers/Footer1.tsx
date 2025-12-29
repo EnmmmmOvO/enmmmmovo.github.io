@@ -18,7 +18,6 @@ export default function Footer1() {
       links: [
         { label: "Home", href: "/" },
         { label: "Projects", href: "/projects" },
-        { label: "Portfolios", href: "/portfolios" },
         { label: "Contact", href: "/contact" },
         { label: "Old Version", href: "https://enmmmmovo.github.io/" },
       ],
@@ -29,7 +28,7 @@ export default function Footer1() {
         { label: "Github", href: "https://github.com/enmmmmovo" },
         { label: "Email", href: "mailto:william.wang@willcode.io" },
         { label: "Linkedin", href: "https://www.linkedin.com/in/wang-jinghan-722144309/" },
-        { label: "Resume", href: "/Jinghan_Wang_Resume.pdf" },
+        { label: "Resume", href: "https://drive.willcode.io/Jinghan-Wang-Resume.pdf" },
       ],
     }
   ] as FooterSection[];
@@ -42,7 +41,7 @@ export default function Footer1() {
           alt="Rayo Image"
           width={1920}
           height={580}
-          src="/img/demo/01-footer.webp"
+          src="/img/footer/01-footer.webp"
         />
       </div>
       {/* Footer Background End */}

@@ -12,6 +12,7 @@ export default function ThemeSwitcherButton({}) {
     return "light";
   });
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setShowSwitcher(true);
   }, []);
 

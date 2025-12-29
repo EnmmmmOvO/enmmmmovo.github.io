@@ -1,6 +1,6 @@
 import { type ProjectProps } from '@/types/project';
 
-const seek : ProjectProps = {
+const data : ProjectProps = {
   detail: {
     name: "NLP x SEEK",
     desc: "This project focuses on **extracting structured information from large-scale job advertisements** under **realistic computational and deployment constraints**. It explores **resource-efficient NLP system design** and received an **award nomination** for its applied impact.",
@@ -96,8 +96,8 @@ const seek : ProjectProps = {
     {href: "https://github.com/EnmmmmOvO/Information-Technology/blob/master/COMP6713/project/report.pdf", text: "Paper"}
   ],
   related: {
-    next: { href: "/projects/signal", title: "End-to-End Platform" }
+    next: { href: "/projects/signal", title: "E2E Platform" }
   }
 };
 
-export default seek;
+export default data;

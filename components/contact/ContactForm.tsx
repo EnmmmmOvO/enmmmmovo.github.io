@@ -18,7 +18,7 @@ export default function ContactForm() {
   });
 
   // Formspree submit hook
-  const [fsState, fsSubmit] = useForm<ContactForm>("meoljlry");
+  const [fsState, fsSubmit] = useForm<ContactForm>("xregrlwk");
 
   const onSubmit = async (data: ContactForm) => {
     try {
@@ -60,18 +60,8 @@ export default function ContactForm() {
                           {/* Hidden Required Fields */}
                           <input
                             type="hidden"
-                            name="project_name"
-                            defaultValue="Rayo Template"
-                          />
-                          <input
-                            type="hidden"
                             name="admin_email"
                             defaultValue="support@mixdesign.dev"
-                          />
-                          <input
-                            type="hidden"
-                            name="form_subject"
-                            defaultValue="Contact Form Message"
                           />
                           {/* Visible Fields */}
                           <div className="container-fluid p-0">
@@ -90,13 +80,6 @@ export default function ContactForm() {
                               </div>
                               <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
                                 <input
-                                  type="text"
-                                  placeholder="Company name"
-                                  {...register("Company")}
-                                />
-                              </div>
-                              <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <input
                                   type="email"
                                   placeholder="Email*"
                                   {...register("E-mail")}
@@ -106,13 +89,6 @@ export default function ContactForm() {
                                     {errors["E-mail"].message}
                                   </p>
                                 )}
-                              </div>
-                              <div className="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <input
-                                  type="tel"
-                                  placeholder="Phone"
-                                  {...register("Phone")}
-                                />
                               </div>
                               <div className="col-12 mxd-grid-item anim-uni-in-up">
                                 <textarea

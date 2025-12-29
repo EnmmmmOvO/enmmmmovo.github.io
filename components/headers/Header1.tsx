@@ -1,13 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AnimatedButton from "../animation/AnimatedButton";
-import { usePathname } from "next/navigation";
 import ThemeSwitcherButton from "./ColorSwitcher";
 import Logo from '@/components/headers/Logo';
 
 export default function Header1() {
-  const pathname = usePathname();
   const [isHidden, setIsHidden] = useState(false);
   useEffect(() => {
     const handleScroll = () => {

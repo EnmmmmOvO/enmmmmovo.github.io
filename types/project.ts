@@ -26,16 +26,19 @@ export interface LinkProps {
   text: string;
 }
 
-export interface ImageProps {
-  type: "image";
-  src: string;
-}
-
 export interface ContentProps {
   type: "content";
   title: string;
   highlight?: string;
   desc: string;
+}
+
+export interface LargeImageProps {
+  type: "large-image";
+  src: string;
+  caption?: string;
+  width: number;
+  height: number;
 }
 
 export interface RelatedProjectProps {
@@ -45,8 +48,8 @@ export interface RelatedProjectProps {
 
 export interface ProjectProps {
   detail: DetailProjectProps;
-  img1: string;
-  content: (ContentProps | ImageProps | ImageGalleryProps)[];
+  img1?: string;
+  content: (ContentProps | ImageGalleryProps | LargeImageProps)[];
   links: LinkProps[];
   related: RelatedProjectProps;
 }

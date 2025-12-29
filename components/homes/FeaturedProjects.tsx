@@ -140,7 +140,7 @@ export default function FeaturedProjects() {
                 <div className="mxd-services-stack__controls">
                   <Link
                     className="btn btn-round btn-round-large btn-base slide-right-up anim-no-delay"
-                    href="#"
+                    href="/projects/data-clean"
                   >
                     <i className="ph ph-arrow-up-right" />
                   </Link>
