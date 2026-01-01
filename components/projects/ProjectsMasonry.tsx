@@ -1,6 +1,6 @@
 import Link from "next/link";
 import MasonryGrid from "../animation/MasonryGrid";
-import projects from "@/data/projects.json";
+import projects from "@/data/projects";
 import BackgroundParallax from "../animation/BackgroundParallax";
 
 export default function ProjectsMasonry() {

@@ -1,3 +1,5 @@
+import { EMAIL } from '@/data/metadata';
+
 export default function PageTitle() {
   return (
     <div className="mxd-section mxd-section-inner-headline padding-s-text-pre-form overflow-hidden">
@@ -49,9 +51,9 @@ export default function PageTitle() {
                     </h1>
                     <a
                       className="btn btn-line-headline slide-right-up anim-no-delay contact-title"
-                      href="mailto:william.wang@willcode.io?subject=Inquiry%20from%20Website"
+                      href={`mailto:${EMAIL}?subject=Inquiry%20from%20Website`}
                     >
-                      <span className="btn-caption">william.wang@willcode.io</span>
+                      <span className="btn-caption">{EMAIL}</span>
                       <i className="ph-bold ph-arrow-up-right" />
                     </a>
                     <p className="inner-headline__text t-large t-bright loading__item">

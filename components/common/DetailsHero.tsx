@@ -1,6 +1,6 @@
 import AnimatedButton from "../animation/AnimatedButton";
 import { type DetailProjectProps, LinkProps } from '@/types/project';
-import Markdown from '@/components/projects/Markdown';
+import Markdown from '@/components/common/Markdown';
 
 export default function DetailsHero({ detail, links, portfolio } : {
   detail : DetailProjectProps,
@@ -27,7 +27,7 @@ export default function DetailsHero({ detail, links, portfolio } : {
                     text={portfolio ? "Portfolio Page" : "Project Page"}
                     as={"a"}
                     className="btn btn-anim btn-line-small btn-muted slide-right-up"
-                    href="/projects"
+                    href={portfolio ? `/portfolios` : `/projects` }
                   >
                     <i className="ph ph-arrow-up-right" />
                   </AnimatedButton>

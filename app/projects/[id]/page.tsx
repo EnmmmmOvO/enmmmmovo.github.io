@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import { notFound } from 'next/dist/client/components/not-found';
 import { type ProjectProps } from '@/types/project';
 import ImageGalley from '@/components/projects/ImageGalley';
-import { MetaTitle } from '@/data/metadata';
+import { MetaDescription, MetaTitle } from '@/data/metadata';
 import ImageLarge from '@/components/projects/ImageLarge';
 
 export async function generateMetadata({ params } : {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params } : {
 
     return {
       title: project.detail.name + MetaTitle,
-      description: "Technical portfolio of Jinghan Wang, focusing on applied machine learning, NLP systems, end-to-end encryption, and production-grade data platforms."
+      description: MetaDescription
     };
   } catch {
     return { title: "Project Not Found" + MetaTitle };

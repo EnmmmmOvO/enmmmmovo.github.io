@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import menuItems from "@/data/menu.json"; // adjust path accordingly
+import menuItems from "@/data/menu"; // adjust path accordingly
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 

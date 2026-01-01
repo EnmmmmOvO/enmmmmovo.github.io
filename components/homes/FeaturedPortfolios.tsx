@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import blogs from "@/data/blogs.json";
+import blogs from "@/data/featured-portfolios";
 import RevealText from "../animation/RevealText";
 import BackgroundParallax from "../animation/BackgroundParallax";
 import AnimatedButton from "../animation/AnimatedButton";
@@ -26,6 +26,7 @@ export default function FeaturedPortfolios() {
                   <div className="mxd-section-title__hrcontrols anim-uni-in-up">
                     <AnimatedButton
                       text="View More"
+                      as="a"
                       className="btn btn-anim btn-default btn-outline slide-right-up"
                       href={`/portfolios`}
                     >
