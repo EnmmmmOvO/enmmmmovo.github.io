@@ -152,6 +152,10 @@
   margin-bottom: 5rem;
 }
 
+main {
+  cursor: default;
+}
+
 .pointer-events-circle {
   position: fixed;
   width: 40px;

@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ThemeSwitcherButton from "./ColorSwitcher";
 import Logo from '@/components/headers/Logo';
+import LanguageSwitchButton from '@/components/headers/LanguageSwitcher';
+import ThemeSwitcherButton from '@/components/headers/ColorSwitcher';
 
-export default function Header1() {
+export default function Header() {
   const [isHidden, setIsHidden] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +28,7 @@ export default function Header1() {
       </div>
       {/* header controls */}
       <div className="mxd-header__controls loading__fade">
+        <LanguageSwitchButton />
         <ThemeSwitcherButton />
       </div>
     </header>

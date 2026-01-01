@@ -4,7 +4,7 @@ import Logo from '@/components/headers/Logo';
 import AllRights from '@/components/common/AllRights';
 import data from '@/data/footer-menu';
 
-export default function Footer1() {
+export default function Footer() {
 
 
   return (

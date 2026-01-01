@@ -1,6 +1,9 @@
 import TypedText from "@/components/common/TypedText";
+import { getTranslations } from 'next-intl/server';
 
-export default function Hero() {
+export default async function Hero() {
+  const t = await getTranslations("home");
+
   return (
     <div className="mxd-section mxd-section-inner-headline padding-text-pre-block">
       <div className="mxd-container grid-container">
@@ -45,9 +48,7 @@ export default function Hero() {
                       <TypedText />
                     </h1>
                     <p className="inner-headline__text t-large t-bright loading__item">
-                      I’m a full-stack developer exploring AI, blockchain, and system-level engineering.
-                      I enjoy building products where technology, logic, and real-world use cases meet,
-                      and I’m always eager to learn new ideas and work with emerging technologies.
+                      {t("subtitle")}
                     </p>
                   </div>
                 </div>

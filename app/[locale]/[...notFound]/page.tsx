@@ -1,6 +1,7 @@
+// app/[locale]/[...notFound]/page.tsx
 import { Metadata } from "next";
 import { MetaDescription, MetaTitle } from '@/data/metadata';
-import NotFound from '@/components/common/NotFound';
+import { notFound } from 'next/dist/client/components/not-found';
 
 export const metadata: Metadata = {
   title: "Page Not Found" + MetaTitle,
@@ -8,7 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function NotFoundPage() {
-  return (
-    <NotFound />
-  );
+  notFound()
 }

@@ -1,40 +1,39 @@
-import "../public/css/styles.css";
-import "@/styles/overrides.scss"
-import ClientLayout from "@/components/layout/ClientLayout";
-import { Metadata } from "next";
-import Footer1 from '@/components/footers/Footer1';
-import MouseTracker from '@/components/animation/MouseTracker';
-import { MetaDescription, MetaTitle } from '@/data/metadata';
-
-export const metadata: Metadata = {
-  title: MetaTitle,
-  description: MetaDescription,
-};
+// app/[locale]/layout.tsx
+import '@/public/css/styles.css'
+import '@/styles/overrides.scss'
+import { NextIntlClientProvider } from "next-intl";
+import { ReactNode } from 'react';
+import { cookies } from 'next/dist/server/request/cookies';
 
 const setColorSchemeScript = `
-(function() {
-  try {
-    var scheme = localStorage.getItem('color-scheme') || 'light';
-    document.documentElement.setAttribute('color-scheme', scheme);
-  } catch(e) {}
-})();
+  (function() {
+    try {
+      var scheme = localStorage.getItem('color-scheme') || 'light';
+      document.documentElement.setAttribute('color-scheme', scheme);
+    } catch(e) {}
+  })();
 `;
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function LocaleLayout({
+  children
+}: {
+  children: ReactNode;
+}) {
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("NEXT_LOCALE")?.value ?? "en";
+
   return (
-    <html suppressHydrationWarning lang="en" className="no-touch">
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
-      </head>
-      <body>
-        <MouseTracker />
-        <ClientLayout>{children}</ClientLayout>
-        <Footer1 />
-      </body>
-    </html>
+    <>
+      <html suppressHydrationWarning className="no-touch" lang={locale}>
+        <head>
+          <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
+        </head>
+        <body>
+          <NextIntlClientProvider>
+            {children}
+          </NextIntlClientProvider>
+        </body>
+      </html>
+    </>
   );
 }
