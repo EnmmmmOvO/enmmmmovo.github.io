@@ -1,8 +1,6 @@
 "use client";
-import { ElementType, useLayoutEffect, useRef } from "react";
+import { ElementType, useEffect, useRef } from "react";
 import gsap from "gsap";
-// Tip: if SSR complains, use the dynamic import version shown below.
-import Ukiyo from "ukiyojs";
 type HtmlTag = keyof HTMLElementTagNameMap;
 
 type UkiyoBgProps<T extends HtmlTag = "div"> = {
@@ -28,24 +26,39 @@ const BackgroundParallax = <T extends HtmlTag = "div">({
 }: UkiyoBgProps<T>) => {
   const elRef = useRef<HTMLElement | null>(null);
   const Tag = (as ?? "div") as ElementType;
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!elRef.current) return;
 
-    // Create instance
-    const instance = new Ukiyo(elRef.current, {
-      scale,
-      speed,
-      willChange,
-      wrapperClass,
-      externalRAF: true, // we’ll drive it with GSAP’s ticker
-    });
+    let instance: { animate: () => void; destroy: () => void } | null = null;
+    let tick: (() => void) | null = null;
+    let cancelled = false;
 
-    const tick = () => instance.animate();
-    gsap.ticker.add(tick);
+    const init = async () => {
+      try {
+        const { default: Ukiyo } = await import("ukiyojs");
+        if (cancelled || !elRef.current) return;
+
+        instance = new Ukiyo(elRef.current, {
+          scale,
+          speed,
+          willChange,
+          wrapperClass,
+          externalRAF: true, // driven by GSAP’s ticker
+        });
+        tick = () => instance?.animate();
+        gsap.ticker.add(tick);
+      } catch (e) {
+        // Fail silently so the background still renders even if parallax fails
+        console.error("Ukiyo init failed", e);
+      }
+    };
+
+    init();
 
     return () => {
-      gsap.ticker.remove(tick);
-      instance.destroy();
+      cancelled = true;
+      if (tick) gsap.ticker.remove(tick);
+      instance?.destroy();
     };
   }, [scale, speed, willChange, wrapperClass]);
 

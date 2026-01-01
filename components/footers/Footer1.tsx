@@ -1,37 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import Logo from '@/components/headers/Logo';
 import AllRights from '@/components/common/AllRights';
-
-type Footer1Props = {
-  title: string;
-  links: { label: string; href: string }[];
-}
-
-type FooterSection = | Footer1Props | { groups: Footer1Props[]; };
+import data from '@/data/footer-menu';
 
 export default function Footer1() {
-  const footerNavData = [
-    {
-      title: "My Pages",
-      links: [
-        { label: "Home", href: "/" },
-        { label: "Projects", href: "/projects" },
-        { label: "Contact", href: "/contact" },
-        { label: "Old Version", href: "https://enmmmmovo.github.io/" },
-      ],
-    } as Footer1Props,
-    {
-      title: "Links",
-      links: [
-        { label: "Github", href: "https://github.com/enmmmmovo" },
-        { label: "Email", href: "mailto:william.wang@willcode.io" },
-        { label: "Linkedin", href: "https://www.linkedin.com/in/jinghan-wang-willcode/" },
-        { label: "Resume", href: "https://drive.willcode.io/Jinghan-Wang-Resume.pdf" },
-      ],
-    }
-  ] as FooterSection[];
+
 
   return (
     <footer className="mxd-demo-footer">
@@ -55,7 +29,7 @@ export default function Footer1() {
                 <nav className="mxd-demo-footer__nav">
                   <div className="container-fluid p-0">
                     <div className="row g-0">
-                      {footerNavData.map((section, index) => (
+                      {data.map((section, index) => (
                         <div
                           key={index}
                           className="col-12 col-md-4 mxd-grid-item mxd-footer-nav__item"

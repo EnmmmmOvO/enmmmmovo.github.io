@@ -23,6 +23,7 @@ export default function FeaturedProjects() {
               <div className="mxd-section-title__hrcontrols pre-title anim-uni-in-up">
                 <AnimatedButton
                   text="View More"
+                  as="a"
                   className="btn btn-anim btn-default btn-outline slide-right-up"
                   href={`/projects`}
                 >

@@ -1,5 +1,5 @@
 import RevealText from "../animation/RevealText";
-import Markdown from '@/components/projects/Markdown';
+import Markdown from '@/components/common/Markdown';
 import { ContentProps } from '@/types/project';
 
 export default function Content({ detail } : { detail : ContentProps }) {
@@ -19,10 +19,10 @@ export default function Content({ detail } : { detail : ContentProps }) {
             <div className="col-12 col-xl-6 mxd-grid-item no-margin">
               <div className="mxd-project__content">
                 <div className="mxd-project__paragraph">
-                  <Markdown className="t-large t-bright anim-uni-in-up">
+                  <Markdown className="t-large t-bright">
                     {detail.highlight}
                   </Markdown>
-                  <Markdown className="anim-uni-in-up">
+                  <Markdown>
                     {detail.desc}
                   </Markdown>
                 </div>
@@ -48,7 +48,7 @@ export default function Content({ detail } : { detail : ContentProps }) {
           <div className="col-12 col-xl-6 mxd-grid-item no-margin">
             <div className="mxd-project__content">
               <div className="mxd-project__paragraph medium-text">
-                <Markdown className="anim-uni-in-up">
+                <Markdown>
                   {detail.desc}
                 </Markdown>
               </div>

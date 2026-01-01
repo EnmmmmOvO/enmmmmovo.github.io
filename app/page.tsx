@@ -1,17 +1,17 @@
 import { Metadata } from "next";
 import Hero from '@/components/homes/Hero';
-import heroStack from '@/data/herostack.json';
+import heroStack from '@/data/herostack';
 import Techstack from '@/components/homes/Techstack';
-import toolstack from '@/data/toolstack.json';
+import toolstack from '@/data/toolstack';
 import WorkExperiences from '@/components/homes/WorkExperiences';
 import Education from '@/components/homes/Education';
 import FeaturedProjects from '@/components/homes/FeaturedProjects';
 import FeaturedPortfolios from '@/components/homes/FeaturedPortfolios';
-import { MetaTitle } from '@/data/metadata';
+import { MetaDescription, MetaTitle } from '@/data/metadata';
 
 export const metadata: Metadata = {
   title: "Jinghan Wang" + MetaTitle,
-  description: "Technical portfolio of Jinghan Wang, focusing on applied machine learning, NLP systems, end-to-end encryption, and production-grade data platforms."
+  description: MetaDescription
 };
 
 export default function Home() {

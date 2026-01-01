@@ -4,12 +4,11 @@ import ClientLayout from "@/components/layout/ClientLayout";
 import { Metadata } from "next";
 import Footer1 from '@/components/footers/Footer1';
 import MouseTracker from '@/components/animation/MouseTracker';
-import ScrollToTop from '@/components/scroll/ScrollToTop';
+import { MetaDescription, MetaTitle } from '@/data/metadata';
 
 export const metadata: Metadata = {
-  title: "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
-  description:
-    "Rayo - Digital Agency & Personal Portfolio React Nextjs Template",
+  title: MetaTitle,
+  description: MetaDescription,
 };
 
 const setColorSchemeScript = `
@@ -32,7 +31,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
       </head>
       <body>
-        <ScrollToTop />
         <MouseTracker />
         <ClientLayout>{children}</ClientLayout>
         <Footer1 />

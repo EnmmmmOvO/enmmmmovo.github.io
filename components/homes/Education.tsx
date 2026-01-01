@@ -1,6 +1,6 @@
 import RevealText from "@/components/animation/RevealText";
 
-import education from "@/data/education.json";
+import education from "@/data/education";
 import { Experience2 } from "@/types/experiences";
 import Image from 'next/image';
 
