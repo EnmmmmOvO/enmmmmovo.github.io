@@ -1,4 +1,5 @@
 import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '@/data/metadata';
+import { FooterSection } from '@/types/menu';
 
 const data : FooterSection[] = [
   {
