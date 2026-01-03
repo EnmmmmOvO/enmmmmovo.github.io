@@ -186,7 +186,7 @@ export default function MobileMenu() {
                                     isMenuActive(sub.href) ? "active" : ""
                                   }`}
                                 >
-                                  <Link href={sub.href}>{sub.label}</Link>
+                                  <Link href={sub.href}>{t(sub.label)}</Link>
                                 </li>
                               ))}
                             </ul>

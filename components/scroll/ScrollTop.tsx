@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
-import { usePathname } from 'next/navigation';
 
 export default function ScrollTop() {
   const [visible, setVisible] = useState(false);
