@@ -1,6 +1,6 @@
 {
   "name": "willcode",
-  "version": "v2.2-analytics",
+  "version": "v2.3-logo",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
