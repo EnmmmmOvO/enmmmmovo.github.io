@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from 'react';
 import { cookies } from 'next/dist/server/request/cookies';
 import ScrollToTop from '@/components/scroll/ScrollToTop';
+import { Analytics } from "@vercel/analytics/next"
 
 const setColorSchemeScript = `
   (function() {
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
           <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
         </head>
         <body>
+          <Analytics />
           <NextIntlClientProvider>
             <ScrollToTop />
             {children}
