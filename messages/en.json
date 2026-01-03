@@ -1,5 +1,577 @@
 {
+  "metaTitle": " | WillCode",
+  "metaDesc": "Technical portfolio of Jinghan Wang, focusing on full-stack projects, applied machine learning",
+  "pageNotFound": "Page Not Found",
+  "contactPage": "Contact",
+  "projectsPage": "Projects List",
+  "portfoliosPage": "Portfolios List",
+  "homePage": "Home",
+  "header-footer": {
+    "home": "Home",
+    "projects": "Projects",
+    "portfolios": "Portfolios",
+    "contact": "Contact",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "resume": "Resume",
+    "oldVersion": "Old Version",
+    "links": "Links",
+    "myPages": "My Pages",
+    "intro": "Where Will(iam) meets Code — Exploring ideas through working software.",
+    "welcome": "Welcome to the whimsical world of Will(iam)'s Code!"
+  },
   "home": {
-    "subtitle": "I’m a full-stack developer exploring AI, blockchain, and system-level engineering.I enjoy building products where technology, logic, and real-world use cases meet,and I’m always eager to learn new ideas and work with emerging technologies."
+    "hero": ["Jinghan Wang", "Full-Stack Developer", "Artificial Intelligence", "Blockchain"],
+    "subtitle": "I’m a full-stack developer exploring AI, blockchain, and system-level engineering.I enjoy building products where technology, logic, and real-world use cases meet,and I’m always eager to learn new ideas and work with emerging technologies.",
+    "coreTechTitle": "Core Technologies & Tools",
+    "viewMore": "View More",
+    "featuredProjects": "Featured Projects",
+    "selectedWriting": "Selected Writing",
+    "workExperience": "Work Experience",
+    "workIn": "In the",
+    "toolsIUse": "Tools I Use",
+    "MyEducation": "My Education",
+    "courseBy": "Course by"
+  },
+  "projects": {
+    "listPage": "Project Page",
+    "date": "Date",
+    "technologies": "Technologies",
+    "role": "Role",
+    "context": "Context",
+    "github": "GitHub",
+    "paper": "Paper",
+    "next": "Next",
+    "prev": "Prev",
+    "presentation": "Presentation",
+    "dataset": "Dataset",
+    "projectTitle1": "Projects",
+    "projectTitle2": "to Explore",
+    "kaggle": "Kaggle"
+  },
+  "portfolios": {
+    "listPage": "Portfolios Page",
+    "date": "Date",
+    "technologies": "Technologies",
+    "wordCount": "Word Count",
+    "context": "Context",
+    "github": "GitHub",
+    "paper": "Paper",
+    "next": "Next",
+    "prev": "Prev",
+    "presentation": "Presentation",
+    "portfolioTitle": "Portfolios to Explore"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "intro": "I’m a junior developer, recently graduated, and still learning every day. I like building things, breaking them, and learning from the process. If you want to get in touch or talk about ideas, feel free to drop me a message.",
+    "yourName": "Your Name",
+    "email": "Email",
+    "content": "Something you want to say...",
+    "submit": "Submit",
+    "messageSent": "Message sent — thanks!",
+    "submitFailed": "Submit failed — please try again later.",
+    "done": "Done!",
+    "thanks": "Thanks for your message. I will get back as soon as possible.",
+    "nameIsRequired": "Name is required.",
+    "invalidEmail": "Invalid email address.",
+    "messageIsTooShort": "Message is too short."
+  },
+  "data": {
+    "work": {
+      "digital-capital-group": {
+        "role": "Full-Stack Engineer",
+        "agency": "Digital Capital Group",
+        "desc": "Developed and maintained multiple internal and external web applications, including company landing pages, event-focused websites, and supporting backend services.\n\nDesigned and implemented backend APIs and database architectures to support diverse business requirements, focusing on data integrity, system stability, and maintainability.\n\nBuilt and integrated blockchain-based web applications involving digital asset payment workflows and smart contract interactions.\n\nTook ownership of production environments, managing multiple servers, deployments, monitoring, and routine maintenance to ensure high availability and operational reliability.\n\nInvestigated and resolved urgent production issues and system bugs through structured troubleshooting and code-level debugging.\n\nCollaborated with cross-functional teams and external technical partners to diagnose issues and improve existing systems, contributing to long-term platform stability.",
+        "year": "2024 - Present"
+      },
+      "baosight-software": {
+        "role": "Robotics Department (Internship)",
+        "agency": "Baosight Software (Anhui) Co., Ltd.",
+        "desc": "Worked within the robotics department on robot programming and simulation tasks, using ABB RobotStudio to model and optimise complex workstation operations.\n\nAssisted in developing and validating simulation demonstrations, including path planning, motion sequencing, and collision detection, ensuring alignment between theoretical design and practical implementation.",
+        "year": "2023 – 2024"
+      },
+      "phima-intelligence-technology": {
+        "role": "Smart Application Department (Internship)",
+        "agency": "Phima Intelligence Technology Co., Ltd.",
+        "desc": "Reviewed source code and technical documentation to understand the functional architecture and execution flow of a Spring Boot–based ERP system.\n\nSupported system testing and bug resolution by participating in issue reproduction, code-level debugging, and verification, contributing to improved system stability and reliability.",
+        "year": "2021 – 2022"
+      },
+      "anhui-cloud-rail-information-technology": {
+        "role": "Internship Product Specialist",
+        "agency": "Anhui Cloud Rail Information Technology Co., Ltd.",
+        "desc": "Assisted in the deployment of a factory dashboard system by contributing to test planning for critical modules, reporting issues, and supporting bug localisation efforts.\n\nSupported improvements to user data management workflows by handling data entry, validation, and integrity checks to ensure accurate and reliable system data.",
+        "year": "2021"
+      }
+    },
+    "education": {
+      "master": {
+        "title": "Master of Information Technology (Artificial Intelligence)",
+        "institution": "University of New South Wales",
+        "desc": "Relevant coursework includes Cybersecurity and Big Data Systems, with a focus on applied machine learning, data-intensive computing, and secure system design.",
+        "year": "2024 – 2025"
+      },
+      "bachelor": {
+        "title": "Bachelor of Computer Science",
+        "institution": "University of New South Wales",
+        "desc": "Completed advanced coursework in compilers, operating systems, concurrency principles, and frontend development, building a strong foundation in software engineering and system-level concepts.",
+        "year": "2020 - 2023"
+      }
+    },
+    "projects": {
+      "conex": {
+        "title": "CONEX",
+        "preview": {
+          "title": "CONEX",
+          "description": "(A Project Management Platform)"
+        },
+        "desc": "CONEX is a collaborative full-stack web platform designed to connect professionals with project opportunities, supporting both company users and professional users throughout the project lifecycle.",
+        "tags": [
+          "Full-Stack",
+          "FastAPI",
+          "React"
+        ],
+        "date": "Dec 2023",
+        "role": "Backend & Frontend Developer",
+        "technologies": "Full-Stack Web Development",
+        "context": "Capstone Project",
+        "content": {
+          "1": {
+            "title": "Task Breakdown",
+            "desc": "The platform provides different functionalities for two user roles:\n\n**Company Users**\n\n- Create and publish projects\n\n- Review and approve professional applications\n\n- Manage project participation\n\n**Professional Users**\n\n- Apply for available projects\n\n- Participate in approved projects\n\n- Evaluate companies and projects after completion\n\nThe system supports user authentication, project workflows, and mutual evaluations between users."
+          },
+          "2": {
+            "title": "Technology Stack",
+            "desc": "- Contributed primarily to **backend development**, focusing on **database design and core backend logic**.\n\n- Designed and implemented the database schema using **SQLAlchemy** with **SQLite3**.\n\n- Developed backend services using **FastAPI**, handling project workflows and user interactions.\n\n- Designed and deployed **email notification functionality** using Python’s SMTP library, enabling direct access via embedded URLs.\n\n- Implemented selected **front-end pages** and handled **email-based URL redirection logic** using **React Router**."
+          }
+        }
+      },
+      "data-clean": {
+        "title": "Data Cleaning Platform",
+        "preview": {
+          "title": "Data Cleaning Platform",
+          "description": "for information extraction and enrichment"
+        },
+        "desc": "This project focuses on building a scalable data cleaning and enrichment system designed to process heterogeneous contact datasets under realistic engineering constraints. The platform emphasizes asynchronous task execution, lightweight ML inference, and robust backend orchestration rather than end-to-end monolithic pipelines.",
+        "homeDesc": "Scalable data cleaning and enrichment platform with an asynchronous processing pipeline, integrating ML-based field extraction and multi-layer storage.",
+        "tags": [
+          "ML",
+          "Data Engineering",
+          "System Architecture",
+          "Asynchronous"
+        ],
+        "date": "Apr 2025",
+        "role": "Backend & ML Pipeline Implementation",
+        "technologies": "Information Extraction",
+        "context": "Capstone Project",
+        "content": {
+          "1": {
+            "title": "System Architecture",
+            "desc": "- Designed and implemented the backend using **FastAPI** as the core service layer.\n\n- Built an asynchronous processing pipeline with **Celery** and **Redis** to handle long-running cleaning and extraction tasks.\n\n- Implemented **short-term (Redis)** and **long-term (SQL-based)** storage to manage task states, intermediate results, and final outputs.\n\n- Containerized backend services and worker nodes using **Docker**, enabling flexible deployment across different devices and environments."
+          },
+          "2": {
+            "title": "My Contributions",
+            "desc": "I was mainly responsible for the backend infrastructure and machine learning integration of the platform.\n\nMy work included designing the FastAPI-based backend, building the asynchronous task pipeline with Celery and Redis, and setting up short- and long-term storage for task states and results. I also handled backend containerization using Docker to support deployment across different environments.\n\nOn the ML side, I fine-tuned and integrated lightweight models (MiniLM-L12 and FLAN-T5-Small) for field matching and content extraction, enabling the identification of names, organizations, roles, and semantic content matches."
+          },
+          "3": "System Architecture Diagram",
+          "4": {
+            "title": "Asynchronous Task Design with Celery",
+            "desc": "The data cleaning workflow involves multiple stages with highly variable execution time, including file parsing, field extraction, model inference, and result aggregation. To avoid blocking user interactions and to ensure scalability, the system adopts an asynchronous, task-based execution model built around **Celery**.\n\nRather than treating data cleaning as a single monolithic job, the pipeline is decomposed into **independent, restartable tasks**. Each task is responsible for a clearly defined stage (e.g., preprocessing, field matching, model inference, post-processing), allowing failures to be isolated without invalidating the entire workflow.\n\n**Redis** is used as both the message broker and short-term state store, enabling:\n\n- Efficient task dispatch and scheduling\n\n- Lightweight progress tracking and status polling\n\n- Temporary storage of intermediate results during execution\n\nLong-running or resource-intensive operations—particularly ML inference—are executed exclusively within Celery workers, keeping the FastAPI layer responsive and stateless. This separation allows the number and type of workers to be adjusted independently based on workload and available hardware.\n\nOverall, the asynchronous design prioritizes **fault tolerance, scalability, and resource efficiency**, ensuring that the system remains robust under realistic data volumes and constrained deployment conditions."
+          },
+          "5": "Header Matching Results with MiniLM",
+          "6": "Content Extraction Results with FLAN-T5",
+          "7": {
+            "title": "Machine Learning Integration",
+            "desc": "- Fine-tuned and integrated lightweight models (**MiniLM-L12** and **FLAN-T5-Small**) for field matching and content extraction.\n\n- Implemented pipelines for extracting and matching **names, organizations, and roles**, as well as generating semantic content matches based on model outputs.\n\n- Prioritized **resource-aware model selection**, ensuring stable inference on constrained hardware without sacrificing extraction quality.\n\n- Designed the system to support execution across heterogeneous devices while maintaining consistent model behavior."
+          }
+        }
+      },
+      "image-to-prompts": {
+        "title": "Image to Prompts",
+        "preview": {
+          "title": "Image to Prompts",
+          "description": "From a Kaggle competition"
+        },
+        "desc": "This project aims to generate textual prompts that align with the content of input images, targeting the image-to-prompt task commonly used in Stable Diffusion workflows, inspired by a [Kaggle competition](https://www.kaggle.com/competitions/stable-diffusion-image-to-prompts).",
+        "tags": [
+          "CV",
+          "NLP",
+          "ML",
+          "Image-to-Text"
+        ],
+        "date": "Apr 2023",
+        "role": "Front-End Developer",
+        "technologies": "React",
+        "context": "Collaborative Academic Project",
+        "content": {
+          "1": {
+            "title": "Task Breakdown",
+            "desc": "The project was inspired by a Kaggle competition and focuses on comparing different image–text modeling strategies for prompt generation:\n\n- **CLIP-based model** for joint image–text representation learning\n\n- **ResNet + LSTM pipeline** for sequential image-to-text generation\n\nBoth models were trained independently and evaluated at a macro level to analyze their strengths and limitations.\n\nThe dataset was sourced from **DiffusionDB (Hugging Face)**, with appropriate preprocessing applied to training, validation, and test splits."
+          },
+          "2": {
+            "title": "My Contribution",
+            "desc": "Implemented and trained the **ResNet + LSTM** image-to-prompt generation model.\n\n- Used **ResNet-50** as the image encoder to extract visual features from input images.\n\n- Applied a **linear mapping layer** to align image features with the textual input space.\n\n- Generated initial textual descriptions using an **LSTM-based sequence model**.\n\n- Refined the generated descriptions using **GPT-2** to produce more complete and descriptive prompts.\n"
+          },
+          "3": {
+            "title": "Challenges and Limitations",
+            "desc": "- **Model Architecture Limitations**  \n\n  The pipeline relies on a CNN for image encoding and an RNN for text generation, connected via a fixed feature-mapping layer. This rigid alignment may limit effective cross-modal feature integration, especially when compared to **CLIP’s ViT-based joint image–text representation**, which is better suited for image–text correspondence.\n\n- **Optimization and Time Constraints**  \n\n  Limited training time restricted extensive hyperparameter tuning and architectural refinement, which may have impacted convergence and overall generation quality."
+          }
+        }
+      },
+      "insect-pest-identification": {
+        "title": "Insect Pest Specifies Identification",
+        "preview": {
+          "title": "Insect Pest Identification"
+        },
+        "desc": "This project aims to evaluate and compare multiple deep learning approaches for insect pest and plant disease classification, exploring different feature representation and attention-based strategies to improve recognition performance.",
+        "tags": [
+          "CV",
+          "Image Classification"
+        ],
+        "date": "Apr 2024",
+        "role": "Model Implementation & Evaluation",
+        "technologies": "Computer Vision, Image Classification",
+        "context": "Collaborative Academic Project",
+        "content": {
+          "1": {
+            "title": "Task Decomposition",
+            "desc": "The task involves large-scale insect pest and disease classification under challenging conditions, including a high number of categories, severe class imbalance, and complex visual patterns. To address these challenges, multiple model families were explored:\n\n- **CNN-based Models**  \n  Pre-trained **AlexNet, GoogLeNet, VGG16, and ResNet50** were used as baseline classifiers.  \n  After extensive experiments, **ResNet50** showed better generalization on the imbalanced dataset, while VGG16 tended to overfit despite strong initial performance.\n\n- **MSA-ResNet (Multi-Scale Attention ResNet)**  \n  Built on top of ResNet, this model integrates **multi-scale convolution** with **channel and spatial attention mechanisms** to capture both local details and global structures.  \n  The model was fine-tuned for insect classification and evaluated using accuracy, precision, recall, and F1 score.\n\n- **Swin Transformer (Swin-T)**  \n  A Transformer-based architecture was introduced to further improve classification performance through **hierarchical self-attention** and strong global feature modeling.  \n  Swin-T served as the highest-performing classification backbone in this project.\n\n- **Variational Autoencoder (VAE)**  \n  VAE was explored for **latent feature representation learning**, data augmentation potential, and robustness under limited or noisy labels.  \n  However, the simplified architecture limited its ability to capture fine-grained discriminative features in this task."
+          },
+          "2": "Attention-based heatmap-guided classification Structure",
+          "3": "Attention Module Structure",
+          "4": {
+            "title": "My Contributions",
+            "desc": "Implemented and evaluated **Swin Transformer** and **Variational Autoencoder (VAE)** as initial classification and representation learning models, analyzing their behavior on large-scale, imbalanced pest and disease datasets.\n\nTried to implement and experiment with an **attention-based heatmap-guided classification pipeline**, consisting of:\n\n  - Generating class activation maps (CAMs) from **multiple backbones** (ResNet, ViT, and Swin Transformer)\n\n  - Learning to **select and fuse heatmaps** through an attention module\n\n  - Performing **ROI extraction based on the fused heatmap**\n\n  - Applying **SVM** for final classification on discriminative regions\n\nThe pipeline aims to **suppress irrelevant background regions** while integrating the **local feature sensitivity of CNNs (ResNet)** and the **global context modeling capability of Transformer-based models (ViT/Swin-T)**. \n\nDue to time constraints, **per-image heatmap generation and ROI processing were not completed for the entire dataset**, and therefore the final SVM-based classification stage was **not fully trained end-to-end**."
+          },
+          "5": {
+            "title": "Results and Analysis",
+            "desc": "Overall performance was limited by the nature of the dataset:\n  - Some categories represent **disease symptoms rather than visible insects**\n\n  - Target insects are sometimes absent from the image\n\n  - A large number of classes leads to high inter-class similarity and class imbalance\n\nThese factors also explain the **relatively weaker performance of the VAE-based approach**, which struggled to capture fine-grained discriminative features."
+          },
+          "6": {
+            "title": "References",
+            "desc": "An, J., Du, Y., Hong, P. et al. Insect recognition based on complementary features from multiple views. Sci Rep 13, 2966 (2023). [https://doi.org/10.1038/s41598-023-29600-1](https://doi.org/10.1038/s41598-023-29600-1)"
+          }
+        }
+      },
+      "my-airbnb": {
+        "title": "My Airbnb",
+        "preview": {
+          "title": "My Airbnb",
+          "description": "(A Web Application inspired by Airbnb)"
+        },
+        "desc": "My Airbnb is a web application for property listing and booking, inspired by [Airbnb](https://www.airbnb.com), designed to act as an intermediary platform between landlords and renters.",
+        "tags": [
+          "Frontend",
+          "React",
+          "TypeScript",
+          "Cypress"
+        ],
+        "date": "Dec 2023",
+        "role": "Front-End Developer",
+        "technologies": "React",
+        "context": "Individual Academic Project",
+        "content": {
+          "1": {
+            "title": "Task Breakdown",
+            "desc": "The application supports the full workflow of property browsing and booking, including:\n\n- User registration and authentication\n\n- Uploading property information and photos\n\n- Searching and filtering property listings\n\n- Online booking functionality\n\nThe project was implemented as a single-page application (SPA) with client-side routing and interactive UI components."
+          },
+          "2": {
+            "title": "Technology Stack",
+            "desc": "- Developed the application using **React** with **TypeScript**, focusing on code quality and maintainability.\n\n- Implemented client-side routing using **React Router (BrowserRouter)** to support dynamic navigation.\n\n- Managed shared state using **React Context API**, choosing a lightweight solution over Redux due to limited global state requirements.\n\n- Built the user interface with **Material UI (MUI)** to ensure a modern, responsive design.\n\n- Wrote **unit tests with Jest** for key components and performed **end-to-end testing with Cypress** to validate application behavior and user flows."
+          }
+        }
+      },
+      "seek": {
+        "title": "NLP x SEEK",
+        "preview": {
+          "title": "NLP x SEEK",
+          "description": "for job information extraction"
+        },
+        "homeDesc": "Award-nominated NLP system for large-scale job advertisement information extraction, integrating classical ML, neural models, and LLMs.",
+        "desc": "This project focuses on **extracting structured information from large-scale job advertisements** under **realistic computational and deployment constraints**. It explores **resource-efficient NLP system design** and received an **award nomination** for its applied impact.",
+        "tags": [
+          "NLP",
+          "ML",
+          "Systems",
+          "Research-oriented"
+        ],
+        "date": "Apr 2025",
+        "role": "NLP System Designer",
+        "technologies": "Information Extraction",
+        "context": "Industry–Academic Collaboration",
+        "content": {
+          "1": {
+            "title": "Task Decomposition",
+            "desc": "Instead of treating information extraction as a single end-to-end generation problem, the system decomposes it into **three task-specific pipelines**, each aligned with the structure of the target output and the available computational budget:\n\n- **Work Arrangement**\n    \n    Modelled as a **3-class classification task** (Remote / OnSite / Hybrid), using contextual encoders with sliding-window inference to cover long job descriptions.\n    \n- **Salary Extraction**\n    \n    Designed as a **span extraction + classification pipeline**, where numerical salary bounds are extracted explicitly, followed by lightweight classifiers for currency and payment period. This avoids the formatting instability of generative approaches.\n    \n- **Seniority Level**\n    \n    Approached as a **controlled generation task** due to the open-ended nature of seniority labels, with strict output constraints to limit verbosity and noise.\n    \n\nThis modular design allows each task to use the **simplest model capable of solving it reliably**, rather than defaulting to large generative models."
+          },
+          "2": {
+            "title": "My Contributions",
+            "desc": "My primary responsibility focused on the **non-LLM components and system-level design**, driven by course constraints and limited hardware availability. Key decisions include:\n\n- **Classification over Generation where possible**\n    \n    For structured outputs such as work arrangement, currency, and payment period, classification models were preferred to reduce inference cost and eliminate formatting errors.\n    \n- **Explicit Span Extraction for Numerical Values**\n    \n    Salary bounds were extracted using supervised span prediction rather than text generation, ensuring deterministic outputs and higher numerical accuracy.\n    \n- **Resource-Aware Model Selection**\n    \n    Classical models (SVM, CRF) were implemented as strong baselines to benchmark performance under minimal compute, revealing that simpler models remain competitive for certain subtasks.\n    \n- **Cost–Accuracy Trade-off as a First-Class Constraint**\n    \n    All design choices were evaluated not only by accuracy, but also by training time, inference latency, and deployment feasibility on limited devices.\n    \n\nThese decisions enabled the system to achieve strong results without relying exclusively on large language models."
+          },
+          "3": "Technical Solution Winner Nomination",
+          "4": "Precision Comparison Across Models and Tasks",
+          "5": {
+            "title": "Results and Takeaways",
+            "desc": "Experiments show that **task-specific neural and classical models achieve competitive performance** on structured extraction tasks, especially when outputs are well-defined. While large language models offer flexibility, their benefits diminish under strict cost and deployment constraints.\n\nA key takeaway from this project is that **maximizing results under limited resources requires careful task formulation**, not larger models. For industrial NLP systems, architectural decisions often matter more than raw model scale."
+          }
+        }
+      },
+      "signal": {
+        "title": "E2E Chat Platform",
+        "preview": {
+          "title": "E2E Chat Platform",
+          "description": "(Signal Protocol)"
+        },
+        "desc": "Rather than building a full messaging product, this project focuses on faithfully reproducing the cryptographic workflow of the Signal Protocol, including asynchronous key exchange, per-message key evolution, and forward secrecy guarantees.",
+        "homeDesc": "Rust-based implementation of a Signal-style end-to-end encrypted chat system, covering key exchange, message encryption/decryption, and ratcheting mechanisms.",
+        "tags": [
+          "Rust",
+          "Security",
+          "Cryptography",
+          "E2E Encryption"
+        ],
+        "date": "Nov 2024",
+        "role": "Individual Implementation",
+        "technologies": "Cryptographic Protocols",
+        "context":  "Individual Academic Project",
+        "content": {
+          "1": {
+            "title": "Scope and Non-Goals",
+            "desc": "##### Scope\n\n- Implements **X3DH** for asynchronous key agreement\n\n- Implements the **Double Ratchet algorithm** for forward secrecy and post-compromise security\n\n- Supports encrypted message sending and receiving between two peers\n\n- Focuses on protocol correctness rather than feature completeness\n\n##### Non-Goals\n\n- No group messaging\n\n- No multi-device support\n\n- No network transport layer abstraction\n\n- No production-ready messaging features\n\nThese boundaries were defined intentionally to keep the project focused on cryptographic design rather than application-level complexity."
+          },
+          "2": "X3DH",
+          "3": "Double Ratchet",
+          "4": {
+            "title": "Cryptographic Architecture",
+            "desc": "The system follows the standard Signal Protocol flow. An initial shared secret is established via **X3DH**, using identity keys, signed pre-keys, and optional one-time pre-keys. This shared secret initializes the **Double Ratchet** state.\n\nFrom this point:\n- A **root key** is used to derive sending and receiving **chain keys**\n\n- Each message derives a fresh **message key**\n\n- Message keys are used once and immediately discarded\n\nThis design ensures that message compromise does not affect past or future messages.\n"
+          },
+          "5": {
+            "title": "Security Properties Considered",
+            "desc": "The implementation explicitly considers the following security properties:\n\n- **Forward secrecy** through per-message key derivation\n\n- **Post-compromise security** via continuous ratcheting\n\n- **Key separation**, ensuring long-term keys are never reused for message encryption\n\n- Clear **key lifecycle management**, with explicit disposal of used keys\n\nThe goal is not to formally prove security, but to faithfully follow the intended guarantees of the Signal Protocol."
+          },
+          "6": "A simple UI built with egui for testing",
+          "7": {
+            "title": "Implementation Notes",
+            "desc": "- Implemented entirely in **safe Rust**, without using `unsafe`\n\n- Cryptographic state transitions are modeled explicitly to avoid implicit or hidden behavior\n\n- Cryptographic logic is strictly separated from the UI layer\n\n- A lightweight interface built with **egui** is used solely for controlled testing and visualization\n\nThis approach prioritizes transparency and maintainability over performance optimization."
+          }
+        }
+      },
+      "slackr": {
+        "title": "Slackr",
+        "preview": {
+          "title": "Slackr",
+          "description": "(A Discord-like Chat Application)"
+        },
+        "desc": "Slackr is a multi-functional social and communication platform inspired by [Discord](https://discord.com), featuring a [Slack-style](https://slack.com/) visual identity and supporting text and image-based messaging.",
+        "tags": [
+          "Frontend",
+          "Vanilla JS",
+          "Bootstrap 5"
+        ],
+        "date": "Oct 2023",
+        "role": "Front-End Developer",
+        "technologies": "Vanilla JS",
+        "context": "Individual Academic Project",
+        "content": {
+          "1": {
+            "title": "Task Breakdown",
+            "desc": "The application provides core chat platform functionalities, including:\n\n- User registration and authentication\n\n- Channel creation, joining, and invitations\n\n- Sending and receiving text messages and images\n\n- User profile editing and channel management\n\nThe project focuses on client-side implementation, interacting with a backend service via asynchronous requests.\n"
+          },
+          "2": {
+            "title": "Technology Stack",
+            "desc": "- Implemented the entire front-end using **Vanilla JavaScript**, **HTML**, and **CSS**.\n\n- Used **AJAX** to enable asynchronous data exchange with the backend server.\n\n- Designed all user interactions through JavaScript **event-driven logic**, with dynamic DOM manipulation.\n\n- Built the UI using **Bootstrap 5**, incorporating components such as modals, toasts, and navigation bars.\n\n- Integrated message rendering, image display, channel navigation, and user interaction flows.\n"
+          }
+        }
+      },
+      "stet": {
+        "title": "RWA Tokenization (STET)",
+        "preview": {
+          "title": "RWA Tokenization",
+          "description": "(STET)"
+        },
+        "desc": "This project implements a real-world asset (RWA) tokenization workflow on a BEP-20–compatible blockchain. The system enables compliant token issuance, stablecoin-based subscriptions, and on-chain equity conversion, with built-in access control and security safeguards.\n",
+        "tags": [
+          "RWA",
+          "Solidity",
+          "Hardhat",
+          "Smart Contracts"
+        ],
+        "date": "Sep 2025",
+        "role": "Token Contract Design & Implementation",
+        "technologies": "RWA",
+        "context": "Company Collaboration",
+        "content": {
+          "1": {
+            "title": "System Architecture",
+            "desc": "The on-chain system is composed of three main contract components:\n\n- **Equity Token (STET)**  \n  A BEP-20–compatible equity token with whitelist and blacklist enforcement, pausability, and permit-based approvals.\n\n- **Subscription Contract**  \n  Handles token subscriptions using stablecoins (USDT / USDC), enforces fundraising caps, and distributes equity tokens from a treasury address.\n\n- **Equity Conversion Contract**  \n  Allows users to convert equity tokens through on-chain burn operations, with optional EIP-2612 permit support for gas-efficient approvals.\n\nEach contract follows a clear separation of responsibilities to reduce complexity and improve auditability."
+          },
+          "2": {
+            "title": "Security Properties Considered",
+            "desc": "- Implemented the equity token using OpenZeppelin extensions, including **ERC20Permit**, **ERC20Burnable**, and **ERC20Pausable**.\n\n- Enforced **whitelist and blacklist controls** at the token transfer level to support compliance requirements.\n\n- Designed the subscription mechanism to support **stablecoin payments**, fundraising caps, and deterministic token issuance.\n\n- Implemented a **burn-based equity conversion flow**, emitting on-chain events for off-chain reconciliation.\n\n- Integrated **reentrancy protection** and safe transfer patterns across all state-changing operations.\n"
+          }
+        }
+      },
+      "transport": {
+        "title": "Transport Application",
+        "preview": {
+          "title": "Transport Application",
+          "description": "for coursework and daily use"
+        },
+        "desc": "Transport Application is a terminal-based chat and local area network (LAN) file transfer tool built with Java, focusing on low-level network communication using **UDP** and **TCP** protocols.",
+        "tags": [
+          "Java",
+          "Networking",
+          "Protocols"
+        ],
+        "date": "Apr 2022",
+        "role": "Individual Implementation",
+        "technologies": "Network Programming",
+        "context": "Individual Academic & Daily Used Tool",
+        "content": {
+          "1": {
+            "title": "Task Breakdown",
+            "desc": "The project consists of two related components that explore different aspects of network communication:\n\n**Project 1: Simple Chat Thread**\n\n- Terminal-based chat system supporting user login, thread creation, message exchange, and file upload/download\n\n- Client–server architecture implemented entirely in Java\n\n- **UDP** used for message transmission and request–response communication via `DatagramSocket`\n\n- A custom **Message** class designed for structured data exchange\n\n- **TCP** used for file transfer, with UDP-based port negotiation prior to transmission\n\n**Project 2: Local Area Network File Transfer**\n\n- Extended the file transfer mechanism to support **LAN-based communication** between Windows and macOS devices\n\n- Implemented using Java Socket programming\n\n- Supports multi-file and folder transfer in a terminal environment\n\n- Requires manual input of target IP address and port number\n\n- Does not support automatic device discovery or interrupted transfer resumption"
+          }
+        }
+      },
+      "turtle-segmentation": {
+        "title": "Sea Turtle Segmentation",
+        "preview": {
+          "title": "Sea Turtle Segmentation"
+        },
+        "desc": "This project benchmarks **multiple semantic segmentation models** on a large-scale sea turtle dataset, aiming to accurately segment key anatomical regions such as the **body, head, and flippers**. All models are evaluated under a **unified training and evaluation pipeline** to analyze their performance on **multi-scale objects** and **fine-grained boundaries**.",
+        "tags": [
+          "CV",
+          "Semantic Segmentation"
+        ],
+        "date": "Dec 2024",
+        "role": "Model Implementation & Evaluation",
+        "technologies": "Computer Vision, Semantic Segmentation",
+        "context": "Collaborative Academic Project",
+        "content": {
+          "1": {
+            "title": "Task Decomposition",
+            "desc": "The project was conducted as a **team-based comparison study**, with responsibilities divided across the **full segmentation pipeline**:\n\n- **Dataset preprocessing** and **COCO-style annotation handling**\n\n- Implementation of **multiple segmentation architectures**, including **FCN, U-Net, FPN, DeepLabV3, Mask R-CNN**, and **Mask2Former with Swin Transformer**\n\n- **Training configuration**, **data augmentation**, and **optimization strategies**\n\n- **Unified evaluation** using **IoU, Dice, and accuracy** across multiple object categories\n\n- **Cross-model performance analysis** and **result interpretation**\n\nThis task decomposition ensured that each model was **developed, trained, and evaluated under comparable conditions**, enabling a **fair architectural comparison** rather than isolated performance tuning."
+          },
+          "2": {
+            "title": "My Contributions",
+            "desc": "Implemented and fine-tuned **FCN (ResNet101)** and **FPN (ResNet152)** models for semantic segmentation.\n\nEvaluated their performance across multiple semantic feature categories in a comparative experimental setting.\n\nAchieved strong segmentation results, with **FCN** reaching 0.8746 in head feature recognition and **FPN** obtaining a stable average score of 0.8696, demonstrating effective multi-scale and spatial feature preservation."
+          }
+        }
+      }
+    },
+    "portfolios": {
+      "autonomous-vehicles-and-utilitarianism": {
+        "title": "Balancing Ethics and Efficiency: Autonomous Vehicles and Utilitarianism",
+        "preview": "Balancing Ethics and Efficiency",
+        "homeTitle": {
+          "before": "Balancing Ethics and Efficiency:",
+          "highlight": "Autonomous Vehicles and Utilitarianism",
+          "after": ""
+        },
+        "desc": "This article explores the ethical considerations of applying Act and Rule Utilitarianism to the collision-avoidance protocols in autonomous vehicles, analyzing the impact of each approach on decision-making in critical scenarios, and evaluating their implications for societal norms and technological design in the context of autonomous driving.",
+        "tags": [
+          "Autonomous Vehicles",
+          "Ethics",
+          "Utilitarianism"
+        ],
+        "date": "Oct 2022",
+        "technologies": "Ethics, Autonomous Vehicles",
+        "context": "Individual Academic Portfolio",
+        "word-count": "2,200 words"
+      },
+      "fantastic-celestial-objects": {
+        "title": "Fantastic Celestial Objects",
+        "preview": "Fantastic Celestial Objects",
+        "desc": "This is a popular science magazine geared towards readers with little or no knowledge of the cosmos. Its primary aim is to introduce various celestial bodies (stars, planets, satellites) that constitute the vast expanse of the universe, discussing their types, structures, and potential evolutionary processes. There may be instances of non-professional explanations or inaccuracies within the content, and corrections or clarifications are welcome.",
+        "tags": [
+          "Astronomy",
+          "Celestial Objects"
+        ],
+        "date": "Feb 2023",
+        "technologies": "Astronomy, Planets, Stars",
+        "context": "Individual Academic Portfolio",
+        "word-count": "3,000 words"
+      },
+      "implementing-concurrent-operation-of-a-data-set": {
+        "title": "Implementing Concurrent Operation of a Data Set",
+        "preview": "Implementing Concurrent Operation of a Data Set",
+        "desc": "This article mainly utilizes read-and-write locks as the main body to ensure that only one process is allowed to run if and when the data needs to be modified, and multiple processes can read the data if there are no writes. In addition, signalling is used to ensure the integrity of the data structure.",
+        "tags": [
+          "Concurrency",
+          "Data Structures",
+          "Read-Write Locks"
+        ],
+        "date": "Jun 2023",
+        "technologies": "Concurrency, Data Structures",
+        "context": "Individual Academic Portfolio",
+        "word-count": "1,800 words"
+      },
+      "james-webb-space-telescope": {
+        "title": "James Webb Space Telescope",
+        "preview": "James Webb Space Telescope",
+        "homeTitle": {
+          "before": "",
+          "highlight": "James Webb",
+          "after": "Space Telescope"
+        },
+        "desc": "This article focuses on the James Webb Space Telescope, the successor to the Hubble telescope, including its launch purpose, structure, orbit, and reasons for the launch. Finally, it pays more attention to the results obtained more than a year after the launch and its contribution to astronomy.",
+        "tags": [
+          "Astronomy",
+          "Space Telescopes",
+          "James Webb"
+        ],
+        "date": "Jan 2023",
+        "technologies": "Astronomy, Space Telescopes",
+        "context": "Individual Academic Portfolio",
+        "word-count": "1,500 words"
+      },
+      "short-report-about-astronomy": {
+        "title": "Short Report about Astronomy",
+        "preview": "Short Report about Astronomy",
+        "desc": "The article primarily focuses on exploring the possibility of finding extraterrestrial life by examining the structural features of galaxies and searching for planets that could support carbon-based life forms.",
+        "tags": [
+          "Astronomy",
+          "Extraterrestrial Life",
+          "Galaxies"
+        ],
+        "date": "Jan 2023",
+        "technologies": "Full-Stack Web Development",
+        "context": "Individual Academic Portfolio",
+        "word-count": "1,000 words"
+      },
+      "suzuki-kasami-concurrency-algorithm": {
+        "title": "Suzuki-Kasami Concurrency Algorithm",
+        "preview": "Suzuki-Kasami Concurrency Algorithm",
+        "homeTitle": {
+          "before": "",
+          "highlight": "Suzuki-Kasami",
+          "after": "Concurrency Algorithm"
+        },
+        "desc": "This video critically analyzes the advantages and shortcomings of the Suzuki-Kasami algorithm for token-based concurrency in distributed environments, while concurrently examining the merits of channel-based concurrent programming in the Go language from an academic perspective.",
+        "tags": [
+          "Distributed Systems",
+          "Concurrency",
+          "Go"
+        ],
+        "date": "Apr 2023",
+        "technologies": "Distributed Systems, Concurrency Algorithms",
+        "context": "Individual Academic Portfolio"
+      },
+      "the-ethical-challenges-of-ai-in-artistic-creation": {
+        "title": "The Ethical Challenges of AI in Artistic Creation",
+        "preview": "The Ethical Challenges of AI in Artistic Creation",
+        "desc": "This article delves into the ethical implications and challenges of AI drawing technologies in the realm of art, focusing on how AI is reshaping the boundaries of artistic creation, copyright, and originality, as well as the appropriateness of AI technologies in art competitions.",
+        "tags": [
+          "AI",
+          "Ethics",
+          "Art"
+        ],
+        "date": "Dec 2022",
+        "technologies": "Artificial Intelligence, Ethics",
+        "context": "Collaborative Academic Portfolio",
+        "word-count": "4,500 words"
+      }
+    }
   }
 }

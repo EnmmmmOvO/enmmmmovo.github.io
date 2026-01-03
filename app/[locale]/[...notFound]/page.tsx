@@ -1,13 +1,17 @@
 // app/[locale]/[...notFound]/page.tsx
 import { Metadata } from "next";
-import { MetaDescription, MetaTitle } from '@/data/metadata';
-import { notFound } from 'next/dist/client/components/not-found';
+import { getTranslations } from 'next-intl/server';
+import NotFoundPage from '@/components/common/NotFound';
 
-export const metadata: Metadata = {
-  title: "Page Not Found" + MetaTitle,
-  description: MetaDescription,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
 
-export default function NotFoundPage() {
-  notFound()
+  return {
+    title: t("pageNotFound") + t("metaTitle"),
+    description: t("metaDesc")
+  };
+}
+
+export default function NotFound() {
+  return <NotFoundPage />;
 }

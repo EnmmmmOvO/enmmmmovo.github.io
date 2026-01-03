@@ -1,9 +1,10 @@
-// app/[locale]/layout.tsx
+// app/layout.tsx
 import '@/public/css/styles.css'
 import '@/styles/overrides.scss'
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from 'react';
 import { cookies } from 'next/dist/server/request/cookies';
+import ScrollToTop from '@/components/scroll/ScrollToTop';
 
 const setColorSchemeScript = `
   (function() {
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
         </head>
         <body>
           <NextIntlClientProvider>
+            <ScrollToTop />
             {children}
           </NextIntlClientProvider>
         </body>

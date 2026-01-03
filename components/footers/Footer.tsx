@@ -3,9 +3,10 @@ import Image from "next/image";
 import Logo from '@/components/headers/Logo';
 import AllRights from '@/components/common/AllRights';
 import data from '@/data/footer-menu';
+import { getTranslations } from 'next-intl/server';
 
-export default function Footer() {
-
+export default async function Footer() {
+  const t = await getTranslations("header-footer");
 
   return (
     <footer className="mxd-demo-footer">
@@ -43,7 +44,7 @@ export default function Footer() {
                               >
                                 <div className="mxd-footer-nav__title anim-uni-in-up">
                                   <p className="t-140 t-bright t-caption">
-                                    {group.title}
+                                    {t(group.title)}
                                   </p>
                                 </div>
                                 <div className="mxd-footer-nav__list">
@@ -53,9 +54,9 @@ export default function Footer() {
                                         <Link
                                           className="anim-uni-in-up"
                                           href={link.href}
-                                          target="_blank"
+                                          target={link.blank ? "_blank" : "_self"}
                                         >
-                                          {link.label}
+                                          {t(link.label)}
                                         </Link>
                                       </li>
                                     ))}
@@ -67,7 +68,7 @@ export default function Footer() {
                             <div className="mxd-footer-nav__block">
                               <div className="mxd-footer-nav__title anim-uni-in-up">
                                 <p className="t-140 t-bright t-caption">
-                                  {section.title}
+                                  {t(section.title)}
                                 </p>
                               </div>
                               <div className="mxd-footer-nav__list">
@@ -77,9 +78,9 @@ export default function Footer() {
                                       <Link
                                         className="anim-uni-in-up"
                                         href={link.href}
-                                        target="_blank"
+                                        target={link.blank ? "_blank" : "_self"}
                                       >
-                                        {link.label}
+                                        {t(link.label)}
                                       </Link>
                                     </li>
                                   ))}
@@ -107,8 +108,7 @@ export default function Footer() {
                 </div>
                 <div className="mxd-demo-footer__slogan anim-uni-in-up">
                   <p className="t-small t-bright">
-                    ⚙️ Where Will(iam) meets Code —
-                    Exploring ideas through working software.
+                    ⚙️ {t("intro")}
                   </p>
                 </div>
                 <div className="mxd-demo-footer__btn anim-uni-in-up">

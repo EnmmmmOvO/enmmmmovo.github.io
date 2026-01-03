@@ -119,6 +119,10 @@
 .mxd-page-content .contact-title i {
   font-size: 6rem;
 }
+.mxd-page-content .error-message {
+  color: red;
+  font-size: 1.4rem;
+}
 
 .mxd-demo-footer__bg {
   z-index: -10;

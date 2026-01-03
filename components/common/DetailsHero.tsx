@@ -1,17 +1,22 @@
 import AnimatedButton from "../animation/AnimatedButton";
-import { type DetailProjectProps, LinkProps } from '@/types/project';
+import { LinkProps } from '@/types/project';
 import Markdown from '@/components/common/Markdown';
+import { getTranslations } from 'next-intl/server';
+import { CONFIG, PortfolioIntl, ProjectIntl } from '@/config';
 
-export default function DetailsHero({ detail, links, portfolio } : {
-  detail : DetailProjectProps,
+const projectDetail = [ ["date", "role"], ["technologies", "context"] ];
+const portfolioDetail = [ ["date", "technologies"], ["context", "wordCount"] ];
+
+export default async function DetailsHero({ intlKey, ignoreDetails, links, portfolio } : {
+  intlKey: string,
+  ignoreDetails?: string[]
   links: LinkProps[],
   portfolio?: boolean
 }) {
+  const t = await getTranslations(portfolio ? PortfolioIntl() : ProjectIntl());
+  const tData = await getTranslations(intlKey);
 
-  const chunks = Array.from(
-    { length: Math.ceil(detail.shortDetails.length / 2) },
-    (_, i) => detail.shortDetails.slice(i * 2, i * 2 + 2)
-  );
+  const label = portfolio ? portfolioDetail : projectDetail;
 
   return (
     <div className="mxd-section mxd-section-inner-headline padding-default">
@@ -24,10 +29,10 @@ export default function DetailsHero({ detail, links, portfolio } : {
               <div className="col-12 col-xl-2 mxd-grid-item no-margin">
                 <div className="mxd-block__name name-project-link loading__fade">
                   <AnimatedButton
-                    text={portfolio ? "Portfolio Page" : "Project Page"}
+                    text={t("listPage")}
                     as={"a"}
                     className="btn btn-anim btn-line-small btn-muted slide-right-up"
-                    href={portfolio ? `/portfolios` : `/projects` }
+                    href={portfolio ? CONFIG.PORTFOLIOS.base : CONFIG.PROJECTS.base }
                   >
                     <i className="ph ph-arrow-up-right" />
                   </AnimatedButton>
@@ -38,7 +43,7 @@ export default function DetailsHero({ detail, links, portfolio } : {
               <div className="col-12 col-xl-10 mxd-grid-item no-margin">
                 <div className="mxd-block__content">
                   <div className="mxd-block__inner-headline loading__item">
-                    <h1 className="inner-headline__title">{detail.name}</h1>
+                    <h1 className="inner-headline__title">{tData("title")}</h1>
                   </div>
                 </div>
               </div>
@@ -52,23 +57,26 @@ export default function DetailsHero({ detail, links, portfolio } : {
               {/* Inner Headline Paragraph & Data Start */}
               <div className="col-12 col-xl-6 mxd-grid-item no-margin">
                 <div className="inner-headline__paragraph loading__item">
-                  <Markdown>{detail.desc}</Markdown>
+                  <Markdown>{tData("desc")}</Markdown>
                 </div>
                 <div className="inner-headline__data">
                   <div className="mxd-data-list">
                     <div className="container-fluid p-0">
                       <div className="row g-0">
-                        {chunks.map((group, colIndex) => (
+                        {label.map((group, colIndex) => (
                           <div
                             className="col-12 col-md-6 col-xl-5 mxd-data-list__column loading__item"
                             key={colIndex}
                           >
-                            {group.map((item, index) => (
-                              <div className="mxd-data-list__item" key={`${colIndex}-${index}`}>
-                                <p className="mxd-data-list__name">{item.title}</p>
-                                <p className="mxd-data-list__content">{item.content}</p>
-                              </div>
-                            ))}
+                            {group.map((item, index) => {
+                              if (ignoreDetails && ignoreDetails.includes(item)) {
+                                return null;
+                              }
+                              return (<div className="mxd-data-list__item" key={`${colIndex}-${index}`}>
+                                <p className="mxd-data-list__name">{t(item)}</p>
+                                <p className="mxd-data-list__content">{tData(item)}</p>
+                              </div>);
+                            })}
                           </div>
                         ))}
                       </div>
@@ -83,7 +91,7 @@ export default function DetailsHero({ detail, links, portfolio } : {
                   {
                     links.map((item, index) => (
                       <AnimatedButton
-                        text={item.text}
+                        text={t(item.text)}
                         as={"div"}
                         key={`${new Date().getTime()}${index}`}
                         className="btn btn-anim btn-small btn-muted slide-right-up "
@@ -94,9 +102,9 @@ export default function DetailsHero({ detail, links, portfolio } : {
                     ))
                   }
                   <div className="inner-headline__margin" />
-                  {detail.tags.map((tag, index) => (
+                  {(tData.raw("tags") as string[]).map((tag, index) => (
                     <span className="tag tag-default tag-outline-medium" key={`tag-${index}`}>
-                    {tag}
+                      {tag}
                     </span>
                   ))}
                 </div>

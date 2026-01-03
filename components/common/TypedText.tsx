@@ -3,7 +3,9 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
 export default function TypedText({
-  strings = ["Jinghan Wang", "Full Stack Engineer", "Artificial Intelligence", "BlockChain"],
+  strings,
+} : {
+  strings: string[];
 }) {
   const el = useRef<HTMLSpanElement | null>(null); // Element where Typed will attach
   const typedInstance = useRef<Typed | null>(null); // Store Typed instance

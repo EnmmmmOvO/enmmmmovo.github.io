@@ -1,10 +1,15 @@
 import RevealText from "../animation/RevealText";
 import Markdown from '@/components/common/Markdown';
-import { ContentProps } from '@/types/project';
+import { ContentProps, HighLightContentProps } from '@/types/project';
+import { getTranslations } from 'next-intl/server';
 
-export default function Content({ detail } : { detail : ContentProps }) {
+export default async function Content({ intlKey, detail } : {
+  intlKey: string,
+  detail : ContentProps | HighLightContentProps
+}) {
+  const t = await getTranslations(intlKey);
 
-  if (detail.highlight) {
+  if (detail.type === 'highlight-content') {
     return (
       <div className="mxd-project__block pre-grid">
         <div className="container-fluid px-0">
@@ -12,7 +17,7 @@ export default function Content({ detail } : { detail : ContentProps }) {
             <div className="col-12 col-xl-5 mxd-grid-item no-margin">
               <div className="mxd-project__subtitle">
                 <RevealText as="h2" className="reveal-type anim-uni-in-up">
-                  {detail.title}
+                  {t(`content.${detail.index}.title`)}
                 </RevealText>
               </div>
             </div>
@@ -20,10 +25,10 @@ export default function Content({ detail } : { detail : ContentProps }) {
               <div className="mxd-project__content">
                 <div className="mxd-project__paragraph">
                   <Markdown className="t-large t-bright">
-                    {detail.highlight}
+                    {t(`content.${detail.index}.highlight`)}
                   </Markdown>
                   <Markdown>
-                    {detail.desc}
+                    {t(`content.${detail.index}.desc`)}
                   </Markdown>
                 </div>
               </div>
@@ -41,7 +46,7 @@ export default function Content({ detail } : { detail : ContentProps }) {
           <div className="col-12 col-xl-5 mxd-grid-item no-margin">
             <div className="mxd-project__subtitle">
               <RevealText as="h2" className="reveal-type anim-uni-in-up">
-                {detail.title}
+                {t(`content.${detail.index}.title`)}
               </RevealText>
             </div>
           </div>
@@ -49,7 +54,7 @@ export default function Content({ detail } : { detail : ContentProps }) {
             <div className="mxd-project__content">
               <div className="mxd-project__paragraph medium-text">
                 <Markdown>
-                  {detail.desc}
+                  {t(`content.${detail.index}.desc`)}
                 </Markdown>
               </div>
             </div>

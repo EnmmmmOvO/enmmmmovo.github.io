@@ -3,8 +3,11 @@ import RevealText from "@/components/animation/RevealText";
 import education from "@/data/education";
 import { Experience2 } from "@/types/experiences";
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
+import { EducationIntl } from '@/config';
 
-export default function Education() {
+export default async function Education() {
+  const t = await getTranslations("home");
   return (
     <div className="mxd-section padding-default">
       <div className="mxd-container grid-container">
@@ -22,9 +25,7 @@ export default function Education() {
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__title card-split-title">
                               <RevealText as="h2" className="reveal-type">
-                                My
-                                <br />
-                                education
+                                {t("MyEducation")}
                               </RevealText>
                             </div>
                           </div>
@@ -37,36 +38,37 @@ export default function Education() {
                 <div className="col-12 col-xl-7 mxd-pinned-universal__scroll">
                   <div className="mxd-pinned-universal__scroll-inner mxd-grid-item no-margin">
                     <div className="mxd-res-list">
-                      {education.map((item: Experience2, idx: number) => (
-                        <div className="mxd-res-list__item" key={idx}>
-                          <div className="mxd-res-list__divider anim-uni-in-up" />
+                      {education.map(async (item: Experience2, idx: number) => {
+                        const tData = await getTranslations(EducationIntl(item.id));
+                        return <div className="mxd-res-list__item" key={idx}>
+                          <div className="mxd-res-list__divider anim-uni-in-up"/>
                           <div className="mxd-res-list__content">
                             <div className="mxd-res-list__data">
                               <div className="mxd-res-list__title">
-                                <h4 className="anim-uni-in-up">{item.title}</h4>
+                                <h4 className="anim-uni-in-up">{tData("title")}</h4>
                                 <p className="mxd-res-list__source anim-uni-in-up">
-                                  {item.addition ? "Coursework via" : "Course by"}{" "}
+                                  {`${t("courseBy")} `}
                                   <a href={item.institutionUrl} target="_blank">
-                                    {item.institution}
+                                    {tData("institution")}
                                   </a>
                                 </p>
                               </div>
                               <div className="mxd-res-list__descr">
-                                <p className="anim-uni-in-up">{item.desc}</p>
+                                <p className="anim-uni-in-up">{tData("desc")}</p>
                                 {
                                   item.logo && <span className="res-desc-icon res-desc-education-icon" aria-hidden>
-                                    <Image src={item.logo} alt={item.institution} width={20} height={20} />
+                                    <Image src={item.logo} alt={tData("institution")} width={20} height={20}/>
                                   </span>
                                 }
                               </div>
                             </div>
                             <div className="mxd-res-list__year">
-                              <p className="anim-uni-in-up">{item.year}</p>
+                              <p className="anim-uni-in-up">{tData("year")}</p>
                             </div>
                           </div>
-                          <div className="mxd-res-list__divider anim-uni-in-up" />
+                          <div className="mxd-res-list__divider anim-uni-in-up"/>
                         </div>
-                      ))}
+                      })}
                     </div>
                   </div>
                 </div>

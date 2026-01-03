@@ -1,18 +1,6 @@
-export interface ShortDetailProps {
-  title: string;
-  content: string;
-}
-
-export interface DetailProjectProps {
-  name: string;
-  desc: string;
-  shortDetails: ShortDetailProps[];
-  tags: string[];
-}
-
 export interface ImgProps {
   src: string;
-  caption?: string;
+  index?: number;
   span: number;
 }
 
@@ -28,28 +16,33 @@ export interface LinkProps {
 
 export interface ContentProps {
   type: "content";
-  title: string;
-  highlight?: string;
-  desc: string;
+  index: number;
+}
+
+export interface HighLightContentProps {
+  type: "highlight-content";
+  index: number;
 }
 
 export interface LargeImageProps {
   type: "large-image";
   src: string;
-  caption?: string;
+  index?: number;
   width: number;
   height: number;
 }
 
 export interface RelatedProjectProps {
-  next?: { href: string; title: string };
-  prev?: { href: string; title: string };
+  next?: string;
+  prev?: string;
 }
 
 export interface ProjectProps {
-  detail: DetailProjectProps;
+  key: string;
+  ignoreDetails?: string[];
+  title: string;
   img1?: string;
-  content: (ContentProps | ImageGalleryProps | LargeImageProps)[];
+  content: (ContentProps | ImageGalleryProps | LargeImageProps | HighLightContentProps)[];
   links: LinkProps[];
   related: RelatedProjectProps;
 }

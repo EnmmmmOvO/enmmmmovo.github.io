@@ -2,25 +2,28 @@ import DetailsHero from "@/components/common/DetailsHero";
 import NextPrevNavigation from "@/components/common/NextPrevNavigation";
 import { Metadata } from "next";
 import { notFound } from 'next/dist/client/components/not-found';
-import { MetaDescription, MetaTitle } from '@/data/metadata';
 import { PortfolioProps } from '@/types/portfolio';
+import { getTranslations } from 'next-intl/server';
+import { PortfolioIntl } from '@/config';
 
 export async function generateMetadata({ params } : {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
+  const tData = await getTranslations(PortfolioIntl(id));
+  const t = await getTranslations();
 
-  try {
-    const mod = await import(`@/data/portfolios/${id}`);
-    const project: PortfolioProps = mod.default;
-
+  if (!tData.has("title")) {
     return {
-      title: project.detail.name + MetaTitle,
-      description: MetaDescription
+      title: t("pageNotFound") + t("metaTitle"),
+      description: t("metaDesc")
     };
-  } catch {
-    return { title: "Project Not Found" + MetaTitle };
   }
+
+  return {
+    title: tData("title") + t("metaTitle"),
+    description: t("metaDesc")
+  };
 }
 
 export default async function ProjectDetailsPage({ params } : {
@@ -30,7 +33,7 @@ export default async function ProjectDetailsPage({ params } : {
 
   try {
     const mod = await import(`@/data/portfolios/${id}`);
-    const project : PortfolioProps = mod.default
+    const portfolio : PortfolioProps = mod.default;
 
     return (
       <>
@@ -38,10 +41,15 @@ export default async function ProjectDetailsPage({ params } : {
           id="mxd-page-content"
           className="mxd-page-content inner-page-content"
         >
-          <DetailsHero detail={project.detail} links={project.links} portfolio />
+          <DetailsHero
+            intlKey={PortfolioIntl(portfolio.key)}
+            links={portfolio.links}
+            ignoreDetails={portfolio.ignoreDetails}
+            portfolio
+          />
           <div className="mxd-section mxd-project overflow-hidden">
             <div className="mxd-container grid-container">
-              <NextPrevNavigation related={project.related} />
+              <NextPrevNavigation related={portfolio.related} portfolio />
             </div>
           </div>
         </main>

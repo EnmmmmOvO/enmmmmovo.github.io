@@ -1,6 +1,9 @@
 import { EMAIL } from '@/data/metadata';
+import { getTranslations } from 'next-intl/server';
 
-export default function PageTitle() {
+export default async function PageTitle() {
+  const t = await getTranslations("contact");
+
   return (
     <div className="mxd-section mxd-section-inner-headline padding-s-text-pre-form overflow-hidden">
       <div className="mxd-container grid-container">
@@ -33,7 +36,6 @@ export default function PageTitle() {
                     c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"
                       />
                     </svg>
-                    <span>Contact</span>
                   </p>
                 </div>
               </div>
@@ -43,11 +45,7 @@ export default function PageTitle() {
                 <div className="mxd-block__content">
                   <div className="mxd-block__inner-headline loading__item">
                     <h1 className="inner-headline__title">
-                      Let&apos;s talk
-                      {/* <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:example@example.com?subject=Message%20from%20your%20site">
-                    <span class="btn-caption">hello@rayo.com</span>
-                    <i class="ph-bold ph-arrow-up-right"></i>
-                  </a> */}
+                      {t("title")}
                     </h1>
                     <a
                       className="btn btn-line-headline slide-right-up anim-no-delay contact-title"
@@ -57,10 +55,7 @@ export default function PageTitle() {
                       <i className="ph-bold ph-arrow-up-right" />
                     </a>
                     <p className="inner-headline__text t-large t-bright loading__item">
-                      I’m a junior developer, recently graduated, and still learning every day.
-                      I like building things, breaking them, and learning from the process.
-
-                      If you want to get in touch or talk about ideas, feel free to drop me a message.
+                      {t("intro")}
                     </p>
                   </div>
                 </div>

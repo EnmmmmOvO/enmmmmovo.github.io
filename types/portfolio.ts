@@ -1,10 +1,11 @@
 import {
-  DetailProjectProps,
   LinkProps, RelatedProjectProps
 } from '@/types/project';
 
 export interface PortfolioProps {
-  detail: DetailProjectProps;
+  title: string;
+  key: string;
+  ignoreDetails?: string[];
   links: LinkProps[];
   related: RelatedProjectProps;
 }

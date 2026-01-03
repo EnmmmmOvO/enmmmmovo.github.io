@@ -45,7 +45,7 @@ export default async function Hero() {
                 <div className="mxd-block__content">
                   <div className="mxd-block__inner-headline">
                     <h1 className="inner-headline__title animated-type loading__item">
-                      <TypedText />
+                      <TypedText strings={t.raw("hero") as string[]}/>
                     </h1>
                     <p className="inner-headline__text t-large t-bright loading__item">
                       {t("subtitle")}

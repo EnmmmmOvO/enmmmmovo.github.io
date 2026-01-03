@@ -2,8 +2,20 @@ import Link from "next/link";
 
 import AnimatedButton from "../animation/AnimatedButton";
 import { RelatedProjectProps } from '@/types/project';
+import { getTranslations } from 'next-intl/server';
+import { CONFIG, ProjectIntl, PortfolioIntl } from '@/config';
 
-export default function NextPrevNavigation({ related } : { related: RelatedProjectProps }) {
+export default async function NextPrevNavigation({ related, portfolio } : {
+  related: RelatedProjectProps,
+  portfolio?: boolean
+}) {
+  const intlFunc = portfolio ? PortfolioIntl : ProjectIntl;
+  const urlFunc = portfolio ? CONFIG.PORTFOLIOS.detail : CONFIG.PROJECTS.detail;
+
+  const t =  await getTranslations(intlFunc());
+  const prevText = related.prev ? (await getTranslations(intlFunc(related.prev)))("title") : null;
+  const nextText = related.next ? (await getTranslations(intlFunc(related.next)))("title") : null;
+
   return (
     <div className="mxd-project__block no-margin">
       <div className="mxd-project__nav">
@@ -14,17 +26,17 @@ export default function NextPrevNavigation({ related } : { related: RelatedProje
               {
                 related.prev && <>
                   <AnimatedButton
-                    text="Prev"
+                    text={t("prev")}
                     className="btn btn-anim btn-line-small btn-muted anim-no-delay slide-left"
-                    href={related.prev.href}
+                    href={urlFunc(related.prev)}
                   >
                     <i className="ph ph-arrow-left"/>
                   </AnimatedButton>
                   <Link
                     className="mxd-project__link anim-uni-in-up"
-                    href={related.prev.href}
+                    href={urlFunc(related.prev)}
                   >
-                    <span>{related.prev.title}</span>
+                    <span>{prevText}</span>
                   </Link>
                 </>
               }
@@ -33,17 +45,17 @@ export default function NextPrevNavigation({ related } : { related: RelatedProje
               {
                 related.next && <>
                   <AnimatedButton
-                    text="Next"
+                    text={t("next")}
                     className="btn btn-anim btn-line-small btn-muted anim-no-delay slide-right"
-                    href={related.next.href}
+                    href={urlFunc(related.next)}
                   >
                     <i className="ph ph-arrow-right" />
                   </AnimatedButton>
                   <Link
                     className="mxd-project__link anim-uni-in-up"
-                    href={related.next.href}
+                    href={urlFunc(related.next)}
                   >
-                    <span>{related.next.title}</span>
+                    <span>{nextText}</span>
                   </Link>
                 </>
               }

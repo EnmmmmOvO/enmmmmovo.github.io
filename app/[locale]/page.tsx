@@ -7,23 +7,29 @@ import WorkExperiences from '@/components/homes/WorkExperiences';
 import Education from '@/components/homes/Education';
 import FeaturedProjects from '@/components/homes/FeaturedProjects';
 import FeaturedPortfolios from '@/components/homes/FeaturedPortfolios';
-import { MetaDescription, MetaTitle } from '@/data/metadata';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: "Jinghan Wang" + MetaTitle,
-  description: MetaDescription
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
 
-export default function Home() {
+  return {
+    title: t("homePage") + t("metaTitle"),
+    description: t("metaDesc")
+  };
+}
+
+export default async function Home() {
+  const t = await getTranslations("home");
+
   return (
     <>
       <main id="mxd-page-content" className="mxd-page-content inner-page-content">
         <Hero />
-        <Techstack techStack={heroStack} topic="Core Technologies & Tools"/>
+        <Techstack techStack={heroStack} topic={t("coreTechTitle")}/>
         <FeaturedProjects />
         <FeaturedPortfolios />
         <WorkExperiences />
-        <Techstack techStack={toolstack} topic="Tools I Use" direction="left" />
+        <Techstack techStack={toolstack} topic={t("toolsIUse")} direction="left" />
         <Education />
       </main>
     </>

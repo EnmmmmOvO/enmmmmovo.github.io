@@ -1,3 +1,5 @@
+"use client";
+
 import { usePathname, useRouter } from "next/navigation";
 import React from 'react';
 
@@ -11,11 +13,10 @@ export default function LanguageSwitchButton({}) {
     const nextLocale = currentLocale === "en" ? "zh" : "en";
 
     const segments = pathname.split("/").filter(Boolean);
-    if (segments[0] === "en" || segments[0] === "zh") {
-      segments.shift();
-    }
+    if (segments[0] === "en" || segments[0] === "zh") segments.shift();
 
     router.push(`/${nextLocale}/${segments.join("/")}`);
+    router.refresh();
   };
 
   return (

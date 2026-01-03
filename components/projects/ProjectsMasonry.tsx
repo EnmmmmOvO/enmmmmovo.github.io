@@ -2,8 +2,12 @@ import Link from "next/link";
 import MasonryGrid from "../animation/MasonryGrid";
 import projects from "@/data/projects";
 import BackgroundParallax from "../animation/BackgroundParallax";
+import { CONFIG, ProjectIntl } from '@/config';
+import { getTranslations } from 'next-intl/server';
 
-export default function ProjectsMasonry() {
+export default async function ProjectsMasonry() {
+  const t = await getTranslations(ProjectIntl());
+
   return (
     <div className="mxd-section mxd-section-inner-headline grid-headline padding-default">
       <div className="mxd-container grid-l-container">
@@ -21,28 +25,30 @@ export default function ProjectsMasonry() {
                 <div className="col-12 col-xl-6 mxd-projects-masonry__item mxd-projects-masonry__title headline-title">
                   <div className="mxd-block__inner-headline">
                     <h1 className="inner-headline__title headline-img-07">
-                      Projects
+                      {t("projectTitle1")}
                       <br />
-                      to explore
+                      {t("projectTitle2")}
                     </h1>
                   </div>
                 </div>
                 {/* portfolio gallery single item */}
-                {projects.map((item, index) => (
-                  <div
+                {projects.map(async (item, index) => {
+                  const tData = await getTranslations(ProjectIntl(item.id));
+
+                  return <div
                     key={index}
                     className="col-12 col-xl-6 mxd-project-item mxd-projects-masonry__item"
                   >
                     <Link
                       className="mxd-project-item__media masonry-media"
-                      href={item.url}
+                      href={CONFIG.PROJECTS.detail(item.id)}
                     >
                       <BackgroundParallax
                         className={`mxd-project-item__preview masonry-preview parallax-img-small`}
-                        style={{ backgroundImage: `url(${item.src})` }}
+                        style={{backgroundImage: `url(${item.src})`}}
                       />
                       <div className="mxd-project-item__tags">
-                        {item.tags.map((tag, idx) => (
+                        {(tData.raw("tags") as string[]).map((tag, idx) => (
                           <span
                             key={idx}
                             className="tag tag-default tag-permanent"
@@ -54,13 +60,13 @@ export default function ProjectsMasonry() {
                     </Link>
                     <div className="mxd-project-item__promo masonry-promo">
                       <div className="mxd-project-item__name">
-                        <Link href={`/project-details`}>
-                          <span>{item.title}</span> {item.description}
+                        <Link href={CONFIG.PROJECTS.detail(item.id)} >
+                          <span>{tData("preview.title")}</span> {item.description && tData("preview.description")}
                         </Link>
                       </div>
                     </div>
                   </div>
-                ))}
+                })}
                 {/* portfolio gallery single item */}
               </MasonryGrid>
               {/* Portfolio Gallery End */}

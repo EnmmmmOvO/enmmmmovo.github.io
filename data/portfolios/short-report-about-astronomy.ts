@@ -1,38 +1,17 @@
-import { PortfolioProps } from '@/types/portfolio';
+import { type PortfolioProps } from '@/types/portfolio';
 
 const data: PortfolioProps = {
-  detail: {
-    name: "Short Report about Astronomy",
-    desc: "The article primarily focuses on exploring the possibility of finding extraterrestrial life by examining the structural features of galaxies and searching for planets that could support carbon-based life forms.",
-    shortDetails: [
-      {
-        title: "Date",
-        content: "Jan 2023"
-      },
-      {
-        title: "Technologies",
-        content: "Full-Stack Web Development"
-      },
-      {
-        title: "Context",
-        content: "Academic Coursework Portfolio"
-      },
-      {
-        title: "Word Count",
-        content: "1,000 words"
-      }
-    ],
-    tags: [ "Astronomy", "Extraterrestrial Life", "Galaxies" ]
-  },
+  title: "Short Report about Astronomy",
+  key: "short-report-about-astronomy",
   links: [
-    { href: "https://drive.google.com/file/d/1atjfM2VD6-NVtkhVwm6arXfcCw8CmQ4p/view", text: "Paper" }
+    {
+      href: "https://drive.google.com/file/d/1atjfM2VD6-NVtkhVwm6arXfcCw8CmQ4p/view",
+      text: "paper"
+    }
   ],
   related: {
-    prev: {
-      href: "/portfolios/implementing-concurrent-operation-of-a-data-set",
-      title: "Implementing Concurrent Operation of a Data Set",
-    },
+    prev: "implementing-concurrent-operation-of-a-data-set"
   }
-}
+};
 
 export default data;
