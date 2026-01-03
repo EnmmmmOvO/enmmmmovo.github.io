@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ImageGalleryProps } from '@/types/project';
+import { getTranslations } from 'next-intl/server';
 
 const spanToWidthHeight = (span: number) => {
   switch(span) {
@@ -11,7 +12,15 @@ const spanToWidthHeight = (span: number) => {
   }
 }
 
-const ImageGalley = ({ detail } : { detail: ImageGalleryProps }) => {
+const ImageGalley = async ({
+  detail,
+  intlKey
+} : {
+  detail: ImageGalleryProps,
+  intlKey: string
+}) => {
+  const t = await getTranslations(intlKey);
+
   return (
     <div className="mxd-project__block no-margin">
       <div className="mxd-project-cards">
@@ -35,9 +44,9 @@ const ImageGalley = ({ detail } : { detail: ImageGalleryProps }) => {
                       height={height}
                     />
                   </div>
-                  {item.caption && (
+                  {item.index && (
                     <p className="project-image-caption t-small">
-                      {item.caption}
+                      {t(`content.${item.index}`)}
                     </p>
                   )}
                 </div>

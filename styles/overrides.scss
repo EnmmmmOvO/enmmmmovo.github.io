@@ -148,6 +148,11 @@
   .contact-title i {
     font-size: 6rem;
   }
+
+  .error-message {
+    color: red;
+    font-size: 1.4rem;
+  }
 }
 
 .mxd-demo-footer__bg {
@@ -182,9 +187,10 @@
 .mxd-demo-footer__btn p {
   margin-bottom: 5rem;
 }
-//main {
-//  cursor: default;
-//}
+
+main {
+  cursor: default;
+}
 
 .pointer-events-circle {
   position: fixed;

@@ -1,16 +1,18 @@
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '@/data/metadata';
+import { GITHUB_URL, LINKEDIN_URL, OLD_WEBSITE_URL, RESUME_URL } from '@/data/metadata';
+import { CONFIG } from '@/config';
 
 const data = [
-  { title: "Home", href: "/" },
-  { title: "Projects", href: "/projects" },
-  { title: "Portfolios", href: "/portfolios" },
-  { title: "Contact", href: "/contact" },
+  { title: "home", href: CONFIG.HOME },
+  { title: "projects", href: CONFIG.PROJECTS.base },
+  { title: "portfolios", href: CONFIG.PORTFOLIOS.base },
+  { title: "contact", href: CONFIG.CONTACT },
   {
-    title: "Links",
+    title: "links",
     submenu: [
-      { label: "Github", href: GITHUB_URL },
-      { label: "Linkedin", href: LINKEDIN_URL },
-      { label: "Resume", href: RESUME_URL }
+      { label: "github", href: GITHUB_URL },
+      { label: "linkedin", href: LINKEDIN_URL },
+      { label: "resume", href: RESUME_URL },
+      { label: "oldVersion", href: OLD_WEBSITE_URL },
     ]
   }
 ]

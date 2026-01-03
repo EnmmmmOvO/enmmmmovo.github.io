@@ -1,11 +1,15 @@
 import { Metadata } from "next";
-import { MetaDescription, MetaTitle } from '@/data/metadata';
 import PortfolioList from '@/components/portfolios/PortfolioList';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: "Portfolio List" + MetaTitle,
-  description: MetaDescription
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+
+  return {
+    title: t("portfoliosPage") + t("metaTitle"),
+    description: t("metaDesc")
+  };
+}
 
 export default function WorksMasonryPage() {
   return (

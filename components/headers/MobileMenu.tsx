@@ -10,11 +10,13 @@ import { usePathname } from "next/navigation";
 import AnimatedButton from "../animation/AnimatedButton";
 import AllRights from '@/components/common/AllRights';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(Flip);
 
 export default function MobileMenu() {
   const pathname = usePathname();
+  const t = useTranslations("header-footer");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(-1);
@@ -127,7 +129,7 @@ export default function MobileMenu() {
                 className="mxd-menu__caption fade-in-elm"
                 style={{ transitionDelay: "0.4s" }}
               >
-                🦄 Welcome to the whimsical world of William&#39;s portfolio!
+                🦄 {t("welcome")}
               </p>
               <div className="main-menu">
                 <nav className="main-menu__content">
@@ -149,7 +151,7 @@ export default function MobileMenu() {
                               }
                             >
                               <AnimatedButton
-                                text={item.title}
+                                text={t(item.title)}
                                 as="span"
                                 className="main-menu__link btn btn-anim"
                               ></AnimatedButton>
@@ -193,7 +195,7 @@ export default function MobileMenu() {
                           <>
                             {item.href ? (
                               <AnimatedButton
-                                text={item.title}
+                                text={t(item.title)}
                                 className="main-menu__link btn btn-anim"
                                 href={item.href}
                               ></AnimatedButton>
@@ -219,7 +221,7 @@ export default function MobileMenu() {
                     className="menu-promo__caption fade-in-elm"
                     style={{ transitionDelay: "0.4s" }}
                   >
-                    ⚙️ Where Will(iam) meets Code — Exploring ideas through working software.
+                    ⚙️ {t("intro")}
                   </p>
                 </div>
               </div>

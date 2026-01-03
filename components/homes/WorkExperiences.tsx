@@ -3,8 +3,12 @@ import RevealText from "@/components/animation/RevealText";
 import experiences from "@/data/work";
 import { Experience } from "@/types/experiences";
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
+import { WorkIntl } from '@/config';
 
-export default function WorkExperiences() {
+export default async function WorkExperiences() {
+  const t = await getTranslations("home");
+
   return (
     <div className="mxd-section padding-grid-pre-pinned">
       <div className="mxd-container grid-container">
@@ -22,9 +26,7 @@ export default function WorkExperiences() {
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__title card-split-title">
                               <RevealText as="h2" className="reveal-type">
-                                Work
-                                <br />
-                                Experience
+                                {t("workExperience")}
                               </RevealText>
                             </div>
                           </div>
@@ -37,36 +39,38 @@ export default function WorkExperiences() {
                 <div className="col-12 col-xl-7 mxd-pinned-universal__scroll">
                   <div className="mxd-pinned-universal__scroll-inner mxd-grid-item no-margin">
                     <div className="mxd-res-list">
-                      {experiences.map((item: Experience, idx: number) => (
-                        <div className="mxd-res-list__item" key={idx}>
-                          <div className="mxd-res-list__divider anim-uni-in-up" />
+                      {experiences.map(async (item: Experience, idx: number) => {
+                        const tData = await getTranslations(WorkIntl(item.id));
+
+                        return <div className="mxd-res-list__item" key={idx}>
+                          <div className="mxd-res-list__divider anim-uni-in-up"/>
                           <div className="mxd-res-list__content">
                             <div className="mxd-res-list__data">
                               <div className="mxd-res-list__title">
-                                <h4 className="anim-uni-in-up">{item.role}</h4>
+                                <h4 className="anim-uni-in-up">{tData("role")}</h4>
                                 <p className="mxd-res-list__source anim-uni-in-up">
-                                  In the{" "}
+                                  {`${t("workIn")} `}
                                   <a href={item.agencyUrl} target="_blank">
-                                    {item.agency}
+                                    {tData("agency")}
                                   </a>
                                 </p>
                               </div>
                               <div className="mxd-res-list__descr">
-                                <p className="anim-uni-in-up">{item.desc}</p>
+                                <p className="anim-uni-in-up">{tData("desc")}</p>
                                 {
                                   item.logo && <span className="res-desc-icon" aria-hidden>
-                                    <Image src={item.logo} alt={item.agency} width={20} height={20} />
+                                    <Image src={item.logo} alt={tData("agency")} width={20} height={20}/>
                                   </span>
                                 }
                               </div>
                             </div>
                             <div className="mxd-res-list__year">
-                              <p className="anim-uni-in-up">{item.year}</p>
+                              <p className="anim-uni-in-up">{tData("year")}</p>
                             </div>
                           </div>
-                          <div className="mxd-res-list__divider anim-uni-in-up" />
+                          <div className="mxd-res-list__divider anim-uni-in-up"/>
                         </div>
-                      ))}
+                      })}
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,11 @@
-"use client";
 import Link from "next/link";
 import portfolios from "@/data/portfolios";
+import { PortfolioIntl } from '@/config';
+import { getTranslations } from 'next-intl/server';
 
-export default function PortfolioList() {
+export default async function PortfolioList() {
+  const t = await getTranslations(PortfolioIntl());
+
   return (
     <div className="mxd-section mxd-section-inner-headline grid-headline padding-default">
       <div className="mxd-container grid-l-container">
@@ -11,7 +14,7 @@ export default function PortfolioList() {
             <div className="mxd-projects-masonry__title headline-title loading__item">
               <div className="mxd-block__inner-headline">
                 <h1 className="inner-headline__title headline-img-07">
-                  Portfolios to explore
+                  {t("portfolioTitle")}
                 </h1>
               </div>
             </div>
@@ -19,28 +22,30 @@ export default function PortfolioList() {
             {/* Block - Projects List #01 Start */}
             <div className="mxd-block loading__item">
               <div className="mxd-projects-list hover-reveal">
-                {portfolios.map(item => (
-                  <Link
+                {portfolios.map(async item => {
+                  const tData = await getTranslations(PortfolioIntl(item.id));
+
+                  return <Link
                     key={item.id}
                     className="mxd-projects-list__item hover-reveal__item"
                     href={item.url}
                   >
-                    <div className="mxd-projects-list__border anim-uni-in-up" />
+                    <div className="mxd-projects-list__border anim-uni-in-up"/>
                     <div className="mxd-projects-list__inner">
                       <div className="container-fluid px-0">
                         <div className="row gx-0">
                           <div className="col-12 col-xl-8 mxd-grid-item no-margin">
                             <div className="mxd-projects-list__title anim-uni-in-up">
                               <div className="mxd-projects-list__icon">
-                                <i className="ph ph-arrow-right" />
+                                <i className="ph ph-arrow-right"/>
                               </div>
-                              <p>{item.title}</p>
+                              <p>{tData("preview")}</p>
                             </div>
                           </div>
                           <div className="col-6 col-md-6 col-xl-2 mxd-grid-item no-margin">
                             <div className="mxd-projects-list__tagslist">
                               <ul>
-                                {item.tags.map((t, i) => (
+                                {(tData.raw("tags") as string[]).map((t, i) => (
                                   <li key={i} className="anim-uni-in-up">
                                     <p className="t-small">{t}</p>
                                   </li>
@@ -50,15 +55,15 @@ export default function PortfolioList() {
                           </div>
                           <div className="col-6 col-md-6 col-xl-2 mxd-grid-item no-margin">
                             <div className="mxd-projects-list__date anim-uni-in-up">
-                              <p className="t-small">{item.date}</p>
+                              <p className="t-small">{tData("date")}</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="mxd-projects-list__border anim-uni-in-up" />
+                    <div className="mxd-projects-list__border anim-uni-in-up"/>
                   </Link>
-                ))}
+                })}
               </div>
             </div>
         </div>

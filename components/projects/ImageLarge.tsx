@@ -1,8 +1,16 @@
 import Image from 'next/image';
 import { LargeImageProps } from '@/types/project';
+import { getTranslations } from 'next-intl/server';
 
+const ImageGalley = async ({
+  detail,
+  intlKey
+} : {
+  detail: LargeImageProps;
+  intlKey: string;
+}) => {
+  const t = await getTranslations(intlKey);
 
-const ImageGalley = ({ detail } : { detail: LargeImageProps }) => {
   return (
     <div className="mxd-project__block no-margin">
       <div className="mxd-project-cards">
@@ -19,9 +27,9 @@ const ImageGalley = ({ detail } : { detail: LargeImageProps }) => {
                   height={detail.height}
                 />
               </div>
-              {detail.caption && (
+              {detail.index && (
                 <p className="project-image-caption t-small">
-                  {detail.caption}
+                  {t(`content.${detail.index}`)}
                 </p>
               )}
             </div>

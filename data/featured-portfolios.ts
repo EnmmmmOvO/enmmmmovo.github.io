@@ -1,33 +1,15 @@
 const data = [
   {
-    id: 1,
-    tags: ["Computer Ethics"],
+    id: "autonomous-vehicles-and-utilitarianism",
     imgSrc: "/img/portfolios/preview/1000_1250_portfolio-01.png",
-    title: {
-      before: "Balancing Ethics and Efficiency:",
-      highlight: "Autonomous Vehicles and Utilitarianism"
-    },
-    url: "/portfolios/autonomous-vehicles-and-utilitarianism"
   },
   {
-    id: 2,
-    tags: ["Concurrency", "Go"],
+    id: "suzuki-kasami-concurrency-algorithm",
     imgSrc: "/img/portfolios/preview/1000_1250_portfolio-02.png",
-    title: {
-      highlight: "Suzuki-Kasami",
-      after: "Concurrency Algorithm"
-    },
-    url: "/portfolios/suzuki-kasami-concurrency-algorithm"
   },
   {
-    id: 3,
+    id: "james-webb-space-telescope",
     imgSrc: "/img/portfolios/preview/1000_1250_portfolio-03.png",
-    tags: ["Astronomy"],
-    title: {
-      highlight: "James Webb",
-      after: "Space Telescope"
-    },
-    url: "/portfolios/james-webb-space-telescope"
   }
 ]
 

@@ -7,11 +7,6 @@ import { usePathname } from 'next/navigation';
 export default function ScrollTop() {
   const [visible, setVisible] = useState(false);
   const lenis = useLenis();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;

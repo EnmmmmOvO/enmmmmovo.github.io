@@ -1,22 +1,24 @@
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '@/data/metadata';
+import { GITHUB_URL, LINKEDIN_URL, OLD_WEBSITE_URL, RESUME_URL } from '@/data/metadata';
+import { FooterSection } from '@/types/menu';
+import { CONFIG } from '@/config';
 
 const data : FooterSection[] = [
   {
-    title: "My Pages",
+    title: "myPages",
     links: [
-      { label: "Home", href: "/" },
-      { label: "Projects", href: "/projects" },
-      { label: "Portfolios", href: "/portfolios" },
-      { label: "Contact", href: "/contact" },
-      { label: "Old Version", href: "https://enmmmmovo.github.io/" },
+      { label: "home", href: CONFIG.HOME },
+      { label: "projects", href: CONFIG.PROJECTS.base },
+      { label: "portfolios", href: CONFIG.PORTFOLIOS.base },
+      { label: "contact", href: CONFIG.CONTACT },
     ],
   },
   {
-    title: "Links",
+    title: "links",
     links: [
-      { label: "Github", href: GITHUB_URL },
-      { label: "Linkedin", href: LINKEDIN_URL },
-      { label: "Resume", href: RESUME_URL },
+      { label: "github", href: GITHUB_URL, blank: true },
+      { label: "linkedin", href: LINKEDIN_URL, blank: true },
+      { label: "resume", href: RESUME_URL, blank: true },
+      { label: "oldVersion", href: OLD_WEBSITE_URL, blank: true },
     ],
   }
 ];
