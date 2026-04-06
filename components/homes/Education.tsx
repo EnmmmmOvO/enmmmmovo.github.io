@@ -57,7 +57,13 @@ export default async function Education() {
                                 <p className="anim-uni-in-up">{tData("desc")}</p>
                                 {
                                   item.logo && <span className="res-desc-icon res-desc-education-icon" aria-hidden>
-                                    <Image src={item.logo} alt={tData("institution")} width={20} height={20}/>
+                                    <Image
+                                      src={item.logo}
+                                      alt={tData("institution")}
+                                      width={20}
+                                      height={20}
+                                      className="res-desc-icon__image"
+                                    />
                                   </span>
                                 }
                               </div>

@@ -79,11 +79,17 @@
   },
   "data": {
     "work": {
+      "finance-pro": {
+        "role": "Software Engineer",
+        "agency": "FinanceTech Pro Pty Ltd",
+        "desc": "Designed, developed, and maintained trading systems, CRM platforms, APIs, and broader financial technology infrastructure to support core business operations.\n\nContributed to system stability, performance optimisation, and data security through ongoing maintenance, technical improvements, and a strong focus on reliability.\n\nParticipated in architecture discussions and technical planning for new and existing systems, while handling financial and client data with strict confidentiality and working in line with internal compliance, risk management, and cybersecurity requirements.",
+        "year": "2026 - Present"
+      },
       "digital-capital-group": {
         "role": "Full-Stack Engineer",
         "agency": "Digital Capital Group",
         "desc": "Developed and maintained multiple internal and external web applications, including company landing pages, event-focused websites, and supporting backend services.\n\nDesigned and implemented backend APIs and database architectures to support diverse business requirements, focusing on data integrity, system stability, and maintainability.\n\nBuilt and integrated blockchain-based web applications involving digital asset payment workflows and smart contract interactions.\n\nTook ownership of production environments, managing multiple servers, deployments, monitoring, and routine maintenance to ensure high availability and operational reliability.\n\nInvestigated and resolved urgent production issues and system bugs through structured troubleshooting and code-level debugging.\n\nCollaborated with cross-functional teams and external technical partners to diagnose issues and improve existing systems, contributing to long-term platform stability.",
-        "year": "2024 - Present"
+        "year": "2024 - 2026"
       },
       "baosight-software": {
         "role": "Robotics Department (Internship)",

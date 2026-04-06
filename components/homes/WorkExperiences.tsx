@@ -59,7 +59,13 @@ export default async function WorkExperiences() {
                                 <p className="anim-uni-in-up">{tData("desc")}</p>
                                 {
                                   item.logo && <span className="res-desc-icon" aria-hidden>
-                                    <Image src={item.logo} alt={tData("agency")} width={20} height={20}/>
+                                    <Image
+                                      src={item.logo}
+                                      alt={tData("agency")}
+                                      width={20}
+                                      height={20}
+                                      className="res-desc-icon__image"
+                                    />
                                   </span>
                                 }
                               </div>

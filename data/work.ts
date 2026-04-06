@@ -1,5 +1,10 @@
 const data = [
   {
+    id: "finance-pro",
+    agencyUrl: "https://finance-pro.com.au/",
+    logo: "/img/works/icon-fp.svg"
+  },
+  {
     id: "digital-capital-group",
     agencyUrl: "https://www.dcglobal.com.au",
     logo: "/img/works/icon-dcg.svg"
