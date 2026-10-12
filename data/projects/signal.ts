@@ -2,7 +2,7 @@ import { type ProjectProps } from '@/types/project';
 
 const data: ProjectProps = {
   title: "E2E Platform",
-  img1: "/img/project/signal/1920_1200_logo.png",
+  img1: "/img/project/signal/1920_1200_logo.webp",
   key: "signal",
   content: [
     {
@@ -13,12 +13,12 @@ const data: ProjectProps = {
       type: "image-gallery",
       list: [
         {
-          src: "/img/project/signal/1200_1000_signal.png",
+          src: "/img/project/signal/1200_1000_signal.webp",
           index: 2,
           span: 6
         },
         {
-          src: "/img/project/signal/1200_1000_double_ratchet.png",
+          src: "/img/project/signal/1200_1000_double_ratchet.webp",
           index: 3,
           span: 6
         }
@@ -36,7 +36,7 @@ const data: ProjectProps = {
       type: "image-gallery",
       list: [
         {
-          src: "/img/project/signal/2400_1000_ui.png",
+          src: "/img/project/signal/2400_1000_ui.webp",
           index: 6,
           span: 12
         }

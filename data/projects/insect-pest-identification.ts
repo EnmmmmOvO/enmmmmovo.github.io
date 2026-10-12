@@ -2,7 +2,7 @@ import { type ProjectProps } from '@/types/project';
 
 const data: ProjectProps = {
   title: "Insect Pest Specifies Identification",
-  img1: "/img/project/insect-pest-identification/1920_1200_home.png",
+  img1: "/img/project/insect-pest-identification/1920_1200_home.webp",
   key: "insect-pest-identification",
   content: [
     {
@@ -13,12 +13,12 @@ const data: ProjectProps = {
       type: "image-gallery",
       list: [
         {
-          src: "/img/project/insect-pest-identification/1920_1920_structure1.png",
+          src: "/img/project/insect-pest-identification/1920_1920_structure1.webp",
           index: 2,
           span: 5
         },
         {
-          src: "/img/project/insect-pest-identification/2800_2200_structure2.png",
+          src: "/img/project/insect-pest-identification/2800_2200_structure2.webp",
           index: 3,
           span: 7
         }
@@ -30,7 +30,7 @@ const data: ProjectProps = {
     },
     {
       type: "large-image",
-      src: "/img/project/insect-pest-identification/1920_711_result.png",
+      src: "/img/project/insect-pest-identification/1920_711_result.webp",
       width: 1920,
       height: 711
     },

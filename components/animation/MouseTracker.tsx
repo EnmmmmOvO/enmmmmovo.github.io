@@ -68,6 +68,8 @@ const MouseTracker = () => {
 
   /* RAF loops (ONLY place where RAF repeats itself) */
   useEffect(() => {
+    if (!isMouseDevice) return;
+
     circleLoopRef.current = () => {
       updateCircle();
       circleRafId.current = requestAnimationFrame(circleLoopRef.current!);
@@ -85,7 +87,7 @@ const MouseTracker = () => {
       if (circleRafId.current !== null) cancelAnimationFrame(circleRafId.current);
       if (dotRafId.current !== null) cancelAnimationFrame(dotRafId.current);
     };
-  }, [updateCircle, updateDot]);
+  }, [updateCircle, updateDot, isMouseDevice]);
 
   if (!isMouseDevice) return null;
 

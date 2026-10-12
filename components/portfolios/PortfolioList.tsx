@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import portfolios from "@/data/portfolios";
 import { PortfolioIntl } from '@/config';
 import { getTranslations } from 'next-intl/server';

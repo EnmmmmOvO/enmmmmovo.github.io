@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "willcode",
+  "account_id": "d7ff587270119db9ee3d4ce56c80bf63",
+  "compatibility_date": "2026-10-06",
+  // `wrangler deploy` and `wrangler dev` run this before uploading ./out.
+  "build": {
+    "command": "pnpm build",
+    "watch_dir": ["app", "components", "data", "hooks", "i18n", "messages", "public", "styles"]
+  },
+  // Static assets only: `pnpm build` exports the site to ./out.
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "routes": [
+    { "pattern": "willcode.io", "custom_domain": true },
+    { "pattern": "www.willcode.io", "custom_domain": true }
+  ]
+}

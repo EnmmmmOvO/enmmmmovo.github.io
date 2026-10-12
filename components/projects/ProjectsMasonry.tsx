@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import MasonryGrid from "../animation/MasonryGrid";
 import projects from "@/data/projects";
 import BackgroundParallax from "../animation/BackgroundParallax";

@@ -2,7 +2,7 @@ import { type ProjectProps } from '@/types/project';
 
 const data: ProjectProps = {
   title: "RWA Tokenization (STET)",
-  img1: "/img/project/stet/1920_1200_logo.png",
+  img1: "/img/project/stet/1920_1200_logo.webp",
   key: "stet",
   content: [
     {

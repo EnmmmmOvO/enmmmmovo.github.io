@@ -7,10 +7,13 @@ import WorkExperiences from '@/components/homes/WorkExperiences';
 import Education from '@/components/homes/Education';
 import FeaturedProjects from '@/components/homes/FeaturedProjects';
 import FeaturedPortfolios from '@/components/homes/FeaturedPortfolios';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations();
+export async function generateMetadata({ params } : {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   return {
     title: t("homePage") + t("metaTitle"),
@@ -18,7 +21,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Home() {
+export default async function Home({ params } : {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("home");
 
   return (

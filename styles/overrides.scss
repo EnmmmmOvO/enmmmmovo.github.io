@@ -222,3 +222,18 @@ main {
   transform: translate(-50%, -50%);
   transition: width 0.5s, height 0.5s, background-color 0.8s;
 }
+
+// Touch devices skip backdrop blur and blend modes on these buttons to cut GPU compositing while scrolling.
+@media (pointer: coarse) {
+  .btn-to-top,
+  .mxd-color-switcher {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .btn-to-top {
+    mix-blend-mode: normal;
+    background-color: var(--base-tint);
+    color: var(--t-bright);
+  }
+}

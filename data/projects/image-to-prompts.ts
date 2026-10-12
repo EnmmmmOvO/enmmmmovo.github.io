@@ -2,7 +2,7 @@ import { type ProjectProps } from '@/types/project';
 
 const data: ProjectProps = {
   title: "Image to Prompts",
-  img1: "/img/project/image-to-prompts/2730_1535_home.png",
+  img1: "/img/project/image-to-prompts/2730_1535_home.webp",
   key: "image-to-prompts",
   content: [
     {
@@ -17,11 +17,11 @@ const data: ProjectProps = {
       type: "image-gallery",
       list: [
         {
-          src: "/img/project/image-to-prompts/1300_1100_result1.png",
+          src: "/img/project/image-to-prompts/1300_1100_result1.webp",
           span: 6
         },
         {
-          src: "/img/project/image-to-prompts/1300_1100_result2.png",
+          src: "/img/project/image-to-prompts/1300_1100_result2.webp",
           span: 6
         }
       ]

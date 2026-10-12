@@ -13,11 +13,11 @@ const data: ProjectProps = {
       type: "image-gallery",
       list: [
         {
-          src: "/img/project/turtle-segmentation/1200_1200_result1.png",
+          src: "/img/project/turtle-segmentation/1200_1200_result1.webp",
           span: 5
         },
         {
-          src: "/img/project/turtle-segmentation/1400_1100_result2.png",
+          src: "/img/project/turtle-segmentation/1400_1100_result2.webp",
           span: 7
         }
       ]

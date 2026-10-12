@@ -7,8 +7,8 @@ const data = [
     titleClass: "opposite",
     textClass: "t-opposite",
     tagClass: "tag-outline-opposite",
-    imageSmall: "/img/project/preview/800_800_project_01.png",
-    imageLarge: "/img/project/preview/1000_1000_project_01.png"
+    imageSmall: "/img/project/preview/800_800_project_01.webp",
+    imageLarge: "/img/project/preview/1000_1000_project_01.webp"
   },
   {
     id: "signal",
@@ -18,8 +18,8 @@ const data = [
     titleClass: "",
     textClass: "",
     tagClass: "tag-outline",
-    imageSmall: "/img/project/preview/800_800_project_02.png",
-    imageLarge: "/img/project/preview/1000_1000_project_02.png"
+    imageSmall: "/img/project/preview/800_800_project_02.webp",
+    imageLarge: "/img/project/preview/1000_1000_project_02.webp"
   },
   {
     id: "data-clean",
@@ -29,8 +29,8 @@ const data = [
     titleClass: "opposite",
     textClass: "t-opposite",
     tagClass: "tag-outline-opposite",
-    imageSmall: "/img/project/preview/800_800_project_03.png",
-    imageLarge: "/img/project/preview/1000_1000_project_03.png"
+    imageSmall: "/img/project/preview/800_800_project_03.webp",
+    imageLarge: "/img/project/preview/1000_1000_project_03.webp"
   }
 ]
 

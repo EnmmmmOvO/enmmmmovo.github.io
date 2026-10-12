@@ -2,7 +2,7 @@ import { type ProjectProps } from '@/types/project';
 
 const data: ProjectProps = {
   title: "NLP x SEEK",
-  img1: "/img/project/seek/1920_1200_logo.png",
+  img1: "/img/project/seek/1920_1200_logo.webp",
   key: "seek",
   content: [
     {
@@ -17,12 +17,12 @@ const data: ProjectProps = {
       type: "image-gallery",
       list: [
         {
-          src: "/img/project/seek/1200_1200_award.png",
+          src: "/img/project/seek/1200_1200_award.webp",
           index: 3,
           span: 5
         },
         {
-          src: "/img/project/seek/1400_1000_result.png",
+          src: "/img/project/seek/1400_1000_result.webp",
           index: 4,
           span: 7
         }

@@ -23,7 +23,7 @@ const data = [
   {
     id: "anhui-cloud-rail-information-technology",
     agencyUrl: "http://www.ahyungui.com",
-    logo: "/img/works/icon-cloudrail.png"
+    logo: "/img/works/icon-cloudrail.webp"
   }
 ]
 

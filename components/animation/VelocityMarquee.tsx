@@ -76,6 +76,15 @@ export default function VelocityMarquee({
         },
       });
 
+      // Pause the loop while the marquee is outside the viewport.
+      const visibility = ScrollTrigger.create({
+        trigger: wrap,
+        start: "top bottom",
+        end: "bottom top",
+        onToggle: (self) => (self.isActive ? master?.play() : master?.pause()),
+      });
+      if (!visibility.isActive) master.pause();
+
       if (pauseOnHover) {
         const onEnter = () => master?.pause();
         const onLeave = () => master?.play();

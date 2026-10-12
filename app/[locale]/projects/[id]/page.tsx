@@ -7,15 +7,20 @@ import { notFound } from 'next/dist/client/components/not-found';
 import { type ProjectProps } from '@/types/project';
 import ImageGalley from '@/components/projects/ImageGalley';
 import ImageLarge from '@/components/projects/ImageLarge';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ProjectIntl } from '@/config';
+import projects from '@/data/projects';
+
+export function generateStaticParams() {
+  return projects.map(({ id }) => ({ id }));
+}
 
 export async function generateMetadata({ params } : {
-  params: Promise<{ id: string }>;
+  params: Promise<{ locale: string; id: string }>;
 }): Promise<Metadata> {
-  const { id } = await params;
-  const tData = await getTranslations(ProjectIntl(id));
-  const t = await getTranslations();
+  const { locale, id } = await params;
+  const tData = await getTranslations({ locale, namespace: ProjectIntl(id) });
+  const t = await getTranslations({ locale });
 
   if (!tData.has("title")) {
     return {
@@ -31,9 +36,10 @@ export async function generateMetadata({ params } : {
 }
 
 export default async function ProjectDetailsPage({ params } : {
-  params: Promise<{ id: string }>;
+  params: Promise<{ locale: string; id: string }>;
 }) {
-  const { id } = await params;
+  const { locale, id } = await params;
+  setRequestLocale(locale);
 
   try {
     const mod = await import(`@/data/projects/${id}`);

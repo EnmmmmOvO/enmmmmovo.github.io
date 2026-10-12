@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import menuItems from "@/data/menu"; // adjust path accordingly
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -215,7 +215,7 @@ export default function MobileMenu() {
               <div className="menu-promo">
                 <div className="menu-promo__content">
                   <div className="menu-promo__caption menu-promo__svg fade-in-elm">
-                    <Image src="/img/icons/800_800_coder.png" alt="Coder Icon" width={800} height={800} />
+                    <Image src="/img/icons/800_800_coder.webp" alt="Coder Icon" width={800} height={800} />
                   </div>
                   <p
                     className="menu-promo__caption fade-in-elm"

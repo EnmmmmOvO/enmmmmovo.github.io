@@ -1,0 +1,6 @@
+# Paths without a locale prefix, previously redirected by the next-intl middleware.
+/projects /en/projects 301
+/projects/* /en/projects/:splat 301
+/portfolios /en/portfolios 301
+/portfolios/* /en/portfolios/:splat 301
+/contact /en/contact 301

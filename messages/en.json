@@ -60,6 +60,7 @@
     "next": "Next",
     "prev": "Prev",
     "presentation": "Presentation",
+    "video": "Video",
     "portfolioTitle": "Portfolios to Explore"
   },
   "contact": {
@@ -484,7 +485,7 @@
         "date": "Oct 2022",
         "technologies": "Ethics, Autonomous Vehicles",
         "context": "Individual Academic Portfolio",
-        "word-count": "2,200 words"
+        "wordCount": "2,200 words"
       },
       "fantastic-celestial-objects": {
         "title": "Fantastic Celestial Objects",
@@ -497,7 +498,7 @@
         "date": "Feb 2023",
         "technologies": "Astronomy, Planets, Stars",
         "context": "Individual Academic Portfolio",
-        "word-count": "3,000 words"
+        "wordCount": "3,000 words"
       },
       "implementing-concurrent-operation-of-a-data-set": {
         "title": "Implementing Concurrent Operation of a Data Set",
@@ -511,7 +512,7 @@
         "date": "Jun 2023",
         "technologies": "Concurrency, Data Structures",
         "context": "Individual Academic Portfolio",
-        "word-count": "1,800 words"
+        "wordCount": "1,800 words"
       },
       "james-webb-space-telescope": {
         "title": "James Webb Space Telescope",
@@ -530,7 +531,7 @@
         "date": "Jan 2023",
         "technologies": "Astronomy, Space Telescopes",
         "context": "Individual Academic Portfolio",
-        "word-count": "1,500 words"
+        "wordCount": "1,500 words"
       },
       "short-report-about-astronomy": {
         "title": "Short Report about Astronomy",
@@ -544,7 +545,7 @@
         "date": "Jan 2023",
         "technologies": "Full-Stack Web Development",
         "context": "Individual Academic Portfolio",
-        "word-count": "1,000 words"
+        "wordCount": "1,000 words"
       },
       "suzuki-kasami-concurrency-algorithm": {
         "title": "Suzuki-Kasami Concurrency Algorithm",
@@ -576,7 +577,7 @@
         "date": "Dec 2022",
         "technologies": "Artificial Intelligence, Ethics",
         "context": "Collaborative Academic Portfolio",
-        "word-count": "4,500 words"
+        "wordCount": "4,500 words"
       }
     }
   }

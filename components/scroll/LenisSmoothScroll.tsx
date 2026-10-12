@@ -71,10 +71,11 @@ export default function LenisSmoothScroll() {
       document.body.style.overflow = "";
     };
   }, [lenis]);
-  // return null for ios
+  // return null for ios and other touch devices (Lenis keeps touch scrolling native)
   if (
     typeof window !== "undefined" &&
-    /iPad|iPhone|iPod/.test(navigator.userAgent)
+    (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      window.matchMedia("(pointer: coarse)").matches)
   ) {
     return null;
   }
