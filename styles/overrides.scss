@@ -161,10 +161,6 @@
   }
 }
 
-.my-logo__body {
-  fill: var(--base-opp);
-}
-
 .mxd-demo-footer__bg {
   z-index: -10;
 }
@@ -178,6 +174,24 @@
   .menu-promo__svg {
     width: 350px;
     height: 350px;
+  }
+}
+
+// Faint particle logo behind the home hero text, desktop only.
+.hero-particles {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .hero-particles {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    bottom: 0;
+    display: block;
+    width: 36%;
+    opacity: 0.24;
+    pointer-events: none;
   }
 }
 

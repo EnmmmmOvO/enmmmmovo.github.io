@@ -20,6 +20,11 @@ const setColorSchemeScript = `
   })();
 `;
 
+// Full page loads always start at the top; ScrollToTop covers client-side navigation.
+const manualScrollRestorationScript = `
+  try { history.scrollRestoration = 'manual'; } catch(e) {}
+`;
+
 const saveLocaleScript = (locale: string) => `
   try { localStorage.setItem('${LOCALE_STORAGE_KEY}', '${locale}'); } catch(e) {}
 `;
@@ -43,6 +48,7 @@ export default async function LocaleLayout({
     <html suppressHydrationWarning className="no-touch" lang={locale}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: manualScrollRestorationScript }} />
         <script dangerouslySetInnerHTML={{ __html: saveLocaleScript(locale) }} />
       </head>
       <body>

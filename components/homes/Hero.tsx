@@ -1,4 +1,5 @@
 import TypedText from "@/components/common/TypedText";
+import LogoParticles from "@/components/animation/LogoParticles";
 import { getTranslations } from 'next-intl/server';
 
 export default async function Hero() {
@@ -6,6 +7,9 @@ export default async function Hero() {
 
   return (
     <div className="mxd-section mxd-section-inner-headline padding-text-pre-block">
+      <div className="hero-particles" aria-hidden="true">
+        <LogoParticles />
+      </div>
       <div className="mxd-container grid-container">
         {/* Block - Inner Page Headline Start */}
         <div className="mxd-block loading-wrap">
